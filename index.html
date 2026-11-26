@@ -1,300 +1,406 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#203e35">
-  <meta name="description" content="40个生活化选择，遇见与你气质相映的中国历史人物。纯趣味人格测试，非专业心理诊断。">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'">
-  <title>测测你的灵魂对应哪位中国历史人物 · 灵魂照面</title>
-  <style>:root{--paper:#f6f3ea;--pine:#203e35;--red:#a54c3d;--gold:#ad9163;--ink:#263a33;--muted:#68736a;--line:#d7d1c2;--serif:'Songti SC','STSong','Noto Serif CJK SC','Source Han Serif SC','SimSun',serif;--sans:'PingFang SC','Microsoft YaHei',sans-serif;color-scheme:light}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased}body:before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(88,77,50,.012) 4px)}button,a,input{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{font:500 15px/1.5 var(--sans);cursor:pointer}button:disabled{cursor:default;opacity:.4}button:focus-visible,a:focus-visible,input:focus-visible+span{outline:3px solid var(--gold);outline-offset:5px}button,a,label{transition:background .2s,color .2s,border-color .2s,transform .2s}button:not(:disabled):active{transform:translateY(1px)}a{color:var(--pine)}h1,h2,h3,p{margin:0}h1,h2,h3,.serif{font-family:var(--serif);font-weight:600}h1:focus,h2:focus{outline:none}[hidden]{display:none!important}.shell{width:min(1184px,calc(100% - 80px));margin:auto}.site-header{min-height:100px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--gold);gap:20px}.brand{border:0;background:none;padding:8px 0;color:var(--pine);font-family:var(--serif);font-size:27px;font-weight:700;letter-spacing:.12em}.header-note{color:#8e7044;font-family:var(--serif);letter-spacing:.18em;font-size:15px}.text-btn{background:none;border:0;color:var(--muted);padding:10px 0;font-size:14px}.text-btn:hover{color:var(--red)}.view{animation:arrive .35s ease-out}.home-hero{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:32px;min-height:610px;padding:64px 0}.hero-copy h1{font-size:clamp(38px,4.25vw,59px);line-height:1.45;letter-spacing:.025em;color:var(--red)}.hero-copy h1 em{font-style:normal;color:var(--pine)}.intro{font-family:var(--serif);font-size:20px;line-height:1.9;margin:25px 0 30px;letter-spacing:.08em}.primary,.secondary{border:1px solid var(--pine);display:inline-flex;align-items:center;justify-content:center;gap:26px;min-height:54px;padding:13px 27px;border-radius:4px;text-decoration:none;font-size:15px}.primary{background:var(--pine);color:#fffdf7}.primary:hover:not(:disabled){background:#305548}.secondary{color:var(--pine);background:transparent}.secondary:hover:not(:disabled){background:#e9ece2}.start-button{min-width:246px;font-family:var(--serif);font-size:24px;letter-spacing:.14em}.arrow{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.meta{font-size:12px;color:var(--muted);letter-spacing:.06em;margin-top:17px}.resume-note{font-size:13px;color:var(--pine);margin-top:12px}.home-actions{display:flex;gap:22px;align-items:center;flex-wrap:wrap}.orbit{width:100%;max-width:490px;aspect-ratio:1;position:relative;justify-self:center;font-family:var(--serif)}.orbit:before,.orbit:after{content:'';position:absolute;inset:11%;border:1px solid var(--gold);border-radius:50%}.orbit:after{inset:13%;opacity:.5}.orbit-center{position:absolute;inset:28% 20%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--red);font-size:43px;font-weight:600;line-height:1.45;letter-spacing:.06em}.seal{display:inline-flex;align-items:center;justify-content:center;flex:none;background:var(--red);color:var(--paper);font-family:var(--serif);border:3px double var(--paper);outline:1px solid var(--red);font-size:17px;line-height:1.3;letter-spacing:.1em;width:45px;height:48px;margin-top:21px;border-radius:2px}.orbit-name{position:absolute;width:22%;aspect-ratio:1;border:1px solid var(--gold);border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;color:var(--pine);font-size:26px;font-weight:600;z-index:1}.orbit-name:nth-child(2){left:39%;top:1%}.orbit-name:nth-child(3){left:2%;top:22%;color:#94723f}.orbit-name:nth-child(4){right:2%;top:22%;font-size:22px}.orbit-name:nth-child(5){left:2%;bottom:18%;font-size:23px}.orbit-name:nth-child(6){right:2%;bottom:18%;color:#94723f;font-size:23px}.orbit-name:nth-child(7){left:39%;bottom:0;font-size:23px}.ritual{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:24px 0;margin-bottom:22px;gap:16px}.ritual p{display:flex;gap:18px;align-items:center;justify-content:center;font-family:var(--serif);font-size:17px}.ritual p+p{border-left:1px solid var(--line)}.ritual span{font:italic 38px/1 var(--serif);color:#9c7c49}.footer{text-align:center;color:var(--muted);font-size:11px;letter-spacing:.045em;padding:18px 0 27px}.question-wrap{max-width:730px;margin:0 auto;padding:36px 0 30px}.progress-copy{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--muted);margin-bottom:12px;letter-spacing:.08em}.progress-copy strong{font-size:17px;font-weight:500;color:var(--pine)}progress{appearance:none;-webkit-appearance:none;width:100%;height:4px;border:0;background:#e2ddcf;display:block;border-radius:10px;overflow:hidden}progress::-webkit-progress-bar{background:#e2ddcf}progress::-webkit-progress-value{background:var(--pine);transition:width .3s}progress::-moz-progress-bar{background:var(--pine)}.question-content{padding-top:27px;animation:arrive .28s ease-out}.question-number{font:italic 84px/1.15 var(--serif);color:#e5decd;margin-bottom:8px}.question-content h2{font-size:29px;line-height:1.65;letter-spacing:.025em;margin-bottom:25px}.question-content fieldset{border:0;padding:0;margin:0;min-width:0}.options{display:grid;gap:13px}.option{position:relative;display:block;cursor:pointer}.option input{position:absolute;opacity:0;width:1px;height:1px}.option span{display:flex;align-items:center;gap:19px;min-height:63px;padding:16px 21px;border:1px solid #c4c6b8;border-radius:4px;background:rgba(255,255,255,.24);font-size:15px;line-height:1.6;transition:background .18s,border-color .18s}.option b{font-family:var(--serif);font-size:19px;font-weight:500;color:var(--muted);width:18px;flex-shrink:0}.option:hover span{background:#eeeee3;border-color:var(--pine)}.option input:checked+span{background:#e4e9dd;border-color:var(--pine);box-shadow:inset 3px 0 var(--pine)}.option input:checked+span b{color:var(--pine)}.question-controls{display:flex;justify-content:space-between;gap:18px;margin-top:30px}.question-controls button{min-width:145px}.question-help{text-align:center;font-size:11px;color:var(--muted);margin-top:16px}.result-wrap{max-width:900px;margin:40px auto 0}.result-sheet{border:1px solid var(--line);background:#faf7ef;box-shadow:0 18px 55px rgba(32,62,53,.045)}.result-band{background:var(--pine);color:var(--paper);padding:13px 35px;display:flex;align-items:center;justify-content:space-between;font:16px/1.6 var(--serif);letter-spacing:.13em}.result-band small{font:10px var(--sans);letter-spacing:.15em;color:#d9ddcd}.result-body{padding:36px 42px}.result-heading{display:flex;align-items:center;justify-content:space-between;gap:20px}.result-name-line{display:flex;align-items:center;gap:24px;flex-wrap:wrap}.result-name-line h1{font-size:72px;line-height:1.3;letter-spacing:.05em;color:var(--red)}.result-era{border-left:1px solid var(--gold);padding-left:20px;color:#8b6b3e;font-family:var(--serif);font-size:17px}.result-heading .seal{margin:0;width:48px;height:53px;font-size:18px}.result-title{color:var(--muted);font-family:var(--serif);font-size:14px;letter-spacing:.16em;margin-top:5px}.result-quote{font:500 24px/1.8 var(--serif);color:#896936;margin:21px 0 17px}.tags{display:flex;gap:10px;flex-wrap:wrap}.tag{border:1px solid #b46a58;color:var(--red);padding:2px 15px;border-radius:30px;font-size:12px}.result-description{font-size:14px;line-height:2;color:#465448;margin-top:25px}.result-columns{display:grid;grid-template-columns:1.08fr 1fr;gap:38px;margin-top:28px;padding-top:26px;border-top:1px solid var(--line)}.result-block+.result-block{margin-top:24px}.result-block h2,.traits-title{font-size:19px;line-height:1.5;letter-spacing:.06em;margin-bottom:10px}.result-block h2{padding-left:12px;border-left:2px solid var(--gold)}.result-block p{font-size:13px;line-height:1.95;color:#4e5b50}.reason+.reason{margin-top:8px}.reason b{font-weight:600;color:var(--pine)}.trait{margin:12px 0}.trait-caption{display:flex;justify-content:space-between;font-size:11px;gap:12px;margin-bottom:5px;color:var(--muted)}.trait-caption b{font-weight:500;color:var(--pine)}.trait-track{height:5px;position:relative;background:#e4dfd0;border-radius:10px;overflow:hidden}.trait-fill{display:block;height:100%;background:var(--pine);border-radius:10px}.trait-track:after{content:'';position:absolute;left:50%;height:100%;width:1px;background:var(--paper);top:0}.trait-note{font-size:10px;color:var(--muted);line-height:1.8;margin-top:16px}.result-reminder{margin-top:28px;border-top:1px solid var(--line);padding-top:19px;font-size:12px;color:var(--muted)}.result-bottom{font-size:10px;text-align:center;color:var(--muted);padding:0 25px 23px;line-height:1.8}.result-actions{display:flex;justify-content:center;gap:14px;margin-top:25px;flex-wrap:wrap}.result-actions button{min-width:166px}.share-hint{text-align:center;font-size:11px;color:var(--muted);margin-top:13px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}dialog{border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:25px;max-width:min(480px,calc(100% - 32px));max-height:90dvh;border-radius:6px;box-shadow:0 20px 70px #0003}dialog::backdrop{background:rgba(20,35,29,.65);backdrop-filter:blur(3px)}.dialog-top{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:15px}.dialog-top h2{font-size:22px}.close-button{border:0;background:transparent;color:var(--muted);font-size:26px;line-height:1;padding:6px}.share-image{display:block;width:100%;height:auto;border:1px solid var(--line);max-height:58dvh;object-fit:contain;background:var(--paper)}.dialog-note{font-size:12px;color:var(--muted);margin:13px 0}.dialog-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:20px;flex-wrap:wrap}.dialog-actions .primary,.dialog-actions .secondary{padding:11px 19px;min-height:46px}.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:var(--pine);color:var(--paper);padding:12px 22px;max-width:90%;border-radius:4px;z-index:10;font-size:13px}.noscript{padding:40px;text-align:center;color:var(--red)}
-@keyframes arrive{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
-@media(min-width:1500px){.home-hero{min-height:670px}.hero-copy h1{font-size:62px}}
-@media(max-width:900px){.shell{width:calc(100% - 48px)}.home-hero{gap:12px;min-height:530px;padding:45px 0}.hero-copy h1{font-size:40px}.intro{font-size:17px}.orbit-center{font-size:32px}.orbit-name{font-size:22px}.orbit-name:nth-child(n+4){font-size:19px}.ritual p{font-size:14px;gap:12px}.ritual span{font-size:31px}.result-body{padding:30px}.result-columns{gap:28px}}
-@media(max-width:640px){.shell{width:calc(100% - 40px)}.site-header{min-height:76px}.brand{font-size:22px}.header-note{font-size:11px;letter-spacing:.03em}.home-hero{display:flex;flex-direction:column;padding:35px 0 28px;gap:27px;align-items:stretch}.hero-copy h1{font-size:clamp(32px,8.7vw,43px);line-height:1.5}.intro{margin:18px 0 23px;font-size:17px;letter-spacing:.03em}.start-button{min-height:55px;min-width:225px;font-size:22px}.meta{font-size:10px;letter-spacing:.01em;margin-top:13px}.orbit{width:300px;max-width:95%;align-self:center}.orbit-center{font-size:29px}.orbit-name{font-size:20px}.orbit-name:nth-child(n+4){font-size:18px}.seal{width:33px;height:36px;font-size:13px;margin-top:12px}.ritual{gap:0;padding:18px 0;margin-bottom:5px}.ritual p{display:block;text-align:center;font-size:11px;line-height:1.7;padding:0 5px}.ritual span{display:block;font-size:28px;margin-bottom:8px}.footer{font-size:10px;letter-spacing:0;padding:17px 0 22px}.question-wrap{padding-top:24px}.progress-copy{font-size:10px}.progress-copy strong{font-size:15px}.question-content{padding-top:25px}.question-number{font-size:73px;margin-bottom:9px}.question-content h2{font-size:24px;line-height:1.65;margin-bottom:24px}.option span{padding:16px;gap:14px;font-size:14px;min-height:66px}.options{gap:13px}.question-controls{margin-top:28px;gap:15px}.question-controls button{min-width:0;flex:1;padding:13px 12px;gap:12px}.result-wrap{margin-top:25px}.result-band{padding:12px 20px;font-size:15px}.result-band small{font-size:9px}.result-body{padding:25px 22px}.result-name-line{gap:15px}.result-name-line h1{font-size:57px}.result-era{font-size:14px;padding-left:14px}.result-heading>.seal{display:none}.result-title{font-size:12px;letter-spacing:.07em}.result-quote{font-size:20px;margin:19px 0 16px;line-height:1.7}.tags{gap:8px}.tag{font-size:11px;padding:2px 11px}.result-description{font-size:13px;margin-top:22px}.result-columns{grid-template-columns:1fr;gap:27px;margin-top:24px;padding-top:23px}.result-block h2,.traits-title{font-size:18px}.result-block+.result-block{margin-top:22px}.result-block p{font-size:13px}.trait{margin:13px 0}.result-reminder{font-size:11px;margin-top:23px}.result-bottom{font-size:9px;padding:0 20px 20px}.result-actions{gap:10px}.result-actions button{min-width:0;flex:1;padding:13px 10px;font-size:13px;gap:10px}.result-actions .text-btn{flex-basis:100%;padding:5px}.share-hint{font-size:10px}.dialog-actions{justify-content:center}.dialog-top h2{font-size:19px}}
-@media(max-width:360px){.shell{width:calc(100% - 30px)}.header-note{font-size:10px}.hero-copy h1{font-size:30px}.result-name-line h1{font-size:48px}.result-body{padding:22px 18px}.option span{font-size:13px}.question-content h2{font-size:22px}}
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+ <meta name="theme-color" content="#efebf8">
+ <meta name="description" content="在26道历史情境中，遇见与你遥相呼应的历史人物。秦、汉、三国、唐、宋，任选一段旅程。">
+ <meta name="format-detection" content="telephone=no,email=no">
+ <title>灵魂照面｜你像哪位历史人物</title>
+ <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+ <style>:root{--bg:#efebf8;--paper:#fff;--ink:#302653;--accent:#7864bd;--accent-dark:#6550aa;--muted:#9187a9;--line:#ded7ef;--tint:#f7f4fc;--radius:26px;--shadow:0 14px 44px #49327308;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);font-size:16px;line-height:1.65;background:var(--bg);font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}button,input,a{-webkit-tap-highlight-color:transparent}button,input{font:inherit}button,a{touch-action:manipulation}button{color:inherit;cursor:pointer}button:disabled{cursor:default}button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}button{border:0}svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}[hidden]{display:none!important}.app-shell{width:min(100%,560px);margin:auto;padding:0 20px max(24px,env(safe-area-inset-bottom))}.site-header{height:88px;display:grid;grid-template-columns:36px 1fr 36px;align-items:center;text-align:center;font-family:"Songti SC","Noto Serif CJK SC",SimSun,serif;font-size:22px;font-weight:700}.site-header #brand{grid-column:2;grid-row:1}.site-header #back{grid-column:1;grid-row:1}.header-space{grid-column:3;grid-row:1}.icon-button{display:grid;place-items:center;background:transparent;padding:6px;border-radius:10px;width:36px;height:36px}.paper{background:var(--paper);border:1px solid #ffffffbd;border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow)}h1,h2,p{margin:0}h1{font-family:"Songti SC","Noto Serif CJK SC",SimSun,serif;font-size:29px;line-height:1.45;letter-spacing:.02em;font-weight:700}h2{font-size:22px;line-height:1.55}h1:focus,h2:focus{outline:none}.subtext{font-size:14px;color:var(--muted);margin-top:12px;line-height:1.85}.primary,.secondary{display:flex;align-items:center;justify-content:center;text-align:center;gap:8px;width:100%;padding:15px 18px;border-radius:16px;font-size:17px;font-weight:600;text-decoration:none;min-height:56px;transition:background .18s,transform .18s}.primary{background:var(--accent);color:white;border:1px solid var(--accent);box-shadow:0 8px 22px #7864bd1d}.primary:hover{background:var(--accent-dark)}.primary:active{transform:scale(.99)}.primary:disabled{opacity:.55}.secondary{background:white;color:var(--accent);border:1.5px solid var(--line)}.secondary:hover{border-color:var(--accent);background:var(--tint)}.text-button{padding:8px 0;color:var(--accent);background:none;font-size:14px}.gate-layout{min-height:calc(100svh - 190px);display:flex;align-items:center}.gate{width:100%;text-align:center;padding:42px 26px 32px}.lock{width:68px;height:68px;color:var(--accent);background:var(--tint);border-radius:20px;display:grid;place-items:center;margin:0 auto 24px}.lock svg{width:34px;height:34px;stroke-width:1.7}.gate h1{font-size:32px}.gate .subtext{margin:16px 0 28px}.code-label{display:block;text-align:left;font-size:13px;color:var(--muted);margin-bottom:8px}.code-input{width:100%;height:72px;border:1.5px solid var(--line);border-radius:16px;background:white;color:var(--ink);text-align:center;font-size:30px;font-weight:500;letter-spacing:22px;padding:0 0 0 22px;appearance:none;-webkit-appearance:none}.code-input::placeholder{color:#c9c0dc}.code-input:focus{outline:0;border-color:var(--accent);box-shadow:0 0 0 4px #7864bd12}.code-input[aria-invalid=true]{border-color:#bd596d}.error{color:#a3425c;font-size:13px;line-height:1.6;min-height:24px;margin:10px 0}.gate-note{font-size:12px;color:var(--muted);margin-top:24px;line-height:1.9}.selection{padding:28px 20px 22px}.selection h1{font-size:27px}.selection .subtext{margin-top:8px}.choice-list{display:grid;gap:12px;margin-top:26px}.choice{width:100%;display:flex;align-items:center;gap:15px;text-align:left;background:white;border:1.5px solid var(--line);border-radius:16px;padding:13px 14px;min-height:82px;transition:border-color .18s,background .18s,transform .18s}.choice:hover,.choice:focus-visible{border-color:var(--accent);background:var(--tint)}.choice:active{transform:scale(.99)}.glyph{width:52px;height:54px;display:grid;place-items:center;border-radius:13px;background:var(--tint);font-family:"Songti SC",SimSun,serif;font-size:32px;flex:none}.choice strong{display:block;font-size:18px;font-weight:600;line-height:1.4}.choice small{display:block;color:var(--muted);font-size:12px;margin-top:4px;line-height:1.6}.choice svg{margin-left:auto;width:18px;height:18px;color:var(--accent)}.choice .choice-copy{flex:1}.choice.random{border-color:#b5a6d9;min-height:74px}.choice.random strong{font-size:17px}.gender .choice{min-height:96px}.gender .glyph{font-size:25px}.footnote{font-size:12px;line-height:1.9;color:var(--muted);margin-top:22px}.candidate-note{background:var(--tint);border-radius:14px;padding:12px 14px;margin-top:20px;font-size:12px;line-height:1.9}.candidate-note strong{color:var(--accent)}.resume{margin-top:18px;padding:14px;background:var(--tint);border-radius:14px;font-size:13px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px}.resume button{background:var(--accent);color:white;padding:7px 12px;border-radius:9px;font-size:12px}.progress-card{padding:16px 20px;margin-bottom:18px;border-radius:20px}.progress-label{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;font-weight:600;color:var(--accent)}.progress-count{white-space:nowrap;color:var(--muted);font-weight:400}.progress-track{height:7px;background:var(--line);border-radius:6px;overflow:hidden;margin-top:12px}.progress-fill{height:100%;background:var(--accent);border-radius:6px;transition:width .3s}.question{padding:25px 22px}.ability-label{display:inline-flex;align-items:center;color:var(--accent);background:#f0ebfa;border-radius:8px;padding:5px 10px;font-size:12px;font-weight:600}.ability-hint{font-size:12px;color:var(--muted);margin-top:8px}.context{color:var(--muted);font-size:11px;margin:22px 0 8px;letter-spacing:.05em}.question h1{font-family:inherit;font-size:22px;font-weight:650;line-height:1.7;letter-spacing:0}.answers{display:grid;gap:12px;margin:24px 0 0;border:0;padding:0}.answer{display:flex;align-items:flex-start;gap:12px;padding:16px 14px;border:1.5px solid var(--line);border-radius:16px;background:var(--tint);text-align:left;min-height:72px;font-size:15px;line-height:1.8;transition:border-color .16s,background .16s,box-shadow .16s}.answer-letter{border:1px solid #d4cae8;width:25px;height:25px;border-radius:50%;display:grid;place-items:center;flex:none;font-size:11px;color:var(--accent);margin-top:2px}.answer[aria-pressed=true]{background:#eee8fa;border-color:var(--accent);box-shadow:0 0 0 3px #7864bd0d;color:var(--accent)}.answer[aria-pressed=true] .answer-letter{background:var(--accent);color:white;border-color:var(--accent)}.answer:hover:not(:disabled){border-color:var(--accent)}.question-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:28px}.question-nav .secondary{width:auto;min-height:43px;border-radius:12px;font-size:13px;padding:9px 16px}.auto-note{font-size:11px;color:var(--muted);text-align:right}.question details{border-top:1px solid #f0ebf6;margin-top:23px;padding-top:14px;font-size:11px;color:var(--muted);line-height:1.9}.question summary{cursor:pointer;font-size:12px}.question details p{margin-top:8px}.question details a,.source-link{color:var(--accent);text-underline-offset:3px}.site-footer{text-align:center;color:#a398b7;font-size:11px;line-height:1.9;padding-top:28px}.loading{padding:80px 12px;text-align:center;color:var(--muted);font-size:14px}.notice{position:fixed;bottom:max(30px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 40px);border-radius:14px;background:#302653eb;color:white;padding:12px 18px;font-size:13px;z-index:30;box-shadow:0 6px 30px #30265325}.result-heading{text-align:center;padding:6px 0 26px;border-bottom:1px solid var(--line)}.result-heading .result-kicker{font-family:"Songti SC",SimSun,serif;font-size:20px}.result-name{font-family:"Songti SC",SimSun,serif;font-size:52px;margin:18px 0 6px;line-height:1.25}.result-role{font-size:13px;color:var(--muted)}.tags{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:22px}.tag{background:#f0ebfa;color:var(--accent);border-radius:24px;padding:5px 12px;font-size:12px}.result-section{margin-top:26px}.result-section h2{font-size:17px;margin-bottom:12px}.result-section p{font-size:14px;line-height:1.95}.result-section .subtext{font-size:12px}.result-bars{display:grid;gap:17px;margin-top:20px}.bar-label{display:flex;justify-content:space-between;font-size:12px}.bar-label strong{font-weight:600}.bar-label span{color:var(--accent);font-size:11px}.trait-track{position:relative;height:7px;background:var(--line);border-radius:6px;margin:8px 0 5px}.trait-track:after{content:'';position:absolute;left:50%;height:11px;top:-2px;width:1px;background:#b1a2ce}.trait-fill{height:100%;border-radius:6px;background:var(--accent)}.bar-ends{display:flex;justify-content:space-between;color:var(--muted);font-size:10px}.reason{border-left:2px solid #cbbde4;padding-left:13px;margin:16px 0}.reason strong{display:block;font-size:13px;margin-bottom:4px}.reason p{font-size:12px;color:var(--muted)}.result-note{font-size:11px!important;color:var(--muted);background:var(--tint);padding:14px;border-radius:12px;margin-top:24px;line-height:1.9}.result-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.result-actions button{font-size:14px;min-height:50px;padding:12px 8px}.review-button{display:block;margin:16px auto 0;font-size:12px}.overlay{position:fixed;inset:0;background:#30265385;z-index:40;display:flex;align-items:flex-start;justify-content:center;padding:24px 16px;overflow:auto;overscroll-behavior:contain}.share-panel{width:min(100%,480px);background:white;border-radius:22px;padding:20px;box-shadow:0 18px 80px #30265333}.share-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.share-top h2{font-size:20px}.share-panel>p{font-size:12px;color:var(--muted);margin:8px 0 16px}.share-panel img{display:block;width:100%;height:auto;border-radius:14px;margin-bottom:16px;-webkit-touch-callout:default}.share-panel a{font-size:14px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}.enter{animation:enter .25s ease-out}@keyframes enter{from{opacity:.25;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:800px){.app-shell{max-width:620px;padding:0 30px 35px}.site-header{height:106px}.paper{padding:35px}.gate{padding:45px 50px}.gate-layout{min-height:calc(100svh - 205px)}.choice-list{gap:13px}.choice{padding:14px 18px}.question h1{font-size:25px}.answer{font-size:16px;padding:18px}.progress-card{padding:20px 25px}.result-name{font-size:64px}}
+@media(max-width:360px){.app-shell{padding-left:14px;padding-right:14px}.paper{padding-left:18px;padding-right:18px}h1,.selection h1{font-size:24px}.gate h1{font-size:29px}.choice strong{font-size:16px}.answer{font-size:14px}.question h1{font-size:20px}.result-name{font-size:43px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-@media print{body{background:#fff}.site-header,.footer,.result-actions,.share-hint,dialog,.toast{display:none!important}.result-wrap{margin:0;max-width:none}.result-sheet{box-shadow:none;break-inside:avoid}.result-band,.trait-fill{print-color-adjust:exact;-webkit-print-color-adjust:exact}.shell{width:100%}}
 </style>
+
 </head>
 <body>
-  <div class="shell">
-    <header class="site-header">
-      <button class="brand" id="brand" aria-label="灵魂照面，返回首页">灵魂照面</button>
-      <p class="header-note" id="header-note">生活选择，历史回响</p>
-      <button class="text-btn" id="exit" hidden>暂存并退出</button>
-    </header>
-    <main id="main">
-      <section id="home" class="view" aria-labelledby="home-title">
-        <div class="home-hero">
-          <div class="hero-copy">
-            <h1 id="home-title" tabindex="-1">测测你的灵魂<br>对应哪位<br><em>中国历史人物</em></h1>
-            <p class="intro">四十个日常选择，<br>遇见一个跨越千年的自己。</p>
-            <div class="home-actions"><button class="primary start-button" id="start">开始照面 <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button><button class="text-btn" id="home-reset" hidden>重新开始</button></div>
-            <p class="meta">40 道生活题 · 约 6–8 分钟 · 14 位历史人物</p>
-            <p id="resume-note" class="resume-note" hidden></p>
-          </div>
-          <div class="orbit" aria-hidden="true">
-            <div class="orbit-center">与古人<br>遥相呼应<span class="seal">照面</span></div>
-            <span class="orbit-name">苏轼</span><span class="orbit-name">李白</span><span class="orbit-name">诸葛亮</span><span class="orbit-name">陶渊明</span><span class="orbit-name">武则天</span><span class="orbit-name">霍去病</span>
-          </div>
-        </div>
-        <div class="ritual"><p><span>01</span>凭直觉选择</p><p><span>02</span>没有标准答案</p><p><span>03</span>收下灵魂来信</p></div>
-      </section>
-      <section id="quiz" class="view" aria-labelledby="question-title" hidden>
-        <div class="question-wrap">
-          <div class="progress-copy"><strong id="progress-position">01 / 40</strong><span id="progress-copy">已答 0 题 · 慢慢来，选最像你的</span></div>
-          <progress id="progress" max="40" value="0" aria-label="已完成题目"></progress>
-          <form id="quiz-form" novalidate>
-            <div id="question-content" class="question-content"></div>
-            <div class="question-controls"><button class="secondary" id="previous" type="button"><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4m6-6-6 6 6 6"/></svg>上一题</button><button class="primary" id="next" type="submit" disabled>下一题</button></div>
-            <p class="question-help">按平时的真实偏好作答，选项没有高低之分。</p>
-          </form>
-        </div>
-      </section>
-      <section id="result" class="view" aria-labelledby="result-name" hidden><div class="result-wrap"><article id="result-sheet" class="result-sheet"></article><div class="result-actions"><button class="primary" id="share">保存分享卡 <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></button><button class="secondary" id="restart">重新测试 <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10a8 8 0 1 0-1 7M20 4v6h-6"/></svg></button><button class="text-btn" id="review">回看与修改答案</button></div><p class="share-hint">分享卡为本地生成的 PNG 图片，可保存后分享至小红书或朋友圈。</p></div></section>
-    </main>
-    <footer class="footer">仅供娱乐与自我探索，不是专业心理诊断。<br>人物为文学化性格映射，不评价真实历史人物的完整人生。</footer>
-    <noscript><p class="noscript">请在浏览器设置中启用 JavaScript 后使用本测试。</p></noscript>
-  </div>
-  <dialog id="share-dialog" aria-labelledby="share-title"><div class="dialog-top"><h2 id="share-title">收下你的灵魂来信</h2><button class="close-button" id="close-share" aria-label="关闭分享卡">×</button></div><img id="share-image" class="share-image" alt="你的历史人物匹配结果分享卡"><p class="dialog-note">手机可长按图片保存；电脑可点击下方下载。分享卡不包含你的具体答题记录。</p><a id="download" class="primary" download="灵魂照面.png">下载 PNG 图片</a></dialog>
-  <dialog id="reset-dialog" aria-labelledby="reset-title"><h2 id="reset-title">开启一次新的照面？</h2><p class="dialog-note">当前答题记录与结果会被替换。已保存的分享图片不受影响。</p><div class="dialog-actions"><button class="secondary" id="cancel-reset">保留当前记录</button><button class="primary" id="confirm-reset">开始新测试</button></div></dialog>
-  <div id="status" class="sr-only" role="status" aria-live="polite"></div><div id="toast" class="toast" role="status" hidden></div>
-  <script>'use strict';
-/* 所有人物均为文学化性格原型；维度用于娱乐匹配，不是心理量表。 */
-const SoulQuiz = (() => {
-  const dimensions = [
-    {name:'决策节奏', low:'审慎', high:'果决', left:'你习惯多留一点观察时间，让决定更稳妥。', right:'你倾向在信息足够时行动，在实践中校准。'},
-    {name:'社交能量', low:'独处', high:'相聚', left:'你更容易在安静、少人的空间里恢复能量。', right:'你常从交流与相聚中获得新的能量。'},
-    {name:'行事章法', low:'随性', high:'筹谋', left:'你愿意给临场感受和意外发现留出位置。', right:'你习惯先梳理路径，再把事情有序推进。'},
-    {name:'探索偏好', low:'熟悉', high:'求新', left:'你珍惜熟悉事物带来的确定感与深度。', right:'你愿意尝试新路径，对未知保持好奇。'},
-    {name:'关注视角', low:'析理', high:'体察', left:'你常先厘清事实与边界，再回应问题。', right:'你容易留意人的感受，以及话语之外的情绪。'},
-    {name:'表达方式', low:'含蓄', high:'抒发', left:'你更习惯把心意留在行动、细节或私下的交流里。', right:'你愿意把感受说出来，让别人看见你的内心。'},
-    {name:'生活驱动', low:'自适', high:'进取', left:'你愿意为自己的节奏留白，不把生活过成竞赛。', right:'你会被更高的目标点燃，愿意为突破投入精力。'},
-    {name:'自主取向', low:'共商', high:'自主', left:'你喜欢一起商量，在彼此配合中找到方向。', right:'你珍视自主判断，愿意为自己的选择负责。'}
-  ];
-  // 每组严格对应一个维度，选项依次为 -3、-1、+1、+3；展示时打散位置。
-  const bank = [
-    [
-      ['两家餐厅都不错，朋友等你拍板，你会？','再看看评价和菜单，确认后再选','问问大家有没有忌口，再做决定','挑一家看着顺眼的，边走边说','直接定一家，吃过才知道合不合适'],
-      ['第一次接到不熟悉的小任务，你更常？','把流程和注意事项都问清楚','找个示例，照着试一小步','先动手做，遇到问题再问','马上做一个初版，用结果换反馈'],
-      ['出门时发现可能下雨，但预报并不确定，你会？','比较几份预报，再调整出行安排','多等一会儿，看看天色','带把伞按时出发','先出门，真的下雨就临时找地方躲'],
-      ['想买一件价格合适、也确实需要的东西，你通常？','做足比较，隔几天再下单','挑两三个候选，想清楚再买','大致看过评价就决定','确认适用就买，把时间留给别的事'],
-      ['讨论陷入来回犹豫，事情却不算重大，你会？','再把各个方案的风险核一遍','找出还缺的那条信息','提议先选一个，设个回看节点','主动拍板，先让事情动起来']
-    ],
-    [
-      ['难得空出一个周末，你更想怎么度过？','独自在家读书、看剧，安静充电','去熟悉的小店坐坐，不约人也舒服','约两三好友，吃饭聊天放松','组织一场聚会，热热闹闹过一天'],
-      ['到了一个几乎谁都不认识的聚会，你往往？','找个安静角落，先自在地待着','等有熟悉话题时再加入','找一两个人慢慢聊起来','主动打招呼，很快串起一桌人'],
-      ['忙完一整周，最能帮你恢复状态的是？','留一段完全不被打扰的时间','一个人散步，偶尔和朋友发消息','找信任的人聊聊这一周','和大家见个面，热闹一会儿'],
-      ['你发现一家特别喜欢的小店，接下来更可能？','把它留作自己的秘密据点','只带最熟悉的那个人去','约几位朋友一起体验','攒一局，把大家都带去认识它'],
-      ['参加一个兴趣活动，你更享受哪种时刻？','自己沉浸在事情里的时候','和一个人安静合作的时候','跟小组交流心得的时候','认识新伙伴、全场聊起来的时候']
-    ],
-    [
-      ['安排一次两天短途旅行，你会？','只订住处，到了再看心情走','列几个想去的地方，不排具体时间','把每天的大致路线安排好','提前核好交通、时间和备选路线'],
-      ['一个小项目还有两周截止，你习惯？','有灵感时集中做，保留自由节奏','先做最有兴趣的一部分','拆成几块，分几天完成','列时间表，给每一步留出缓冲'],
-      ['准备邀请朋友来家里吃饭，你更可能？','当天逛市场，看到什么做什么','提前想几道菜，临场再调整','列好菜单和采购清单','连备菜顺序和上菜时间都安排好'],
-      ['手头突然多了三件待办，你通常？','看当下状态，想做哪件先做哪件','先挑最顺手的，慢慢进入状态','按轻重缓急排个顺序','拆分步骤和用时，安排进日程'],
-      ['要学一个新的兴趣技能，你偏好的方式是？','随手试试，跟着兴趣走','找几个喜欢的小作品模仿','按课程顺序循序渐进','设阶段目标，定期复盘进度']
-    ],
-    [
-      ['常去的咖啡店出了新口味，你会？','照旧点最喜欢的那款','等朋友尝过，再决定要不要换','偶尔换一款，给自己一点新鲜感','直接尝新，未知的口味更有趣'],
-      ['挑一部今晚看的电影，你更想选？','重温最喜欢、已经看过的电影','找自己熟悉的类型，稳稳放松','试试评价不错的陌生类型','选风格特别、可能看不懂的作品'],
-      ['一条常走的路旁出现了新岔道，你会？','照旧走，熟悉的路线最自在','记下位置，下次有空再说','时间够的话，拐进去看看','当场探一探，想知道它通向哪里'],
-      ['整理手机里的应用，你往往？','保留一直好用的，不轻易更换','只有旧工具不够用才找新的','偶尔下载新工具试试','喜欢体验新功能，也常换用法'],
-      ['一门陌生兴趣突然吸引了你，你会？','先继续深挖自己原来的爱好','收藏资料，等合适时机再看','抽个晚上，认真体验一次','很快报名入门课，看看能玩出什么']
-    ],
-    [
-      ['朋友发来一句“今天真不顺”，你第一反应是？','问发生了什么，帮忙理清事实','先找出卡在哪里，再问需不需要陪伴','先听他讲，边听边帮他捋一捋','先接住他的情绪，让他知道有人在'],
-      ['两位同伴对一件小事有分歧，你先关注？','双方说的事实，哪里可以核实','各自的诉求，是否有共同解法','他们在意什么，能不能互相理解','气氛是否让人难受，先给双方缓口气'],
-      ['给亲近的人选礼物，你最看重？','是否实用，能解决一个具体需要','品质和适用场景是否合适','是否呼应他最近的心情和喜好','有没有“你记得我说过”的心意'],
-      ['朋友问你一个方案怎么样，你通常先说？','直接指出最关键的问题','给出判断，再补一句鼓励','先肯定用心，再一起看问题','先问他最担心什么，照顾表达的感受'],
-      ['一场讨论结束后，你更容易记住？','结论是什么，依据够不够','大家提出的关键理由','谁特别投入，谁似乎没说完','每个人的语气和细微情绪变化']
-    ],
-    [
-      ['遇到一件让你很开心的事，你通常？','自己慢慢回味，不急着说','私下告诉一个最亲近的人','跟几位朋友分享感受','忍不住写一大段，把快乐讲出来'],
-      ['朋友做了一件让你感动的事，你会？','记在心里，以后用行动回报','私下简短地说一句谢谢','认真告诉他，哪一点打动了你','把感受说得很具体，让他知道有多珍贵'],
-      ['看完一部很有触动的作品，你更可能？','把感受留在心里，不急着解释','记几句只有自己看得懂的笔记','找人聊聊喜欢的片段','写一篇长评，梳理并表达感受'],
-      ['想念一个很久没联系的朋友，你会？','等自然的机会再见面','发一个有共同回忆的表情或链接','直接问近况，约时间聊聊','坦率告诉对方：最近真的很想你'],
-      ['给一次难忘的经历留纪念，你会？','收好一件小物，自己知道就够','拍几张照，配一句短短的文字','写下当天的感受和细节','做成图文或视频，完整讲出自己的体验']
-    ],
-    [
-      ['一个兴趣做得越来越顺手后，你更想？','按舒服的频率玩，开心就好','保持进步，但不给自己加太多任务','定个小目标，试试更难的部分','挑战比赛或公开展示，看看能走多远'],
-      ['如果突然多出一周自由时间，你更愿意？','彻底放慢，过几天没任务的日子','把生活整理好，顺便做喜欢的小事','集中学一件一直想学的技能','推进一个很想实现、却总没空做的目标'],
-      ['在一份稳定且熟练的工作里，你更在意？','节奏是否舒服，有没有生活空间','能不能稳稳做好，也有余力照顾自己','是否还有成长和承担新事的机会','能不能做出突破，让能力走上新台阶'],
-      ['看到同龄人晒出亮眼成绩，你会？','替他开心，然后继续自己的节奏','欣赏一下，想想自己真正需要什么','被鼓舞，给自己也定一个小目标','很有冲劲，想认真追一次自己的目标'],
-      ['选一件今年最想完成的事，你偏向？','把普通日子过得自在一点','养成一个舒服、能长期保持的习惯','完成一项能看见成长的挑战','争取一个让自己真正跨出舒适区的成果']
-    ],
-    [
-      ['准备和朋友合做一个小作品，你习惯？','大家一起决定，边讨论边调整','先听彼此想法，再分头行动','明确自己负责的部分，独立做好','先形成自己的方案，再邀请大家碰撞'],
-      ['面对一个没有标准答案的选择，你通常？','和信任的人聊透，再共同判断','参考几个人的建议后决定','听完建议，主要按自己的判断来','先想清楚自己的立场，再决定要不要征询意见'],
-      ['结伴出游时，大家想去的地方不同，你更舒服的方式是？','一起协商，尽量保持全程同行','跟随整体安排，也提一点自己的想法','约好集合时间，中间分头逛逛','各自走最想走的路线，再交换见闻'],
-      ['尝试一个新习惯，哪种方式更适合你？','和伙伴一起，互相提醒鼓劲','先听成熟经验，再选适合自己的部分','自己摸索节奏，偶尔交流心得','自己定规则，按个人节奏独立坚持'],
-      ['别人给出与你不同的建议，你通常？','认真商量，愿意一起调整方向','先理解对方的理由，再协调取舍','采纳有用的部分，保留自己的主张','独立核对后做决定，并承担相应结果']
-    ]
-  ];
-  const permutations = [[2,0,3,1],[1,3,0,2],[3,1,2,0],[0,2,1,3],[2,3,1,0],[1,0,2,3],[3,2,0,1],[0,1,3,2]];
-  const questions = [];
-  for(let round=0;round<5;round++) for(let dim=0;dim<8;dim++) {
-    const row=bank[dim][round], id=questions.length;
-    questions.push({id,dim,title:row[0],options:permutations[(dim+round*3)%8].map(i=>({text:row[i+1],value:[-3,-1,1,3][i]}))});
-  }
-  const figures = [
-    {id:'zhuge',name:'诸葛亮',era:'三国',role:'谋士',title:'把远方，落进每一步',quote:'你心里有山河，落子却很轻。',tags:['深思熟虑','有序推进','责任感'],profile:[-.6,-.5,.9,.2,.1,-.5,.7,.3],description:'你喜欢在纷繁里理出线索，把很远的目标拆成眼前能做的事。安静不是没主意，而是在心里把可能性走过一遍。',strength:'你能把复杂的问题翻译成可执行的步骤，让一群人的努力有了共同方向。',egg:'如果穿越进群聊，你大概会先发一份安排清单，再默默把备用方案置顶。',reminder:'准备得足够好之后，也可以给意外留一个座位。'},
-    {id:'zhangliang',name:'张良',era:'秦汉之际',role:'谋士',title:'进退之间，自有分寸',quote:'不必站在风口，也能让风转向。',tags:['审时度势','独立判断','懂得留白'],profile:[-.7,-.7,.7,.5,-.5,-.7,.1,.9],description:'你常先看清局面，再选择最省力也最合适的切入点。你珍惜主动权，也知道何时不必事事亲自出场。',strength:'你能识别真正值得投入的节点，也有能力在不适合自己的局面里及时转身。',egg:'你的古代职场签名可能是：方案已留，今天不参加无效会议。',reminder:'看得透，也不妨让值得信任的人看见你的真实想法。'},
-    {id:'lishimin',name:'李世民',era:'唐',role:'帝王',title:'把众人的力，汇成一条路',quote:'你往前一步，也想让身边的人走得更远。',tags:['行动果决','善于协作','目标清晰'],profile:[.7,.6,.7,.3,-.3,.3,.9,-.5],description:'你习惯把目标说清楚，听取不同的意见，再带着大家向前走。对你而言，成果往往来自判断与协作同时在线。',strength:'你既能推动决定，也愿意把合适的人放到合适的位置，让合作产生更大的力量。',egg:'如果一起做旅行攻略，你负责敲定路线，顺手把司机、摄影和订餐的人都安排明白。',reminder:'偶尔放下推进器，让大家只是轻松相处，也很有价值。'},
-    {id:'wuzetian',name:'武则天',era:'唐 · 武周',role:'帝王',title:'自己的路，自己落款',quote:'世界给你一道门，你另画一条路。',tags:['自主坚定','敢于求新','进取鲜明'],profile:[.7,.1,.8,.7,-.6,.1,1,.9],description:'你不太满足于被动接受安排。认准方向后，你愿意投入长期努力，也能在质疑里保留自己的判断。',strength:'你能把外部限制拆成具体问题，在别人还在等待许可时，为自己找到新的入口。',egg:'你的待办列表里可能有一项：这件事没人试过，所以我想试试。',reminder:'独立不妨碍求助，可靠的支持也能成为你的力量。'},
-    {id:'sushi',name:'苏轼',era:'宋',role:'文人',title:'把日子，过出回甘',quote:'日子有风雨，你有自己的晴天。',tags:['善感豁达','乐于分享','生活有味'],profile:[.2,.6,-.5,.5,.7,.9,-.3,.1],description:'你能认真感受生活，也愿意把感受分享给身边的人。小小的风景、一顿好饭，都能成为你重新喜欢日子的理由。',strength:'你善于从日常里找到值得珍惜的部分，用表达、幽默和共情让紧绷的气氛松下来。',egg:'你的古代朋友圈大概一半写心情，一半研究今天到底吃什么。',reminder:'让别人开心之外，也记得给自己的低落留出空间。'},
-    {id:'wangyangming',name:'王阳明',era:'明',role:'文人',title:'心里想清楚，脚下走出来',quote:'你的答案，不只写在心里。',tags:['内在笃定','重视实践','独立思考'],profile:[.5,-.5,.3,.3,.1,-.3,.5,.8],description:'你在意自己的判断是否经得起实践。想明白一件事之后，你更愿意用日常行动，而非反复宣告，来证明它。',strength:'你能把信念落实到小事里，在环境变化时仍保留一条清晰的内在线索。',egg:'收藏夹里有很多道理，但你会挑一条，今天就试着做起来。',reminder:'有时不必把每件事都想透，试过之后也会长出答案。'},
-    {id:'libai',name:'李白',era:'唐',role:'诗人',title:'把辽阔，还给自己',quote:'你的灵魂，不肯只住在方寸之间。',tags:['自由求新','表达热烈','自主鲜明'],profile:[.6,.3,-.9,1,.3,1,.1,1],description:'你容易被新鲜的风景和强烈的感受点燃。比起一条完全规定好的路线，你更喜欢为自己的兴致留一段岔路。',strength:'你敢于打破惯常的表达，把别人习以为常的事物看出另一种可能。',egg:'你的理想出游方式：先买一张票，攻略可以在路上长出来。',reminder:'给灵感留一小块稳定的落脚处，它会走得更远。'},
-    {id:'liqingzhao',name:'李清照',era:'宋',role:'诗人',title:'把细微，写成回响',quote:'别人路过的瞬间，你替它留了下来。',tags:['细腻敏锐','审美鲜明','情感真切'],profile:[-.5,-.5,.1,.3,1,.6,-.3,.7],description:'你能捕捉那些不容易被说清的情绪与细节。你的喜好有自己的尺度，也愿意为真正触动你的事物停留。',strength:'你能准确描述模糊的感受，让一段经历、一种心情被人认真看见。',egg:'同一场雨，别人记得没带伞，你还记得窗边的气味和那句没说完的话。',reminder:'感受很珍贵，也不必替每一种情绪寻找完美解释。'},
-    {id:'jingke',name:'荆轲',era:'战国',role:'侠客',title:'有所珍重，所以勇敢',quote:'你认准的那一步，自有千钧。',tags:['行动担当','自主坚定','重视承诺'],profile:[.9,-.3,-.1,.1,.2,-.5,.3,.9],description:'你通常不急于表达立场，但一旦认准值得做的事，就更愿意用行动回应。你在意承诺，也珍惜选择的分量。',strength:'关键时刻你敢承担决定，不轻易把自己答应的事推给别人。',egg:'朋友群里平时话不多，真有人需要帮忙，你已经在问地址了。',reminder:'勇敢也包括重新评估，给自己留条退路同样是担当。'},
-    {id:'niezheng',name:'聂政',era:'战国',role:'侠客',title:'温厚里，也有锋芒',quote:'你把心意藏得深，把承诺放得重。',tags:['真诚重情','行动内敛','独立担当'],profile:[.5,-.7,-.1,-.3,.8,-.9,-.1,.7],description:'你不一定擅长把关心说得漂亮，却常常记得谁需要什么。你的热情有边界，但对重要的人和事格外认真。',strength:'你能把关怀变成实际行动，在别人需要依靠时，给出安静而可靠的支持。',egg:'你的关心方式大概是：没有长篇安慰，但饭已点好，事情也帮着办了。',reminder:'照顾别人时，也可以直接说出自己的需要。'},
-    {id:'huoqubing',name:'霍去病',era:'西汉',role:'将领',title:'向前，找到新的疆界',quote:'比起等风来，你更愿意先出发。',tags:['行动迅速','敢于探索','进取果断'],profile:[1,.1,.1,.9,-.7,-.1,1,.7],description:'你在变化里常常更有精神。目标一旦清楚，你愿意快速尝试，通过真实反馈找到下一步的位置。',strength:'你能在不确定中迅速抓住突破口，把停留在讨论里的想法推进到现实。',egg:'当大家还在讨论“要不要试”，你的第一版已经发到群里了。',reminder:'速度之外，补给、休息和同伴的节奏也值得照看。'},
-    {id:'yuefei',name:'岳飞',era:'宋',role:'将领',title:'有章法，也有坚守',quote:'把每一件小事做好，就是你的山河。',tags:['有序坚持','责任清晰','稳步进取'],profile:[.4,-.3,1,-.5,.1,-.7,.9,-.3],description:'你愿意为认定的目标持续投入，也尊重明确的规则与分工。对你来说，可靠往往是每天都把该做的事做好。',strength:'你能在重复与压力中保持执行，让团队知道，有些承诺可以放心交给你。',egg:'一起做事时，你的进度表也许不花哨，但几乎每一格都在按时打勾。',reminder:'认真负责的同时，也允许计划根据现实调整。'},
-    {id:'taoyuanming',name:'陶渊明',era:'东晋',role:'隐士',title:'在自己的时节里生长',quote:'不赶别人的春天，只种自己的花。',tags:['自适从容','亲近日常','珍视自由'],profile:[-.3,-.7,-.5,-.1,.5,-.3,-1,.9],description:'你更在意日子是否合乎自己的心意，而非外界的刻度。安静的时光和朴素的小事，常能给你扎实的满足。',strength:'你能辨认什么才真正重要，不容易把他人的期待误当成自己的愿望。',egg:'你的古代周末：给植物浇水，认真吃饭，消息晚一点回也没关系。',reminder:'喜欢自己的节奏，也可以偶尔为新的关系开一扇窗。'},
-    {id:'linbu',name:'林逋',era:'宋',role:'隐士',title:'安静，也是一种丰盛',quote:'一隅清欢，足够安放心里的山海。',tags:['独处自在','细腻专注','自有秩序'],profile:[-.7,-1,.5,-.7,.7,-.7,-.9,.5],description:'你享受专注于少数珍爱之物的生活。熟悉的环境、慢慢打磨的兴趣，能让你的内心保持充实与安定。',strength:'你有把平常事做出深度的耐心，也能在安静中建立稳定、丰富的精神世界。',egg:'你的社交状态可能是：不常露面，但那盆植物和那项爱好都被照顾得很好。',reminder:'独处之外，偶尔分享自己的小世界，也许会遇见同好。'}
-  ];
-  function isAnswer(value){return Number.isInteger(value)&&value>=0&&value<4;}
-  function validateAnswers(answers){if(!Array.isArray(answers)||answers.length!==40||!Array.from(answers).every(isAnswer)) throw new Error('请完成全部40道题后再查看结果。');}
-  function score(answers){
-    validateAnswers(answers);
-    const totals=Array(8).fill(0);
-    answers.forEach((answer,i)=>{totals[questions[i].dim]+=questions[i].options[answer].value;});
-    return totals.map(total=>total/15);
-  }
-  function distance(a,b){return a.reduce((sum,v,i)=>sum+(v-b[i])**2,0)/a.length;}
-  function hash(value){let n=2166136261;for(const char of value){n^=char.charCodeAt(0);n=Math.imul(n,16777619);}return n>>>0;}
-  function match(answers){
-    const profile=score(answers);
-    const ranking=figures.map(figure=>({figure,distance:distance(profile,figure.profile)})).sort((a,b)=>a.distance-b.distance);
-    // 精确同分时用整份答卷的稳定哈希择一，不随机、也不固定偏向第一位人物。
-    const tied=ranking.filter(item=>Math.abs(item.distance-ranking[0].distance)<1e-10);
-    const winner=tied[hash(answers.join(''))%tied.length];
-    return {figure:winner.figure,profile,ranking,tied:tied.length};
-  }
-  function reasons(profile,figure){
-    return dimensions.map((d,i)=>({i,strength:Math.abs(profile[i]),aligned:profile[i]*figure.profile[i]>0}))
-      .filter(d=>d.aligned).sort((a,b)=>b.strength-a.strength).slice(0,2)
-      .map(({i})=>({name:dimensions[i].name,text:profile[i]>0?dimensions[i].right:dimensions[i].left}));
-  }
-  return {dimensions,questions,figures,score,match,distance,reasons,isAnswer,validateAnswers,version:1};
-})();
-if(typeof module!=='undefined'&&module.exports) module.exports=SoulQuiz;
-</script>
-  <script>'use strict';
-(() => {
-  const $=id=>document.getElementById(id);
-  const {questions,dimensions,match,reasons,isAnswer}=SoulQuiz;
-  const KEY='soul-meeting-v1';
-  const arrow='<svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>';
-  let state={version:SoulQuiz.version,answers:Array(40).fill(null),index:0,complete:false};
-  let currentResult=null,toastTimer,storageWarning=false;
-  const esc=text=>String(text).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
-  const answered=()=>state.answers.filter(isAnswer).length;
-  function toast(message){clearTimeout(toastTimer);$('toast').textContent=message;$('toast').hidden=false;toastTimer=setTimeout(()=>{$('toast').hidden=true;},4200);}
-  function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch{if(!storageWarning){toast('浏览器暂不允许保存进度，请保持页面打开直到完成。');storageWarning=true;}}}
-  function restore(){
-    try{
-      const raw=localStorage.getItem(KEY);if(!raw)return;
-      const candidate=JSON.parse(raw);
-      if(!candidate||candidate.version!==SoulQuiz.version||!Array.isArray(candidate.answers)||candidate.answers.length!==40||!candidate.answers.every(a=>a===null||isAnswer(a))||!Number.isInteger(candidate.index)||candidate.index<0||candidate.index>=40||typeof candidate.complete!=='boolean')return;
-      state={version:SoulQuiz.version,answers:candidate.answers,index:candidate.index,complete:candidate.complete&&candidate.answers.every(isAnswer)};
-    }catch{/* 损坏的旧记录不会阻止开始新的测试。 */}
-  }
-  function show(view){
-    for(const id of ['home','quiz','result'])$(id).hidden=id!==view;
-    $('exit').hidden=view!=='quiz';$('header-note').hidden=view==='quiz';
-    window.scrollTo({top:0,behavior:'instant'});
-    document.title=view==='result'&&currentResult?`${currentResult.figure.name} · 我的灵魂照面`:'测测你的灵魂对应哪位中国历史人物 · 灵魂照面';
-  }
-  function home(focus=true){
-    const n=answered();
-    $('start').innerHTML=(state.complete?'重温结果':n?'继续照面':'开始照面')+' '+arrow;
-    $('home-reset').hidden=n===0;$('resume-note').hidden=n===0;
-    $('resume-note').textContent=state.complete?'这封灵魂来信已为你保留。':`已为你保留 ${n} / 40 道选择，随时可以继续。`;
-    show('home');if(focus)$('home-title').focus({preventScroll:true});
-  }
-  function updateProgress(){
-    const n=answered();$('progress-position').textContent=String(state.index+1).padStart(2,'0')+' / 40';
-    $('progress-copy').textContent=`已答 ${n} 题 · 慢慢来，选最像你的`;
-    $('progress').value=n;$('progress').setAttribute('aria-valuetext',`已完成 ${n} 道，共40道`);
-    $('next').disabled=!isAnswer(state.answers[state.index]);$('previous').disabled=state.index===0;
-    $('next').innerHTML=(state.index===39?'查看照面':'下一题')+' '+arrow;
-  }
-  function question(focus=true){
-    const q=questions[state.index];
-    $('question-content').innerHTML=`<div class="question-number" aria-hidden="true">${String(state.index+1).padStart(2,'0')}</div><h2 id="question-title" tabindex="-1">${esc(q.title)}</h2><fieldset aria-labelledby="question-title"><legend class="sr-only">请选择一个最符合你的选项</legend><div class="options">${q.options.map((o,i)=>`<label class="option"><input type="radio" name="answer" value="${i}" ${state.answers[state.index]===i?'checked':''}><span><b aria-hidden="true">${'ABCD'[i]}</b>${esc(o.text)}</span></label>`).join('')}</div></fieldset>`;
-    // 重建节点使每次题目切换都触发入场动画；关闭动态效果时由 CSS 接管。
-    const content=$('question-content');content.classList.remove('question-content');void content.offsetWidth;content.classList.add('question-content');
-    show('quiz');updateProgress();if(focus)$('question-title').focus({preventScroll:true});
-  }
-  function result(focus=true){
-    if(answered()!==40){state.index=state.answers.findIndex(a=>!isAnswer(a));question();toast('还有一些选择没有完成，我们从这里继续。');return;}
-    currentResult=match(state.answers);state.complete=true;save();
-    const {figure:f,profile}=currentResult;
-    const actualReasons=reasons(profile,f);
-    $('result-sheet').innerHTML=`<div class="result-band"><span>你的灵魂照面</span><small>灵魂照面 · 趣味测试</small></div><div class="result-body"><div class="result-heading"><div><div class="result-name-line"><h1 id="result-name" tabindex="-1">${esc(f.name)}</h1><span class="result-era">${esc(f.role)} · ${esc(f.era)}</span></div><p class="result-title">${esc(f.title)}</p></div><span class="seal" aria-hidden="true">照面</span></div><p class="result-quote">“${esc(f.quote)}”</p><div class="tags" aria-label="人物气质关键词">${f.tags.map(tag=>`<span class="tag">${esc(tag)}</span>`).join('')}</div><p class="result-description">${esc(f.description)}</p><div class="result-columns"><div><section class="result-block"><h2>为什么是他 / 她</h2>${actualReasons.length?actualReasons.map(r=>`<p class="reason"><b>${esc(r.name)}：</b>${esc(r.text)}</p>`).join(''):'<p>你的偏好分布较为均衡，这位人物是与你综合距离最近的文学化原型。</p>'}<p class="reason">结果按全部八个维度综合匹配。你也可能同时拥有多位人物的气质，眼前这一位并不概括你的全部。</p></section><section class="result-block"><h2>隐藏优势</h2><p>${esc(f.strength)}</p></section><section class="result-block"><h2>趣味彩蛋</h2><p>${esc(f.egg)}</p></section></div><section aria-labelledby="traits-title"><h2 class="traits-title" id="traits-title">你的性格侧写</h2>${dimensions.map((d,i)=>{const pct=Math.round((profile[i]+1)*50);const label=Math.abs(profile[i])<.2?'两端接近':`偏向${profile[i]>0?d.high:d.low}`;return `<div class="trait"><div class="trait-caption"><b>${esc(d.name)}</b><span>${esc(d.low)} — ${esc(d.high)} · ${esc(label)}</span></div><div class="trait-track" role="meter" aria-label="${esc(d.name)}：${esc(d.low)}至${esc(d.high)}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}" aria-valuetext="${esc(label)}"><span class="trait-fill" style="width:${pct}%"></span></div></div>`;}).join('')}<p class="trait-note">长短表示在左右两种偏好间的位置，不代表能力高低。八个维度等权匹配14位人物，结果并非心理测评结论。</p></section></div><p class="result-reminder">给你的一句小提醒：${esc(f.reminder)}</p></div><p class="result-bottom">一份答卷，一次照面。人物为文学化映射，趣味彩蛋为现代想象。<br>仅供娱乐与自我探索，不是专业心理诊断。</p>`;
-    show('result');if(focus)$('result-name').focus({preventScroll:true});$('status').textContent=`测试完成，你的灵魂照面是${f.name}。`;
-  }
-  function startNew(){state={version:SoulQuiz.version,answers:Array(40).fill(null),index:0,complete:false};currentResult=null;save();question();}
-  function askReset(){if(answered()===0){startNew();return;}$('reset-dialog').showModal();}
-  function drawShareCard(){
-    const {figure:f,profile}=currentResult;
-    const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=3000;
-    const ctx=canvas.getContext('2d');if(!ctx)throw new Error('图片绘制不可用');
-    const serif='"Songti SC","STSong","SimSun",serif',sans='"PingFang SC","Microsoft YaHei",sans-serif';
-    ctx.fillStyle='#f6f3ea';ctx.fillRect(0,0,1080,3000);
-    ctx.fillStyle='#203e35';ctx.fillRect(0,0,1080,120);ctx.fillStyle='#f6f3ea';ctx.font=`40px ${serif}`;ctx.fillText('你的灵魂照面',80,77);
-    ctx.font=`22px ${sans}`;ctx.textAlign='right';ctx.fillText('灵魂照面 · 趣味测试',1000,73);ctx.textAlign='left';
-    let y=280;
-    ctx.fillStyle='#a54c3d';ctx.font=`600 132px ${serif}`;ctx.fillText(f.name,76,y);
-    ctx.fillStyle='#8b6b3e';ctx.font=`32px ${serif}`;ctx.fillText(`${f.role} · ${f.era}`,82,y+65);
-    y+=155;
-    function lines(text,x,width,fontSize,lineHeight,color='#465448',family=sans){ctx.font=`${fontSize}px ${family}`;ctx.fillStyle=color;let row='';for(const ch of text){if(ctx.measureText(row+ch).width>width&&row){ctx.fillText(row,x,y);row=ch;y+=lineHeight;}else row+=ch;}if(row){ctx.fillText(row,x,y);y+=lineHeight;}}
-    lines('“'+f.quote+'”',80,920,43,64,'#896936',serif);
-    y+=12;ctx.font=`26px ${sans}`;ctx.fillStyle='#a54c3d';ctx.fillText(f.tags.join('   ·   '),82,y);y+=65;
-    lines(f.description,80,920,29,48);y+=20;
-    function section(title,text){ctx.fillStyle='#ad9163';ctx.fillRect(80,y-30,4,34);ctx.font=`600 35px ${serif}`;ctx.fillStyle='#203e35';ctx.fillText(title,103,y);y+=53;lines(text,80,920,29,48);y+=28;}
-    const reasonText=reasons(profile,f).map(r=>r.text).join('');
-    section('为什么是他 / 她',reasonText||'你的偏好较为均衡，这位人物是与你综合距离最近的文学化原型。');
-    section('隐藏优势',f.strength);section('趣味彩蛋',f.egg);
-    ctx.strokeStyle='#d7d1c2';ctx.beginPath();ctx.moveTo(80,y);ctx.lineTo(1000,y);ctx.stroke();y+=58;
-    ctx.font=`600 34px ${serif}`;ctx.fillStyle='#203e35';ctx.fillText('你的八维偏好',80,y);y+=50;
-    const baseY=y;
-    dimensions.forEach((d,i)=>{
-      const x=i%2?580:80,top=baseY+Math.floor(i/2)*88;
-      ctx.font=`23px ${sans}`;ctx.fillStyle='#68736a';ctx.fillText(d.name,x,top);
-      ctx.font=`21px ${sans}`;ctx.textAlign='right';ctx.fillText(Math.abs(profile[i])<.2?'两端接近':`偏向${profile[i]>0?d.high:d.low}`,x+420,top);ctx.textAlign='left';
-      ctx.fillStyle='#e4dfd0';ctx.fillRect(x,top+17,420,9);ctx.fillStyle='#203e35';ctx.fillRect(x,top+17,420*(profile[i]+1)/2,9);
-    });
-    y=baseY+4*88+24;
-    lines('长短表示左右偏好的位置，不代表能力高低。',80,920,23,36,'#68736a');y+=18;
-    lines('给你的小提醒：'+f.reminder,80,920,26,43,'#68736a');y+=25;
-    ctx.fillStyle='#ad9163';ctx.fillRect(80,y,920,1);y+=48;
-    ctx.textAlign='center';ctx.font=`25px ${serif}`;ctx.fillStyle='#203e35';ctx.fillText('测测你的灵魂对应哪位中国历史人物',540,y);y+=43;
-    ctx.font=`20px ${sans}`;ctx.fillStyle='#68736a';ctx.fillText('仅供娱乐与自我探索，不是专业心理诊断。',540,y);y+=31;
-    ctx.fillText('人物为文学化映射，彩蛋为现代想象。',540,y);
-    const final=document.createElement('canvas');final.width=1080;final.height=Math.ceil(y+65);final.getContext('2d').drawImage(canvas,0,0);
-    return final.toDataURL('image/png');
-  }
-  $('brand').addEventListener('click',()=>home());$('exit').addEventListener('click',()=>{save();home();});
-  $('start').addEventListener('click',()=>{if(state.complete)result();else question();});
-  $('home-reset').addEventListener('click',askReset);$('restart').addEventListener('click',askReset);
-  $('cancel-reset').addEventListener('click',()=>{$('reset-dialog').close();});
-  $('confirm-reset').addEventListener('click',()=>{$('reset-dialog').close();startNew();});
-  $('quiz-form').addEventListener('change',event=>{if(event.target.name!=='answer')return;const value=Number(event.target.value);if(!isAnswer(value))return;state.answers[state.index]=value;state.complete=false;save();updateProgress();});
-  $('quiz-form').addEventListener('submit',event=>{event.preventDefault();if(!isAnswer(state.answers[state.index])){toast('先选一个最像你的答案吧。');return;}if(state.index===39)result();else{state.index++;save();question();}});
-  $('previous').addEventListener('click',()=>{if(state.index>0){state.index--;save();question();}});
-  $('review').addEventListener('click',()=>{state.index=0;save();question();});
-  $('share').addEventListener('click',async()=>{
-    if(!currentResult)return;
-    const btn=$('share');btn.disabled=true;
-    try{if(document.fonts&&document.fonts.ready)await document.fonts.ready;const data=drawShareCard();$('share-image').src=data;$('share-image').alt=`${currentResult.figure.name}：${currentResult.figure.quote}；包含匹配理由、隐藏优势和趣味彩蛋的分享卡`;$('download').href=data;$('download').download=`灵魂照面-${currentResult.figure.name}.png`;$('share-dialog').showModal();}catch{toast('图片暂时未能生成，可直接截取结果页保存。');}finally{btn.disabled=false;}
-  });
-  $('close-share').addEventListener('click',()=>{$('share-dialog').close();});
-  for(const id of ['share-dialog','reset-dialog']) $(id).addEventListener('click',event=>{if(event.target!==$(id))return;const r=$(id).getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)$(id).close();});
-  restore();home(false);
+ <div class="app-shell">
+  <header class="site-header"><button id="back" class="icon-button" aria-label="返回上一步" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button><span id="brand">灵魂照面</span><span class="header-space" aria-hidden="true"></span></header>
+  <main id="main" aria-busy="true"><div class="loading" role="status">正在打开你的人物档案…</div></main>
+  <footer class="site-footer">26道选择，一次与历史的相逢。<br>单机版 · 测试过程无需联网<br>趣味自我探索 · 非专业心理测评</footer>
+ </div>
+ <div id="notice" role="status" aria-live="polite" class="notice" hidden></div>
+ <div id="share-overlay" class="overlay" hidden><section class="share-panel" role="dialog" aria-modal="true" aria-labelledby="share-title"><div class="share-top"><h2 id="share-title">保存你的人物卡</h2><button id="close-share" class="icon-button" aria-label="关闭人物卡"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><p>长按图片，保存到手机相册后即可分享。</p><img id="share-image" alt="历史人物匹配结果卡片"><a class="primary" id="download" download="灵魂照面-人物卡.png">下载人物卡</a></section></div>
+ <noscript>请使用电脑的Chrome、Edge、Safari或Firefox打开此文件，并允许JavaScript运行。</noscript>
+ <script>const OfflineQuiz=(()=>{
+// 所有情境及选项均为原创。史实只是场景背景，虚构行动不冒充史书记载。
+const dimensions = [
+  {name:'洞察与判断',low:'凭直觉把握',high:'核证后判断',hint:'你如何理解信息、辨别线索'},
+  {name:'筹谋与布局',low:'随势调整',high:'预先规划',hint:'你如何安排步骤、分配资源'},
+  {name:'决断与行动',low:'审慎等待',high:'及时推进',hint:'你如何把握行动的时机'},
+  {name:'共情与体察',low:'着重规则',high:'体察处境',hint:'你如何平衡事情与人的需要'},
+  {name:'表达与沟通',low:'含蓄传达',high:'直接表达',hint:'你如何向别人传达想法'},
+  {name:'长期经营',low:'珍惜当下',high:'持续积累',hint:'你如何对待眼前收获与长远目标'},
+  {name:'独立与原则',low:'协调共识',high:'坚持自主',hint:'你如何在分歧中保留自己的判断'},
+  {name:'应变与创新',low:'沿用经验',high:'探索新路',hint:'你如何面对陌生情况与变化'}
+];
+const eras = [
+  {id:'qin',name:'秦朝',glyph:'秦',desc:'一统天下，法度初成',period:'前221—前207年',note:'包括秦末；不收录孟姜女等传说人物。'},
+  {id:'han',name:'汉朝',glyph:'汉',desc:'山河开拓，风骨初生',period:'前202—220年',note:'含西汉、东汉及汉末人物。'},
+  {id:'three',name:'三国',glyph:'三',desc:'群雄并起，智略交锋',period:'汉末至280年',note:'按汉末三国文化时期归类，部分人物生于东汉。'},
+  {id:'tang',name:'唐朝',glyph:'唐',desc:'诗意长安，万千气象',period:'618—907年',note:'含武周时期人物。'},
+  {id:'song',name:'宋朝',glyph:'宋',desc:'烟雨人间，文心风骨',period:'960—1279年',note:'含北宋、南宋人物。'}
+];
+const sources = {
+  qin:{title:'《史记·秦始皇本纪》《货殖列传》',url:'https://ctext.org/shiji/qin-shi-huang-ben-ji/zhs'},
+  han:{title:'《史记》《汉书》《后汉书》',url:'https://zh.wikisource.org/wiki/漢書'},
+  three:{title:'《三国志》',url:'https://zh.wikisource.org/wiki/三國志'},
+  tang:{title:'《旧唐书》《唐诗三百首》',url:'https://zh.wikisource.org/wiki/唐詩三百首'},
+  song:{title:'《宋史》《全宋词》',url:'https://zh.wikisource.org/wiki/宋史'}
+};
+// 每套26题：八个维度各3题，另有两道跨维度诗文/价值选择。
+// 各选项均有合理代价，顺序轮换；不以历史知识正误计分。
+const rows = {
+qin:[
+ ['新并入秦地的市集上，同一种布匹报出几种尺寸。受托查清原因，你会先做什么？','听熟悉商贩描述，先形成一个判断','挑几家摊位实看，边问边判断','收集各地旧尺，找出差异所在','逐项核对尺具、货品与交易记录'],
+ ['要把一批粮食运往边地，你会怎样起步？','先沿熟悉路线出发，遇事调整','先试运一小批，再安排后续','列出沿途补给和交接节点','先核人手、路程与损耗，再留备用路线'],
+ ['河道涨水，库中一批简牍可能受潮，负责的人还未赶来。你会？','先确认职责和水情，再等明确安排','请同伴看守，等待更可靠的消息','立即组织转移最易损坏的部分','先把能搬的人召集起来，边搬边补安排'],
+ ['交接粮食时少了一袋，一位疲惫的运粮者说途中照顾病人耽搁了。你更想？','先按交接规程把缺额记清','核清缺额，也让他完整说明','先查是否确有病人与临时支用','先安顿病人，再一起想补齐和说明的办法'],
+ ['同僚对一条新规有疑虑，席间却无人开口。你会？','散席后用行动或简短书信提醒','私下找一位能沟通的人谈','在讨论时委婉提出具体疑点','当面说明疑虑和依据，请大家一起议'],
+ ['接手一家秦地作坊，手头有一笔结余，你最愿意？','先改善眼下的生活与工作条件','留一部分备用，其余按当前需求用','逐步添置工具，培养固定帮手','制定数季计划，稳步更新工具和工艺'],
+ ['众人要在尚未看清利弊时联名支持一项安排，你会？','先听多数人的理由，尽量一致行动','争取补上一项共同认可的条件','说明自己的保留，再决定是否署名','即使独自留下，也等自己判断清楚'],
+ ['旧地的农具习惯不同，统一作业遇到阻力。你更倾向？','沿用已验证的方法，减少意外','先保留熟悉做法，观察新方法','选一处做对照试用','与工匠合做新工具，试出更合适的办法'],
+ ['路边流传一封没有署名的告急简书，你会怎样看？','凭内容与眼前情形判断可信程度','先问周围人是否听过此事','寻找写信人或相关见证','核对时间、地点和独立证词后再判断'],
+ ['县中需要整理一批混乱的文书，你习惯？','先处理眼前最急的一堆','边整理边摸索分类方法','先分类，再排处理顺序','先定目录、责任与复核办法，再动手'],
+ ['两个工匠都说自己的修桥方案可行，天色渐晚。你会？','再问清关键风险，明日再定','先做一段无争议的准备工作','选可回退的方案，先修最急的一处','明确责任与底线，当天推动开工'],
+ ['有家人请求你替他争取较轻的差役。你会先考虑？','同样的规定应怎样适用于所有人','是否有公开可申请的例外条款','他的身体和家庭负担究竟如何','先听完他的难处，再陪他找合规的解决办法'],
+ ['你发现计工记录有误，需要提醒资历更深的人。你会？','把正确记录放在他容易看见的地方','私下递上对照，留他自行修改','当面说明可能有误，请他一起核对','清楚指出差异，并提出立即复核'],
+ ['一项修渠任务要持续数月，最吸引你的是？','每一天都能看到实在的进展','按自己舒服的节奏做出一段成果','把经验积成能传给后来者的方法','把维护、人手和后续用水一并经营好'],
+ ['你认为某条安排不合适，但伙伴更重视共同进退。你会？','优先维系伙伴间的信任和一致','协商一个双方都能接受的折中','只在不触及底线的部分让步','明确拒绝不认同的部分，并承担自己的选择'],
+ ['远行时常用的渡口突然停渡，你会？','按旧经验寻找最近的正规渡口','等可靠消息，尽量维持原路线','向当地人打听其他走法并试探','重新比较陆路水路，尝试更合适的新路线'],
+ ['一位商人说换用新量器后一定更省工，你最在意？','他的经验听起来是否可靠','熟悉的人是否愿意采用','实际用一次是否省时省料','不同条件下多次对照是否仍然有效'],
+ ['从后世史书回望秦朝，你更愿意深入追问哪一件事？','普通人在变局中怎样保住日常','不同地方怎样适应同一种制度','庞大的制度怎样被组织和执行','关键决策依据何在，又留下什么代价'],
+ ['边地来报需要增补物资，但数量尚不明确。你会？','等需求核准后再安排','先备齐一部分通用物资','先发一批急需品，同时继续核实','迅速组织第一轮支援，设定后续纠偏点'],
+ ['同行者因体弱走慢了，队伍又要按时赶到。你更倾向？','先说明时限，让大家按约定前行','按规则重分负担，保证整体进度','问清他的情况，调整休息与分工','先安排照料，再与队伍协商可行的行程'],
+ ['你写完一封劝谏的书信，最想保留怎样的语气？','留白克制，让对方自己体会','先铺事实，尽量少下断语','把主张说清，保留商议空间','直陈核心判断和应当承担的责任'],
+ ['一位伙伴邀请你共同经营一处小作坊，你最先想到？','做得开心、相处舒服就值得试试','先合作一季，看看彼此是否合拍','把分工、账目和收益慢慢建立起来','先约定投入、传承和退出办法，再长期合作'],
+ ['你带去的新想法被众人否决，但你仍认可它。你会？','接受共识，把精力放回共同任务','保留想法，等待更适合的讨论时机','争取一个不影响他人的小范围尝试','独自承担试验成本，用结果回应分歧'],
+ ['竹简空间有限，要向远处交代复杂事务。你更愿意？','沿用大家熟悉的固定格式','在旧格式上删去不必要的句子','试着用分项与图示配合说明','重新设计一套更便于理解和核验的记录方法'],
+ ['若为这段秦地旅程留一句自勉，你更喜欢哪句原创短语？','看过人间，再谈是非','留得余地，便有转机','不乱于心，徐图其事','问到根由，再定去留'],
+ ['新的一年，你愿意把更多时间留给什么？','走到哪，认真过好哪一段日子','在熟悉的生活里留出一点意外','把一件值得做的事稳稳做成','为多年后的自己铺一条更清晰的路']
+],
+han:[
+ ['长安客舍里，有人说边地出现了新的商路。你先做什么？','凭讲述的细节判断是否值得关注','向常来往的旅人打听','对照不同商队的路线和经历','查清路程、补给与各方说法是否互相印证'],
+ ['若随使团远行，你最习惯怎样准备？','带上必需品，路上再适应','先熟悉同伴和基本行程','列出沿途补给、语言与礼俗问题','准备路线、交接与失联时的多套安排'],
+ ['市集突然失火，你离装货的牛车很近。你会？','先看火势和周边情况，避免添乱','先呼救，等熟悉现场的人指挥','带人把附近易燃货物移开','立即组织能做的疏散和搬运，边做边调整'],
+ ['汉代县中核对田租，一户人家说遭灾后无力缴纳。你会先？','把应缴数目和现有规定说清楚','核实是否符合减免条件','到田里看看实际收成和家中负担','先听全家人的处境，再陪他们寻找救济途径'],
+ ['朝议里，你和一位受敬重的前辈意见相左。你会？','会后写一封简短信件','先私下请教他为什么这样想','在会上提出一个具体反例','直接陈述不同主张和所据事实'],
+ ['一位书吏愿意教你整理史料，你更想？','先读最感兴趣的故事，享受发现','抽空学一部分，慢慢积累','固定时间学习，并做自己的目录','把校勘、访谈与保存连成长期计划'],
+ ['远行的伙伴建议大家统一口径，省去麻烦，你会？','先维护共同对外的信任','尽量找到大家都认可的表述','不同意的部分明确保留','宁可自己解释，也不说违背判断的话'],
+ ['与异域商人交流时，双方语言不通，你会？','请熟悉的人按惯例翻译','先用双方都熟悉的货物举例','用动作、图示配合少量词语','尝试建立对照清单，让后续交流更容易'],
+ ['有人献上一种据说能提高产量的耕作法，你更信？','讲述者多年耕作的直觉','邻近农家的亲身经验','在一块地上与旧法对照的结果','不同地力和天气下持续观察的记录'],
+ ['要在书院里组织一次讲学，你会？','先邀大家来，再顺着兴趣聊','定一个主题，细节当场安排','提前列提纲，分配讲读内容','先明确目标、节奏与资料，再留讨论时间'],
+ ['使团约定今晨出发，临时多出一条未经证实的风险消息。你会？','宁可延后，也先把消息查明','先派人探一段路，再作决定','按计划出发，靠近风险处再核实','马上调整队形和补给，边走边继续收集消息'],
+ ['朋友因一次失误失去职位，你最先想到？','帮他厘清责任与应吸取的教训','陪他把事情经过讲清楚','先听他的失落和担忧','先让他有地方安顿，再慢慢商量以后'],
+ ['你想让远方家人知道自己过得如何，更可能？','夹一件用过的小物，不多解释','细写沿途见闻，心事藏在其中','把近况与想念直接写进信里','连同犹豫和期待都坦诚说出来'],
+ ['若参与一部史书的编写，你更享受？','发现一个特别动人的片段','写好自己眼前负责的部分','把零散材料逐年归类','多年校订，让这部书经得起后来者查验'],
+ ['上级希望你删掉记录里一段不体面的事实。你会？','先听清顾虑，寻找双方能接受的写法','保留底稿，与他商量表述边界','坚持事实可以谨慎呈现但不能失真','即使承受压力，也不改自己已核实的事实'],
+ ['旧账册难以记录跨地交易，你会？','继续用熟悉格式，另作口头说明','在边上添注，先满足眼前需要','试一套更简洁的分类记账法','重整货物、时间和往来对象的记录方式'],
+ ['市上流传某位将领的捷报，你会先关注？','叙述是否有让人信服的现场感','熟识军旅的人怎样评价','是否有其他来源证实','战果、损耗与后续局势是否相互吻合'],
+ ['读到司马迁写不同人物的遭际，你更想怎样继续读？','追随打动自己的故事，不设路线','按兴趣交替读几类人物','先按时代和人物关系整理脉络','对照记载，追问各人的处境与取舍'],
+ ['朋友邀你去一处未曾见过的边城做生意，你会？','先等更确实的消息与条件','先往来通信，了解后再决定','准备一趟短行，亲自去看看','确定承受得起的代价，就动身尝试'],
+ ['同伴不愿远行，希望留在家乡照顾家人。你会？','以已经商定的职责讨论安排','帮他找一位合适的替代者','认真听他家庭面临的难处','先支持他的照护选择，再共同补上空缺'],
+ ['宴席上有人误解了你的用意，你会？','等合适时机用行动解释','私下给他写一句说明','趁话题还在，温和澄清','直接把自己的想法与边界讲清'],
+ ['辛苦走完一段商路后，你最愿意？','停下来享受新地方的生活','整理这一趟的得失，暂不急着再走','建立稳定的伙伴与补给关系','把路线、账目和接续人手经营成长期事业'],
+ ['一位有名望的人提出你不认同的观点，你会？','尊重他的经验，先寻求共识','接受有益部分，保留自己的疑问','有分寸地提出不同论据','不因对方的名望改变已核实的判断'],
+ ['要向从未接触过的地方介绍家乡物产，你会？','按历来的礼单逐项介绍','从对方熟悉的东西讲起','试着现场示范用途','设计一场交换体验，让双方共同发现用途'],
+ ['若把汉代旅程化成一幅画，你更愿意画哪一幕？','归家时灯下有人等候','远方市集的各色面孔','出发前井然有序的行囊','沿旧图找出一条尚未标明的道路'],
+ ['你希望多年后留下的痕迹更像什么？','几段真切而自在的日子','一些被朋友记住的相遇','一份后来者还能接着用的手艺','一件有人接续、不断完善的事业']
+],
+three:[
+ ['汉末军营里，两名斥候对同一路口说法不同，你会？','根据他们的神情与经历先作判断','问熟悉当地的人更信哪一种','让两人分别说明时间和位置','把地形、时间与独立消息逐一对照'],
+ ['受命守一处渡口，你的第一步是？','先看现场，遇到情况再调人','先守好最重要的位置','把巡查、补给和轮换排出来','预设水位变化与失守时的应对办法'],
+ ['商议良久仍无法决定驻地，天色将晚，你会？','继续核清最关键的隐患','先让众人暂歇，等更完整消息','选一个可撤回的地点，先安顿','明确底线后拍板，立即组织扎营'],
+ ['有人在迁徙途中丢了公用粮袋，却一直不肯解释，你先？','按原先约定确认应负的责任','让他把经过说明白，再议处理','单独问他是否遇到了难以启齿的事','先确认他和家人是否平安，再共同查找'],
+ ['你发现主事者忽略了一个风险，众人正在赞同，你会？','事后悄悄递一张写明风险的纸','找可信的人代为提醒','在讨论中提出具体疑问','直接说明风险，并给出替代安排'],
+ ['兵事稍歇，你被分派照料一片荒地，最看重？','让眼下生活能安稳、舒展一些','先收好这一季，再看下一季','慢慢修整水渠、工具与种子','让田地、人手和储粮形成持续运转的安排'],
+ ['结盟时，对方希望你承诺一件你尚无把握的事，你会？','先维护合作，再努力补足条件','争取换成双方都能做到的承诺','只答应自己确实能够承担的部分','宁可暂缓结盟，也不作违心保证'],
+ ['旧有传信路线被阻断，你更愿意？','沿熟悉路线上寻找缺口','先恢复一段原有联系','试着让商旅帮忙带分段口信','重新组合水陆与接力节点，建立新线路'],
+ ['一位说客把局势讲得十分有利，你最关注？','他对人情与时机的把握','他过去的判断准不准确','有无其他势力的消息支持','哪些关键假设一旦不成立就会改变结论'],
+ ['小队需要护送几户人家离开战区，你会？','先上路，沿途寻找可用帮助','先确定最近的安全落脚点','核对人数、路程与食物后分工','连同掉队、伤病和道路受阻都预先安排'],
+ ['你发现对手露出一个短暂空隙，但消息不完整，你会？','等待更可靠的确认','先做侦察，尽量不暴露意图','小范围试探，确认后扩大行动','在可承担的范围内迅速抓住机会'],
+ ['一位旧友来自敌对阵营，想请你替家人送封平安信，你会？','先确认是否触及现有规约','只在公开允许的范围内帮忙','先理解他的家人面临怎样的困境','优先寻找能让家人安心又不伤及旁人的做法'],
+ ['你要说服一位犹豫的同伴留下，你更可能？','让他从日常相处里感到被重视','私下讲一段两人共同的经历','明确说出希望他留下的原因','把期待、代价与能给他的支持都坦诚讲清'],
+ ['若帮忙治理一处新安定的城池，你更愿意做？','让街巷先恢复烟火与日常','把眼前最紧要的几件事办妥','逐步恢复田亩、市场和互助关系','建立可以长期接续的粮储与维护制度'],
+ ['主事者和好友意见一致，而你认为仍有缺口，你会？','先跟随共同决定，减少内耗','提出补充条件后尽量配合','将不同判断留下记录，并争取再议','即使无人赞同，也明确说出自己的结论'],
+ ['你得到一份从未见过的地形图，会怎么使用？','仍主要依靠熟悉路线和向导','把它当作原有经验的补充','选一小段验证图上的新路径','结合实地观察，试着重画更适用的地图'],
+ ['有人评价一位谋士“料事如神”，你更想知道？','他是否真的懂人心与局势','他的同伴怎样讲述他的经历','成功之外有没有失算的例子','当时掌握哪些信息，判断如何一步步形成'],
+ ['在《三国志》的人物叙事之外，你更想追问哪件事？','乱世里普通人的相聚与离散','一段联盟为何走到转折处','一次长远布局怎样落实','同一件事在不同记载中为何有差异'],
+ ['好友带来一个合作机会，只能当日答复，你会？','宁可放过，也不仓促决定','先争取延长一点考虑时间','确认最大代价后给出答复','当场谈清底线，先迈出可调整的一步'],
+ ['分粮时，有人建议人人同额，有人说幼童和病人应另顾，你会？','先按此前公开的分配约定','在原规则内设定清楚的例外','先统计不同人的实际需要','从最脆弱者的处境出发，再共同商量分法'],
+ ['对方误以为你的退让就是赞同，你会？','等待行动让他理解你的立场','找个安静的时机单独说明','礼貌指出哪些地方并未同意','立刻把同意与保留的边界说清'],
+ ['一项默默无闻的工作可能数年后才见成效，你会？','更想做眼前能直接改善生活的事','愿意试一段，看看是否适合自己','只要方向值得，就固定投入','把成果记录和接续人选也一起安排'],
+ ['朋友劝你按阵营喜欢的方式解释一段事实，你会？','先寻找彼此都能接受的表达','避开争执，保留私下的判断','说明立场不应改变已知的事实','即使影响关系，也坚持准确记录'],
+ ['城中工匠提出一种没有实战经验的守备器具，你会？','优先使用熟悉可靠的器具','先作为旧器具的补充','设一个不影响全局的小范围试验','让使用者一起修改，逐步验证新方案'],
+ ['曹操《短歌行》中，哪一处更让你停留？','月明星稀，乌鹊南飞','青青子衿，悠悠我心','何以解忧？唯有杜康','山不厌高，海不厌深'],
+ ['如果乱世暂息，你最想先安顿哪件事？','一家人平静地吃上一顿饭','和旧友重走一段熟悉的路','把失散的资料与技艺整理回来','让后来的人少走几段同样的弯路']
+],
+tang:[
+ ['长安米价连涨，街坊都说粮商在囤货。若由你调查，你会先怎么做？','先看街坊和商贩的反应','向熟悉粮市的人打听原因','走访粮铺，核对进货与库存','对照历年月价、仓储与运输情况'],
+ ['你要陪友人从长安去江南，通常怎样安排行程？','带好行囊，走到哪里算哪里','先定几个想去的地方','安排路程、盘缠和落脚处','连天气、渡口与临时绕道都预作安排'],
+ ['诗会临时少了一位主持，众人望向你，你会？','先看看有没有更合适的人','先帮着安顿，等大家共同决定','接过其中一段，边做边熟悉','主动承接，把诗会先有序带起来'],
+ ['一位赴长安应试的友人落第，打算立即回乡，你会？','帮他梳理此次准备的不足','陪他比较再试与回乡的条件','先听他真正失落的是什么','先照顾好他的情绪与住处，再谈以后'],
+ ['宴席上有人误读了你写的一首诗，你更可能？','让诗留着自己的余味，不急着解释','散席后再向懂得的人说说','温和补充写诗时的情境','把自己的想法说清，也听对方的理解'],
+ ['长安有位老师愿意长期教你一门技艺，你更想？','先学最喜欢的一段，尽兴即可','按兴致来，保留自己的节奏','每旬固定练习，慢慢磨熟','把基本功、作品与传授都安排成长久的事'],
+ ['你的诗风与众人偏爱的风格不同，友人劝你改，你会？','试着贴近大家，享受唱和的热闹','借鉴有用的部分，让作品容易被理解','保留自己最在意的语气和题材','即使少有人应和，也坚持自己的写法'],
+ ['远方来的乐师带来陌生曲调，你会？','更愿意先听熟悉的本地曲子','听听新曲，但仍以原来的练法为主','尝试把一小段新曲融进演奏','与乐师合做一首融合不同节奏的新曲'],
+ ['酒肆里有人讲一件轰动长安的奇闻，你会？','先看故事是否符合自己对人情的理解','听听其他食客有没有相似见闻','追问他亲见的部分和转述的部分','寻找独立记载，对照前后是否一致'],
+ ['一座书院要举办十日讲读，你会怎样参与筹备？','到场后见机补位','先认领一件明确的小事','列出每天主题并协调参与者','把材料、日程和缺席时的接续都准备好'],
+ ['下雨误了渡船，同行者还在犹豫去留，你会？','等天气和水情再明朗一点','先找地方避雨，听听船家的说法','确定一条稳妥替代路线后启程','在安全范围内迅速决定，带大家动起来'],
+ ['外地商人不懂长安的交易习惯，屡屡碰壁，你先？','说明本地交易的公开规则','帮他弄清几条最容易误会的约定','问问他家乡怎样交易，找出差异','陪他完成一次交易，再解释双方顾虑'],
+ ['你想劝友人不要急着放弃一件事，会怎样说？','送他一首意思相近的诗','借一次散步，慢慢聊起自己的经历','明确告诉他你看到的可能与困难','直说你希望他留下的理由和能提供的帮助'],
+ ['旅途中有一笔意外的稿酬，你更愿意？','在喜欢的山水间多住几日','请同行朋友好好吃一顿','留作下一阶段的路费与书钱','为持续创作准备住处、资料与稳定时间'],
+ ['你受邀为一件自己尚不了解的事作赞文，你会？','先和邀约者商量合适的写法','只写自己确实知道的部分','了解清楚再决定，保留拒绝的余地','宁可失去邀约，也不写违背判断的赞美'],
+ ['山路塌方，原定看日出的计划落空，你会？','改去熟悉的观景处','按原路线等一等，看能否恢复','向当地人打听附近另一处去处','把意外当新起点，重新设计这一段旅程'],
+ ['一份地方治水方案写得很动人，你最想补看什么？','是否打动了真正生活在那里的人','熟悉河道的人怎样评价','水量、地势与工料的具体记录','以往成败和不同水情下的推演'],
+ ['下面四组唐诗，哪一种意境最让你想停留？','王维《山居秋暝》：明月松间照，清泉石上流','李白《行路难》：长风破浪会有时，直挂云帆济沧海','杜甫《春夜喜雨》：随风潜入夜，润物细无声','王之涣《登鹳雀楼》：欲穷千里目，更上一层楼'],
+ ['有人邀你今夜就出发去看一场难得的山间雪景，你会？','等行程更稳妥时再去','问清路况和归期，再考虑','备齐必需品，就约一段短行','只要风险可控，就趁此刻动身'],
+ ['友人为了谋生，写起了自己从前不喜欢的应酬诗，你会？','尊重作品仍需守住的标准','就诗本身提出能改进的意见','理解他眼下的压力，不急着评价','先问他近况与需要，再谈他真正想写什么'],
+ ['你的诗被抄错了一句，而抄写者是你的好友，你会？','以后另写一份正确的给他','私下把原稿放到他手边','笑着指出差异，一起改回来','直接说明原意，以及为何想保留原句'],
+ ['你愿意怎样对待一首总也写不满意的诗？','先放下，去过真实的生活','等有新的感受时再回来改','留着底稿，隔一段时间修一次','追踪每次修改，把语言慢慢磨到贴合本意'],
+ ['同游者都想去热闹名胜，你更想沿江闲走，你会？','随大家一起，重视同行的相聚','商量半日同行、半日各走','清楚说出偏好，寻找分头会合的办法','独自走想走的路，也承担安排的麻烦'],
+ ['一位画工让你试一种不熟悉的绘画材料，你会？','先把自己熟悉的材料用好','等看过几幅成作再试','用一张小画试试新效果','尝试把新旧材料搭配，找自己的画法'],
+ ['李白《将进酒》中，哪一句最接近你此刻的心情？','天生我材必有用','千金散尽还复来','与君歌一曲','与尔同销万古愁'],
+ ['若在唐代留住一段生活，你更想？','住在江边，日日看不同的云','结识三五知己，偶尔诗酒相聚','把所学编成一册可反复翻阅的书','让一间书院或一门技艺有人接续']
+],
+song:[
+ ['汴京一家铺子的账目与库存对不上，你先怎么查？','凭经营经验找最像出错的环节','先问熟悉进货的人','核对当日账目和交接记录','逐项追踪进货、损耗与售出之间的差异'],
+ ['你准备在临安开一间小茶坊，会先做什么？','先开起来，慢慢形成自己的样子','先试卖几天，听听客人反馈','安排茶品、成本与人手','连淡旺季、供应和周转都预先推算'],
+ ['书坊临时收到一笔急单，人手尚未到齐，你会？','等确认完成把握再接下','先和客人争取宽一点的期限','先做最确定的部分，同时补齐人手','定下可承诺的范围，立即组织开工'],
+ ['朋友收藏的书画失火受损，正为此自责，你先？','帮他确认损失和修复的次序','陪他找人看哪些还能补救','先听他说这件收藏对他意味着什么','陪他安顿下来，不急着要求他振作'],
+ ['书院讨论里，你认为大家把一处引文理解错了，你会？','把相关书页留给主持者','散会后单独提醒几位同窗','提出另一种解释，请大家再看原文','直接指出出处与语境，清楚说明差异'],
+ ['书铺结余可以支撑一段清闲，你最愿意？','暂时歇业，去湖边住些日子','把日常安排得更轻松一点','添置书目，慢慢稳住熟客','建立校勘、刊刻与传授的长期安排'],
+ ['同窗都准备追随一位名师，你的兴趣却在另一处，你会？','一起去学，珍惜共同的道路','先听几次，再判断是否适合','分别比较，选择更符合自己的学问','独自求学，也不因无人同行改变方向'],
+ ['旧版书的版片难以呈现新整理的图表，你会？','调整内容，使之适应熟悉版式','在旧版式上做一些补充','试刻几块新版片，比较效果','与工匠共同设计更清楚的新排法'],
+ ['街市上有传闻说一种新货很快会大涨，你会？','凭对街市气氛的感觉判断','问几位熟悉行情的朋友','看真实买卖是否已经发生变化','对照供货、需求与不同市场的成交记录'],
+ ['书院让你组织一次踏青，你会？','定好集合处，路上随兴而行','先选一个主要去处','安排路线、时刻与分工','把天气、返程和走散后的会合也说清'],
+ ['运书船比约定晚到，客人急着取书，你会？','等船家给出准确消息再承诺','先向客人解释，约定稍后答复','先调齐现有书目，分批交付','迅速拟定替代安排，主动与各方确认'],
+ ['一位手艺人因照顾病母，数次推迟交货，你会？','先按约定谈清交货与责任','和他商议一个明确的新期限','了解照护需要，调整分工','先帮他找临时支援，再共同解决交货难题'],
+ ['你收到一封久别友人的信，怎样回信最像你？','寄一件彼此懂得的小物，话不必多','写风物日常，把想念藏在细处','坦然写下自己最近的感受','把想念、担忧与希望重聚的愿望直接说出'],
+ ['一册旧地方志缺了几页，你更愿意？','把现有的故事读好，不必求全','偶尔访一两位老人，慢慢补线索','固定收集材料，逐年补订','建立出处和校核记录，让后来者可以接着修'],
+ ['你经营的铺子被劝用夸大的说法招徕客人，你会？','先讨论同行都能接受的边界','调整措辞，尽量兼顾生意与实际','只保留自己能兑现的介绍','即使少卖一些，也不说自己不信的话'],
+ ['熟悉的茶客忽然偏爱一种新饮法，你会？','继续把熟悉的茶认真做好','留少量新茶供人尝试','请客人一起品评，试调几种比例','尝试融合新饮法，形成自己的新茶单'],
+ ['一幅署着名家之名的画流入市集，你最关注？','画本身是否有打动人的气韵','懂行朋友的第一印象','笔法、纸绢与可查的收藏经历','多项独立证据能否支持署名与年代'],
+ ['以下宋词片段，哪一种心境与你更近？','苏轼《定风波》：一蓑烟雨任平生','李清照《如梦令》：沉醉不知归路','辛弃疾《破阵子》：了却君王天下事','柳永《雨霖铃》：更那堪，冷落清秋节'],
+ ['一位朋友临时邀你去远处看潮，今日正合时令，你会？','等日程从容时再计划','问清潮时、路况与同行安排','准备好必需品就出发','抓住时机，先确定安全边界再动身'],
+ ['书院里有人因家贫常常缺课，你先想到？','如何让大家遵守同样的学习约定','能否在规则内调整他的课业安排','他需要兼顾怎样的谋生负担','怎样先让他吃住安稳，再陪他继续读书'],
+ ['词社里有人误以为你的沉默就是不满，你会？','下次用相处和行动消除误会','私下找他聊一句近况','温和解释自己的真实想法','直接说明自己的感受，也问他的顾虑'],
+ ['一门费时的技艺短期难见回报，你会？','更愿意让兴趣自然生长，不计进度','有余暇就练，保持喜欢即可','每月留固定时间，累积一点进步','记录方法并寻找同好，让技艺不断传下去'],
+ ['众人赞同一种解释，而你从书中读到相反材料，你会？','先把相反材料放到共同讨论里','保留疑问，等待更合适的时机','有分寸地提出异议和原文','即使与流行看法相反，也坚持自己的考证'],
+ ['河岸小铺常因雨水受潮，老办法收效有限，你会？','把原有防潮办法做到更细','在旧方法上增加几层防护','用一角铺面试验新的通风与摆放','和邻铺、木匠一起改造整套储放方式'],
+ ['如果为宋代生活选一个片段，你更想细看？','黄昏灯下，一家人的闲话','雨后湖边，友人未尽的半句话','书页边角，一代代留下的批注','同一件旧事，不同记载里的细微差别'],
+ ['若多年后回看自己的茶坊，你最希望看到？','自己曾在这里过得自在而认真','许多人记得这里温暖的相遇','它一直保有可靠的手艺和信誉','后来者接得住这门事业，也能继续改进']
+]};
+const special = {
+  'qin-17':{type:'史实背景 · 观点选择',note:'秦的统一与制度建设见《史记》。题目是现代回望，不是秦人对未来的预知。'},
+  'qin-24':{type:'原创短语 · 偏好选择',note:'四句均为本测试原创，不是秦代诗文或历史人物原话。'},
+  'han-17':{type:'史实背景 · 阅读取向',note:'司马迁编撰《史记》；这里只选择阅读角度，不考历史知识。'},
+  'han-24':{type:'虚构画面 · 审美偏好',note:'以汉代旅行生活为灵感创作的画面，没有唯一正确选择。'},
+  'three-17':{type:'史实背景 · 阅读取向',note:'《三国志》为陈寿在西晋编撰。本题采用后世回望视角。'},
+  'three-24':{type:'诗文偏好 · 曹操《短歌行》',note:'作品出自汉末曹操；三国题库按汉末三国文化时期收录。偏好不直接等于作者。',url:'https://zh.wikisource.org/wiki/短歌行_(曹操)'},
+  'tang-17':{type:'诗文偏好 · 唐诗',note:'选最打动你的意境，无需了解诗人生平。一道诗题不会直接决定人物。',url:'https://zh.wikisource.org/wiki/唐詩三百首'},
+  'tang-24':{type:'诗文偏好 · 李白《将进酒》',note:'四个片段出自同一首诗，考察你关注的情感与表达。',url:'https://zh.wikisource.org/wiki/將進酒_(李白)'},
+  'song-17':{type:'诗文偏好 · 宋词',note:'依次选自苏轼、李清照、辛弃疾、柳永的作品，不考背诵与作者辨认。',url:'https://zh.wikisource.org/wiki/全宋詞'},
+  'song-24':{type:'虚构画面 · 观察偏好',note:'以宋代日常生活为灵感创作，选择你最想细看的画面。'}
+};
+const poetryProfiles = {
+ 'three-24':[[.2,-.5,-.4,.3,-.4,-.5,.4,.4],[-.3,.1,-.2,.9,.4,.1,-.1,.1],[-.6,-.6,.3,.2,.6,-.7,.5,.6],[.7,.6,.6,.5,.5,.8,.4,.5]],
+ 'tang-17':[[.4,.1,-.6,.6,-.5,-.1,.5,-.3],[-.1,-.5,.8,.1,.8,.3,.8,.9],[.4,.4,-.3,1,-.5,.8,.1,-.2],[.9,.8,.5,.1,.1,.9,.4,.7]],
+ 'tang-24':[[.1,.1,.6,.1,.5,.6,.9,.7],[-.4,-.7,.5,.2,.7,-.6,.6,.9],[-.3,-.3,.3,.5,1,-.1,.4,.5],[.1,-.2,-.3,1,.5,-.2,.1,.1]],
+ 'song-17':[[.3,-.3,.2,.6,.5,.1,.8,.5],[-.4,-.5,.2,.7,.4,-.2,.7,.4],[.5,.8,.8,.1,.6,.9,.8,.5],[.1,-.4,-.4,1,.6,-.2,.3,.2]]
+};
+const banks = Object.fromEntries(eras.map(era=>[era.id,rows[era.id].map((r,i)=>{
+ const dim=i%8, key=`${era.id}-${i}`, meta=special[key];
+ const permutation=[[2,0,3,1],[1,3,0,2],[3,1,2,0],[0,2,1,3]][i%4];
+ const profiles=poetryProfiles[key];
+ const preference=!!profiles||i===24;
+ return {id:key,dim,ability:preference?'审美与价值取向':dimensions[dim].name,
+   hint:preference?'你被怎样的意境、情感与人生姿态打动':dimensions[dim].hint,
+   type:meta?.type||`虚构情境 · ${era.name}`,note:meta?.note||'借用时代生活背景创作；你可代入当时，不需要掌握历史知识。',
+   source:meta?.url?{title:meta.type,url:meta.url}:sources[era.id],title:r[0],
+   options:permutation.map(n=>({text:r[n+1],scores:profiles?profiles[n].map(v=>v*1.2):dimensions.map((_,d)=>d===dim?[-3,-1,1,3][n]:0)}))};
+})]));
+function publicQuestions(era){
+ if(!banks[era])throw new Error('无效朝代');
+ return banks[era].map(({options,...q})=>({...q,options:options.map(o=>({text:o.text}))}));
+}
+
+// 人物真实身份与文学化原型分开保存。向量由编辑设定，不是人物的科学人格测量。
+const row=(id,name,era,gender,role,history,profile,tags,source)=>({id,name,era,gender,role,history,profile,tags,source});
+const shiji='https://zh.wikisource.org/wiki/史記';
+const han='https://zh.wikisource.org/wiki/漢書';
+const houhan='https://zh.wikisource.org/wiki/後漢書';
+const three='https://zh.wikisource.org/wiki/三國志';
+const tang='https://zh.wikisource.org/wiki/舊唐書';
+const song='https://zh.wikisource.org/wiki/宋史';
+const figures=[
+ row('yingzheng','秦始皇','qin','male','秦朝皇帝','完成六国统一，在统一后的秦朝推行郡县及文字、度量衡等制度。',[.7,.9,.9,-.8,.4,1,.9,.6],['目标明确','制度意识','强烈自主'],shiji),
+ row('lisi','李斯','qin','male','秦朝丞相','参与秦朝制度建设，曾作《谏逐客书》。',[.8,.9,.4,-.6,.7,.8,.2,.3],['筹划周密','善于论证','重视秩序'],shiji),
+ row('mengtian','蒙恬','qin','male','秦朝将领','秦朝将领，曾领兵北击匈奴并参与北方防务建设。',[.4,.8,.7,-.3,-.3,.8,.2,-.3],['执行稳健','责任意识','持续投入'],shiji),
+ row('wangjian','王翦','qin','male','秦将','统一六国过程中的重要将领，重视兵力与准备条件。',[1,.9,-.6,-.3,-.4,.7,.6,-.5],['审慎筹谋','重视条件','沉稳务实'],shiji),
+ row('fusu','扶苏','qin','male','秦始皇长子','曾就秦政进谏，后在上郡与蒙恬共事。',[.3,.3,-.5,.9,-.2,.4,.5,-.4],['体察民生','温厚自持','坚持所信'],shiji),
+ row('chensheng','陈胜','qin','male','秦末起义领袖','秦末大泽乡起义的领导者之一。',[-.4,-.3,1,.1,.9,.1,1,.8],['敢于行动','不囿现状','表达鲜明'],shiji),
+ row('baqing','巴寡妇清','qin','female','秦代女商人','《史记·货殖列传》记载其经营丹砂产业，并受到秦始皇礼遇。',[.8,.7,.3,.1,-.4,1,.9,.4],['独立经营','韧性积累','务实自守'],'https://zh.wikisource.org/wiki/史記三家註/卷129'),
+ row('liubang','刘邦','han','male','汉朝开国皇帝','建立西汉，善于组织与使用不同才能的人。',[.1,.1,.9,.4,.8,.5,-.4,.8],['善于合作','灵活应变','行动有力'],shiji),
+ row('zhangliang','张良','han','male','汉初谋士','辅佐刘邦建立汉朝，为汉初重要谋臣。',[.9,1,-.4,.1,-.5,.7,.7,.5],['审时度势','善留余地','筹谋长远'],shiji),
+ row('hanxin','韩信','han','male','汉初将领','汉初重要军事人物，参与楚汉战争。',[.8,.9,.8,-.5,-.3,.6,.9,1],['善用变化','目标专注','独立判断'],shiji),
+ row('huoqubing','霍去病','han','male','西汉将领','汉武帝时期将领，曾多次率军出击匈奴。',[.1,.2,1,-.3,-.1,.7,.9,.9],['行动果敢','主动探索','目标驱动'],han),
+ row('simaqian','司马迁','han','male','史学家','西汉史学家，《史记》的作者。',[1,.8,-.5,.7,.3,1,1,.4],['求真问底','长期积累','自持坚韧'],shiji),
+ row('zhangqian','张骞','han','male','使者、探路者','西汉使者，出使西域并推动汉与西域的联系。',[.5,.4,.6,.5,.3,.9,.5,1],['好奇开放','坚韧求索','连接不同'],han),
+ row('lvzhi','吕雉','han','female','汉初皇后、太后','汉高祖皇后，汉初重要政治人物。',[.5,.9,.7,-.5,.3,.9,.9,-.2],['布局持久','决断鲜明','重视掌控'],shiji),
+ row('banzhao','班昭','han','female','东汉史学家','东汉学者，参与续成《汉书》。',[1,.8,-.5,.3,-.4,1,.4,-.1],['细致严谨','耐心积累','重视传承'],houhan),
+ row('wangzhaojun','王昭君','han','female','汉代和亲人物','汉元帝时期出塞，嫁呼韩邪单于。',[.1,.3,.2,1,-.2,.6,.4,.7],['体察处境','适应变化','温和坚定'],han),
+ row('zhuowenjun','卓文君','han','female','汉代文学人物','《史记》记载卓文君与司马相如的婚姻及共同生活。',[-.2,-.4,.6,.6,.5,.1,1,.8],['自主选择','真切感受','敢于改变'],shiji),
+ row('zhuge','诸葛亮','three','male','蜀汉政治家','蜀汉丞相，主持政务并多次北伐。',[.9,1,-.1,.2,-.2,1,.5,.4],['周密筹划','责任意识','持续推进'],three),
+ row('caocao','曹操','three','male','汉末政治家、诗人','汉末政治与军事人物，也是建安文学的代表作者。',[.7,.7,.9,-.2,.9,.8,.9,.9],['善观局势','敢于决断','表达有力'],three),
+ row('liubei','刘备','three','male','蜀汉开国皇帝','蜀汉开国皇帝，在汉末形成自己的政治集团。',[.1,.3,.4,1,.6,.9,-.5,.4],['善于联结','体察人心','长久坚持'],three),
+ row('zhouyu','周瑜','three','male','东吴将领','孙吴重要将领，参与指挥赤壁之战。',[.7,.8,.8,.2,.5,.5,.7,.8],['判断敏锐','善于协作','行动利落'],three),
+ row('sunquan','孙权','three','male','吴国开国皇帝','吴国开国皇帝，长期经营江东。',[.5,.8,.1,.3,.1,1,-.2,.3],['长期经营','协调多方','进退有度'],three),
+ row('guanyu','关羽','three','male','蜀汉将领','刘备集团的重要将领，曾镇守荆州。',[.1,.2,.9,-.3,.4,.7,1,-.6],['信守承诺','立场坚定','重视担当'],three),
+ row('caizhi','曹植','three','male','曹魏诗人','建安文学的重要诗人，留有《洛神赋》等作品。',[-.3,-.4,-.2,.7,1,.2,.8,.7],['感受丰富','表达充沛','珍视自我'],three),
+ row('caiyan','蔡琰','three','female','汉末文学家','字文姬，汉末文学家；归汉后曾参与整理、追忆家藏典籍。',[.6,.5,-.3,1,.5,.9,.5,.1],['感受深切','坚韧自持','重视记忆'],houhan),
+ row('sunfuren','孙夫人','three','female','汉末三国历史人物','孙权之妹、刘备夫人，史籍称孙夫人；本库不使用后世通称“孙尚香”作为史实名。',[.1,.1,.9,.2,.6,.1,1,.6],['自主鲜明','行动直接','边界清楚'],three),
+ row('zhenshi','甄氏','three','female','曹魏文昭皇后','曹丕夫人、曹叡之母，见《三国志》；“甄宓”并非本库采用的确定史实名。',[.2,.4,-.4,.9,-.5,.5,.2,-.3],['细腻体察','克制表达','重视安稳'],three),
+ row('lishimin','李世民','tang','male','唐太宗','唐朝第二位皇帝，贞观时期的主要政治人物。',[.8,.7,.8,.3,.5,.9,.5,.5],['统筹协作','善于决断','目标长远'],tang),
+ row('weizheng','魏征','tang','male','唐代政治家','唐太宗时期重要谏臣。',[.9,.6,.1,.1,1,.6,1,-.3],['直言有据','坚持原则','审慎求证'],tang),
+ row('libai','李白','tang','male','唐代诗人','盛唐诗人，作品想象丰富，语言奔放。',[-.4,-.8,.6,.4,1,-.2,1,1],['独立洒脱','想象丰沛','表达热烈'],tang),
+ row('dufu','杜甫','tang','male','唐代诗人','唐代诗人，诗作广泛书写社会生活与个人遭际。',[.8,.5,-.3,1,.5,.9,.7,.1],['体察深切','关注现实','沉着坚持'],tang),
+ row('wangwei','王维','tang','male','唐代诗人、画家','盛唐诗人、画家，山水诗成就突出。',[.5,-.1,-.7,.6,-.8,.3,.6,-.2],['安静敏锐','内在自足','留白含蓄'],tang),
+ row('baijuyi','白居易','tang','male','唐代诗人','唐代诗人，主张诗文关注现实生活。',[.6,.4,.1,.9,.9,.7,.3,.2],['关注民生','表达明晰','平实通达'],tang),
+ row('guoziyi','郭子仪','tang','male','唐代将领','唐代重要将领，参与平定安史之乱。',[.6,.8,.4,.4,-.2,1,-.3,-.2],['稳健担当','协调有度','持久经营'],tang),
+ row('wuzetian','武则天','tang','female','武周皇帝','唐代及武周时期的重要政治人物，建立武周。',[.8,.9,.9,-.4,.7,1,1,.8],['突破限制','决断坚定','布局持久'],tang),
+ row('shangguan','上官婉儿','tang','female','唐代文学家','唐代宫廷文学与政治人物，以文才著称。',[.8,.6,.1,.5,.7,.6,.2,.6],['洞察情势','表达精巧','善于应变'],tang),
+ row('pingyang','平阳昭公主','tang','female','唐初历史人物','唐高祖之女，唐初曾组织武装参与起兵。',[.3,.5,1,.4,.4,.7,.9,.7],['主动担当','行动果敢','善于组织'],tang),
+ row('xuetao','薛涛','tang','female','唐代诗人','唐代女诗人，长期生活于蜀地。',[.3,.1,-.1,.8,.8,.5,.9,.6],['真切敏感','自主表达','细处见意'],tang),
+ row('yuxuanji','鱼玄机','tang','female','唐代诗人','晚唐女诗人，存有多首诗作。',[-.2,-.5,.3,.7,1,-.1,1,.7],['情感鲜明','独立求索','表达直接'],tang),
+ row('sushi','苏轼','song','male','宋代文学家','北宋文学家、书画家，经历多次地方任职与贬谪。',[.5,-.4,.3,.8,.8,.3,.8,.8],['通透豁达','善于表达','随境生长'],song),
+ row('wanganshi','王安石','song','male','宋代政治家、文学家','北宋政治家，曾主持变法。',[.9,1,.6,-.3,.5,1,1,.9],['制度思考','持续推进','坚持所信'],song),
+ row('simaguang','司马光','song','male','宋代史学家','北宋政治家、史学家，主持编纂《资治通鉴》。',[1,1,-.6,-.1,-.1,1,.8,-.9],['考证谨严','守持稳健','耐心积累'],song),
+ row('xinqiji','辛弃疾','song','male','宋代词人','南宋词人，有抗金经历，词作风格雄健。',[.3,.5,.9,.5,1,.9,1,.6],['目标热切','敢于行动','情志鲜明'],song),
+ row('yuefei','岳飞','song','male','南宋将领','南宋抗金将领。',[.5,.8,.8,.2,.1,1,.9,-.3],['重视担当','执行坚韧','信念明确'],song),
+ row('shenkua','沈括','song','male','宋代学者','北宋学者，《梦溪笔谈》的作者。',[1,.7,.1,.1,.1,.9,.7,1],['观察求证','好奇探索','积累经验'],song),
+ row('liuyong','柳永','song','male','宋代词人','北宋词人，善写羁旅行役与都市生活。',[-.2,-.6,-.3,1,1,-.3,.6,.5],['感情细腻','关注日常','表达真切'],song),
+ row('liqingzhao','李清照','song','female','宋代词人','宋代词人，与赵明诚共同从事金石收藏研究。',[.7,.2,-.3,.9,.8,.7,1,.4],['细腻敏锐','自主自持','审美鲜明'],song),
+ row('liangshi','梁氏（梁红玉）','song','female','南宋抗金人物','韩世忠之妻梁氏，见《宋史·韩世忠传》；“红玉”之名见后世记载。',[.4,.5,1,.4,.5,.7,.9,.6],['临事果敢','协同担当','坚韧有力'],song),
+ row('liue','刘娥','song','female','宋代皇后、太后','宋真宗皇后，宋仁宗早年临朝听政。',[.7,.9,.5,.2,.3,1,.8,.2],['统筹有序','长期经营','判断稳健'],song),
+ row('caohou','曹皇后','song','female','宋代皇后、太后','宋仁宗皇后，后为皇太后、太皇太后。',[.6,.7,-.2,.6,-.5,.9,.3,-.5],['沉稳自持','关照全局','克制有度'],song)
+];
+function candidates(era,gender='any'){
+ if(!eras.some(e=>e.id===era)||!['male','female','any'].includes(gender))throw new Error('人物范围无效');
+ return figures.filter(f=>f.era===era&&(gender==='any'||f.gender===gender));
+}
+function profileFor(era,answers){
+ const qs=banks[era];
+ if(!qs||!Array.isArray(answers)||answers.length!==26||Array.from(answers).some(a=>!Number.isInteger(a)||a<0||a>3))throw new Error('需要完成26道题');
+ const totals=dimensions.map(()=>0),max=dimensions.map(()=>0);
+ qs.forEach((q,i)=>q.options[answers[i]].scores.forEach((v,d)=>{totals[d]+=v;max[d]+=Math.max(...q.options.map(o=>Math.abs(o.scores[d])));}));
+ return totals.map((v,d)=>max[d]?v/max[d]:0);
+}
+function match(era,gender,answers){
+ const pool=candidates(era,gender), profile=profileFor(era,answers);
+ const ranked=pool.map(f=>({f,d:f.profile.reduce((n,v,i)=>n+(v-profile[i])**2,0)})).sort((a,b)=>a.d-b.d||a.f.id.localeCompare(b.f.id));
+ const {profile:editorProfile,...figure}=ranked[0].f;
+ const closest=dimensions.map((d,i)=>({...d,index:i,delta:Math.abs(profile[i]-editorProfile[i]),value:profile[i]})).sort((a,b)=>a.delta-b.delta).slice(0,3);
+ return {figure,profile,dimensions,candidateCount:pool.length,
+   reasons:closest.map(d=>({title:d.name,text:`在“${d.name}”相关选择中，你更接近${d.value>=0?d.high:d.low}的倾向，与本库为${figure.name}设定的文学化原型相近。`})),
+   note:pool.length===1?'该朝代与性别范围内仅收录1位人物，因此人物结果固定；八维画像仍由你的26道回答生成。':'人物来自所选朝代与性别范围，按26题的综合倾向匹配；不代表心理学效度或历史人物真实性格。'};
+}
+
+return {eras,dimensions,banks,figures,candidates,publicQuestions,match};
+})();</script>
+ <script>'use strict';
+(()=>{
+ const $=id=>document.getElementById(id),main=$('main'),KEY='soul-history-offline-v3';
+ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const chevron='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>';
+ let config,screen='era',state={version:3,eraChoice:null,era:null,gender:null,answers:Array(26).fill(null),index:0,complete:false},questions=[],result=null,busy=false,advanceTimer,noticeTimer,shareFocus;
+ const validAnswer=a=>Number.isInteger(a)&&a>=0&&a<4;
+ function notify(message){clearTimeout(noticeTimer);$('notice').textContent=message;$('notice').hidden=false;noticeTimer=setTimeout(()=>$('notice').hidden=true,4500);}
+ function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch{notify('当前环境无法暂存进度，请保持页面打开直至完成。');}}
+ function restore(){try{const s=JSON.parse(localStorage.getItem(KEY));if(s?.version!==3||!config.eras.some(e=>e.id===s.era)||!['male','female','any'].includes(s.gender)||!Array.isArray(s.answers)||s.answers.length!==26||Array.from(s.answers).some(a=>a!==null&&!validAnswer(a))||!Number.isInteger(s.index)||s.index<0||s.index>25)return;state={version:3,eraChoice:s.eraChoice==='random'?'random':s.era,era:s.era,gender:s.gender,answers:s.answers,index:s.index,complete:!!s.complete&&s.answers.every(validAnswer)};}catch{}}
+ function createTest(eraChoice,gender){
+  const era=eraChoice==='random'?OfflineQuiz.eras[Math.floor(Math.random()*OfflineQuiz.eras.length)].id:eraChoice;
+  return {era,gender,questions:OfflineQuiz.publicQuestions(era),candidateCount:OfflineQuiz.candidates(era,gender).length};
+ }
+ function render(html,view,title){
+  clearTimeout(advanceTimer);busy=false;screen=view;main.innerHTML=html;main.setAttribute('aria-busy','false');main.classList.remove('enter');void main.offsetWidth;main.classList.add('enter');
+  $('back').hidden=view==='era';$('brand').textContent=view==='quiz'?`${eraName(state.era)} · 灵魂照面`:'灵魂照面';
+  document.title=title?`${title}｜灵魂照面`:'灵魂照面｜你像哪位历史人物';window.scrollTo({top:0,behavior:'instant'});
+  main.querySelector('h1')?.focus({preventScroll:true});
+ }
+ const eraName=id=>config?.eras.find(e=>e.id===id)?.name||'';
+ function eraPage(){
+  const n=state.answers.filter(validAnswer).length;
+  render(`<section class="paper selection"><h1 tabindex="-1">你想走进哪个时代？</h1><p class="subtext">选择一个朝代，遇见与你相似的历史人物。<br>每次26道题，依直觉作答，没有标准答案。</p>${n?`<div class="resume"><span>${esc(eraName(state.era))} · ${state.complete?'人物档案已生成':`已答 ${n} / 26 题`}</span><button id="resume">${state.complete?'查看档案':'继续上次测试'}</button></div>`:''}<div class="choice-list">${config.eras.map(e=>`<button class="choice" data-era="${e.id}"><span class="glyph" aria-hidden="true">${e.glyph}</span><span class="choice-copy"><strong>${e.name}</strong><small>${e.desc}</small></span>${chevron}</button>`).join('')}<button class="choice random" data-era="random"><span class="choice-copy"><strong>随机朝代</strong><small>不必选，让命运替你翻开一页</small></span>${chevron}</button></div><p class="footnote">三国按汉末三国文化时期归类；唐朝含武周。<br>共50位有史料记载的人物，性格描述为文学化映射。</p></section>`,'era');
+  main.querySelectorAll('[data-era]').forEach(button=>button.addEventListener('click',()=>{state.eraChoice=button.dataset.era;genderPage();}));
+  $('resume')?.addEventListener('click',resume);
+ }
+ function genderPage(){
+  const era=config.eras.find(e=>e.id===state.eraChoice),count=era?config.counts[era.id]:null;
+  render(`<section class="paper selection gender"><h1 tabindex="-1">你希望遇见谁？</h1><p class="subtext">${era?`${esc(era.name)} · ${esc(era.period)}`:'随机朝代 · 开始时随机抽取一个朝代'}<br>选择希望匹配的历史人物性别。</p><div class="choice-list">${[['male','男','男性人物'],['female','女','女性人物'],['any','不限','不限性别']].map(([id,glyph,label])=>`<button class="choice" data-gender="${id}"><span class="glyph" aria-hidden="true">${glyph}</span><span class="choice-copy"><strong>${label}</strong><small>${count?`当前收录 ${count[id]} 位历史人物`:'在抽中的朝代内匹配'}</small></span>${chevron}</button>`).join('')}</div>${era?.id==='qin'?'<p class="candidate-note"><strong>秦朝女性范围提示</strong><br>目前仅收录史料明确的巴寡妇清；选择“女性人物”会得到固定人物，26题仍生成个人倾向画像。想获得更多人物可能，可选“不限性别”或返回更换朝代。</p>':''}<p class="footnote">这里只筛选人物范围，不是询问你的生理性别，<br>也不会改变题目内容与计分方式。${era?`<br>${esc(era.note)}`:'<br>随机抽到秦朝时，女性候选仅1位，页面会明确提示。'}</p><p id="start-error" class="error" role="alert"></p></section>`,'gender');
+  main.querySelectorAll('[data-gender]').forEach(button=>button.addEventListener('click',()=>start(button.dataset.gender)));
+ }
+ async function start(gender){
+  if(busy)return;busy=true;main.querySelectorAll('button').forEach(b=>b.disabled=true);
+  try{const data=createTest(state.eraChoice,gender);state={version:3,eraChoice:state.eraChoice,era:data.era,gender,answers:Array(26).fill(null),index:0,complete:false};questions=data.questions;result=null;save();question();if(data.candidateCount===1)notify('当前范围仅有1位历史人物；人物结果固定，倾向画像仍由回答生成。');}
+  catch(e){$('start-error').textContent=e.message;main.querySelectorAll('button').forEach(b=>b.disabled=false);busy=false;}
+ }
+ async function resume(){
+  if(busy)return;busy=true;const button=$('resume');if(button)button.disabled=true;
+  try{const data=createTest(state.era,state.gender);questions=data.questions;if(state.complete||state.answers.every(validAnswer))await finish();else question();}
+  catch(e){{busy=false;if(button)button.disabled=false;notify(e.message);}}
+ }
+ function question(){
+  const q=questions[state.index];if(!q){eraPage();return;}const answered=state.answers.filter(validAnswer).length;
+  render(`<section class="paper progress-card" aria-label="答题进度"><div class="progress-label"><span>${esc(q.ability)}</span><span class="progress-count">${state.index+1} / 26 · 已答${answered}题</span></div><div class="progress-track" role="progressbar" aria-label="已完成题目" aria-valuemin="0" aria-valuemax="26" aria-valuenow="${answered}"><div class="progress-fill" style="width:${answered/26*100}%"></div></div></section><section class="paper question"><div class="ability-label">本题考察：${esc(q.ability)}</div><p class="ability-hint">${esc(q.hint)}</p><p class="context">${esc(q.type)}</p><h1 id="question-title" tabindex="-1">${esc(q.title)}</h1><div class="answers" role="group" aria-labelledby="question-title">${q.options.map((o,i)=>`<button class="answer" data-answer="${i}" aria-pressed="${state.answers[state.index]===i}"><span class="answer-letter" aria-hidden="true">${'ABCD'[i]}</span><span>${esc(o.text)}</span></button>`).join('')}</div><div class="question-nav"><button id="previous" class="secondary">${state.index?'上一题':'返回设置'}</button><span id="auto-note" class="auto-note">${state.index===25?'选择后生成人物档案':'选择后自动进入下一题'}</span></div><details><summary>关于这道题</summary><p>${esc(q.note)}</p><p>时代背景与延伸阅读：<a href="${esc(q.source.url)}" rel="noreferrer">${esc(q.source.title)}</a></p></details></section>`,'quiz');
+  main.querySelectorAll('[data-answer]').forEach(b=>b.addEventListener('click',()=>choose(Number(b.dataset.answer))));
+  $('previous').addEventListener('click',back);
+ }
+ function choose(answer){
+  if(busy||!validAnswer(answer))return;busy=true;state.answers[state.index]=answer;state.complete=false;save();
+  main.querySelectorAll('[data-answer]').forEach(b=>{b.setAttribute('aria-pressed',String(Number(b.dataset.answer)===answer));b.disabled=true;});
+  const count=state.answers.filter(validAnswer).length;main.querySelector('.progress-fill').style.width=count/26*100+'%';main.querySelector('[role=progressbar]').setAttribute('aria-valuenow',count);
+  $('auto-note').textContent=state.index===25?'正在生成人物档案…':'已选择，即将进入下一题…';
+  advanceTimer=setTimeout(async()=>{if(state.index<25){state.index++;save();question();}else await finish();},window.matchMedia('(prefers-reduced-motion: reduce)').matches?120:380);
+ }
+ async function finish(){
+  try{result=OfflineQuiz.match(state.era,state.gender,state.answers);state.complete=true;save();resultPage();}
+  catch(e){{question();notify(e.message+' 可再次选择最后一题重试。');}}
+ }
+ function resultPage(){
+  const f=result.figure;
+  render(`<article class="paper result"><header class="result-heading"><p class="result-kicker">与你遥相呼应的人</p><h1 class="result-name" tabindex="-1">${esc(f.name)}</h1><p class="result-role">${eraName(f.era)} · ${esc(f.role)}</p><div class="tags">${f.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div></header><section class="result-section"><h2>历史中的 ${esc(f.name)}</h2><p>${esc(f.history)}</p><p class="subtext"><a class="source-link" href="${esc(f.source)}" rel="noreferrer">查看史料与延伸阅读</a></p></section><section class="result-section"><h2>你与TA的共同底色</h2>${result.reasons.map(r=>`<div class="reason"><strong>${esc(r.title)}</strong><p>${esc(r.text)}</p></div>`).join('')}</section><section class="result-section"><h2>你的八维倾向画像</h2><p class="subtext">每条刻度描述两端偏好，靠哪一端都没有高低优劣；<br>不是能力高低、心理诊断或匹配准确率。</p><div class="result-bars">${result.dimensions.map((d,i)=>`<div><div class="bar-label"><strong>${esc(d.name)}</strong><span>${esc(result.profile[i]>=0?d.high:d.low)}</span></div><div class="trait-track" role="meter" aria-label="${esc(d.name)}倾向" aria-valuemin="-1" aria-valuemax="1" aria-valuenow="${result.profile[i].toFixed(3)}" aria-valuetext="${esc(result.profile[i]>=0?d.high:d.low)}"><div class="trait-fill" style="width:${(result.profile[i]+1)*50}%"></div></div><div class="bar-ends"><span>${esc(d.low)}</span><span>${esc(d.high)}</span></div></div>`).join('')}</div></section><p class="result-note">${esc(result.note)}<br>本次候选：${result.candidateCount}位 · ${eraName(state.era)} · ${{male:'男性人物',female:'女性人物',any:'不限性别'}[state.gender]}。<br>人物真实生平与本测试的文学化性格解读分别呈现；结果不代表人物全部经历或价值评价。</p><div class="result-actions"><button class="primary" id="share">保存人物卡</button><button class="secondary" id="restart">再测一次</button></div><button class="text-button review-button" id="review">回看并修改答案</button></article>`,'result',`我遇见了${f.name}`);
+  $('share').addEventListener('click',share);$('restart').addEventListener('click',eraPage);$('review').addEventListener('click',()=>{state.index=0;question();});
+ }
+ function back(){clearTimeout(advanceTimer);busy=false;if(screen==='gender')eraPage();else if(screen==='quiz'){if(state.index){state.index--;save();question();}else genderPage();}else if(screen==='result')eraPage();}
+ $('back').addEventListener('click',back);
+ function wrap(ctx,text,x,y,width,lineHeight){let line='';for(const char of text){if(ctx.measureText(line+char).width>width){ctx.fillText(line,x,y);y+=lineHeight;line=char;}else line+=char;}if(line)ctx.fillText(line,x,y);return y+lineHeight;}
+ async function share(){
+  const button=$('share');button.disabled=true;button.textContent='正在制作…';
+  try{await document.fonts?.ready;const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=1570;const ctx=canvas.getContext('2d');
+   if(!ctx)throw new Error('当前环境暂不支持生成人物卡');
+   ctx.fillStyle='#efebf8';ctx.fillRect(0,0,1080,1570);ctx.fillStyle='#fff';ctx.beginPath();ctx.roundRect(54,54,972,1462,48);ctx.fill();
+   ctx.textAlign='center';ctx.fillStyle='#7864bd';ctx.font='30px sans-serif';ctx.fillText('灵魂照面 · 26道选择，一次与历史的相逢',540,130);ctx.fillStyle='#302653';ctx.font='36px sans-serif';ctx.fillText('与你遥相呼应的人',540,220);
+   const f=result.figure;ctx.font=`bold ${f.name.length>7?66:104}px SimSun,serif`;ctx.fillText(f.name,540,355);ctx.font='30px sans-serif';ctx.fillStyle='#9187a9';ctx.fillText(`${eraName(f.era)} · ${f.role}`,540,420);ctx.fillStyle='#7864bd';ctx.font='32px sans-serif';ctx.fillText(f.tags.join('  ·  '),540,490);
+   ctx.textAlign='left';ctx.fillStyle='#302653';ctx.font='28px sans-serif';let y=wrap(ctx,f.history,115,575,850,45)+30;
+   ctx.font='bold 30px sans-serif';ctx.fillText('我的八维倾向',115,y);y+=42;
+   result.dimensions.forEach((d,i)=>{ctx.fillStyle='#302653';ctx.font='25px sans-serif';ctx.fillText(d.name,115,y+15);ctx.fillStyle='#ded7ef';ctx.fillRect(360,y-4,390,12);ctx.fillStyle='#7864bd';ctx.fillRect(360,y-4,390*(result.profile[i]+1)/2,12);ctx.font='23px sans-serif';ctx.fillText(result.profile[i]>=0?d.high:d.low,775,y+13);y+=62;});
+   ctx.fillStyle='#9187a9';ctx.font='22px sans-serif';wrap(ctx,result.candidateCount===1?'当前人物范围仅1位，人物结果固定；倾向画像由回答生成。':'基于26道情境选择的文学化匹配，非专业心理测评。',115,y+25,850,35);ctx.textAlign='center';ctx.font='22px sans-serif';ctx.fillText('刻度表示偏好，不表示能力高低或匹配准确率。',540,1450);
+   $('share-image').src=canvas.toDataURL('image/png');$('download').href=$('share-image').src;
+   shareFocus=document.activeElement;$('share-overlay').hidden=false;document.body.style.overflow='hidden';$('close-share').focus();
+  }catch(e){notify(e.message||'图片生成失败，请稍后重试。');}finally{button.disabled=false;button.textContent='保存人物卡';}
+ }
+ function closeShare(){$('share-overlay').hidden=true;document.body.style.overflow='';shareFocus?.focus();}
+ $('close-share').addEventListener('click',closeShare);$('share-overlay').addEventListener('click',e=>{if(e.target===$('share-overlay'))closeShare();});
+ document.addEventListener('keydown',e=>{if($('share-overlay').hidden)return;if(e.key==='Escape')closeShare();if(e.key==='Tab'){const focusables=[$('close-share'),$('download')],first=focusables[0],last=focusables[1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
+ function boot(){
+  config={eras:OfflineQuiz.eras,dimensions:OfflineQuiz.dimensions,counts:Object.fromEntries(OfflineQuiz.eras.map(e=>[e.id,Object.fromEntries(['male','female','any'].map(g=>[g,OfflineQuiz.candidates(e.id,g).length]))]))};
+  restore();eraPage();
+ }
+ boot();
 })();
 </script>
 </body>
