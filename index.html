@@ -13,6 +13,9 @@
 @media(min-width:800px){.app-shell{max-width:620px;padding:0 30px 35px}.site-header{height:106px}.paper{padding:35px}.gate{padding:45px 50px}.gate-layout{min-height:calc(100svh - 205px)}.choice-list{gap:13px}.choice{padding:14px 18px}.question h1{font-size:25px}.answer{font-size:16px;padding:18px}.progress-card{padding:20px 25px}.result-name{font-size:64px}}
 @media(max-width:360px){.app-shell{padding-left:14px;padding-right:14px}.paper{padding-left:18px;padding-right:18px}h1,.selection h1{font-size:24px}.gate h1{font-size:29px}.choice strong{font-size:16px}.answer{font-size:14px}.question h1{font-size:20px}.result-name{font-size:43px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.result-report{display:grid;gap:18px}.result-cover{text-align:center;padding:30px 24px}.result-cover .result-kicker{font-family:"Songti SC",SimSun,serif;font-size:18px}.result-cover .result-name{margin-top:18px}.dominant-label{display:inline-block;color:var(--accent);background:#f0ebfa;padding:6px 13px;border-radius:20px;margin-top:18px;font-size:12px}.character-voice{margin-top:24px;text-align:left;background:var(--tint);border:1px solid var(--line);border-radius:16px;padding:15px 17px}.character-voice strong{font-size:12px;color:var(--accent)}.character-voice p{font-size:14px;margin-top:6px;line-height:1.9}.report-block{padding:25px 22px}.report-block h2{font-size:18px;line-height:1.6;margin-bottom:18px}.report-block>p{font-size:14px;line-height:2;color:#504665}.report-caption{color:var(--muted)!important;font-size:11px!important;line-height:1.9!important;margin-top:14px}.report-block>h2+.report-caption{margin-top:-5px;margin-bottom:20px}.history-detail{margin-top:20px;padding-top:14px;border-top:1px solid #eee8f5;font-size:12px;color:var(--muted);line-height:1.95}.history-detail summary{cursor:pointer;color:var(--accent)}.history-detail p{margin:10px 0}.report-grid{display:grid;grid-template-columns:1fr;gap:12px}.report-card{margin:0;background:#f8f6fc;border:1px solid var(--line);border-radius:15px;padding:16px}.report-card h3{margin:0 0 7px;font-size:13px;line-height:1.65;color:#4e4169}.report-card p{font-size:13px;line-height:1.95;color:#7f7495}.quote-grid .report-card{font-size:14px;line-height:2;color:#7a6e90}.reality-list{display:grid;gap:12px}.metric-list{display:grid;gap:15px}.metric-row{display:grid;grid-template-columns:36px 1fr 27px;gap:12px;align-items:center;font-size:12px;color:#847799}.metric-row b{text-align:right;font-size:12px;color:var(--accent);font-weight:500}.metric-track{height:8px;border-radius:8px;overflow:hidden;background:#eee9f7}.metric-track>span{display:block;height:100%;background:var(--accent);border-radius:8px}.report-disclaimer{padding:4px 14px;font-size:11px;text-align:center;color:var(--muted);line-height:1.95}.result-report>.result-actions{margin-top:0}.result-report>.review-button{margin-top:0}.share-panel{max-height:calc(100dvh - 48px);overflow:auto}.share-panel img{border:1px solid #eee8f6}.share-panel>p{line-height:1.9}
+@media(min-width:560px){.report-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.report-card{padding:16px 13px}.report-block{padding:28px}.quote-grid .report-card{font-size:13px}.report-card p{font-size:12px}.result-report{gap:20px}}
+@media(max-width:360px){.report-block{padding:22px 18px}.report-block h2{font-size:17px}.metric-row{gap:9px}.report-card{padding:14px}}
 </style>
 
 </head>
@@ -23,9 +26,11 @@
   <footer class="site-footer">26道选择，一次与历史的相逢。<br>单机版 · 测试过程无需联网<br>趣味自我探索 · 非专业心理测评</footer>
  </div>
  <div id="notice" role="status" aria-live="polite" class="notice" hidden></div>
- <div id="share-overlay" class="overlay" hidden><section class="share-panel" role="dialog" aria-modal="true" aria-labelledby="share-title"><div class="share-top"><h2 id="share-title">保存你的人物卡</h2><button id="close-share" class="icon-button" aria-label="关闭人物卡"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><p>长按图片，保存到手机相册后即可分享。</p><img id="share-image" alt="历史人物匹配结果卡片"><a class="primary" id="download" download="灵魂照面-人物卡.png">下载人物卡</a></section></div>
+ <div id="share-overlay" class="overlay" hidden><section class="share-panel" role="dialog" aria-modal="true" aria-labelledby="share-title"><div class="share-top"><h2 id="share-title">保存完整人物档案</h2><button id="close-share" class="icon-button" aria-label="关闭人物卡"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><p>图片包含人物自画像、八维结构、共同底色、现实互动、盲点建议与三句台词，可长按保存。</p><img id="share-image" alt="包含六部分解读的历史人物完整档案"><a class="primary" id="download" download="灵魂照面-人物卡.png">下载完整结果长图</a></section></div>
  <noscript>请使用电脑的Chrome、Edge、Safari或Firefox打开此文件，并允许JavaScript运行。</noscript>
- <script>const OfflineQuiz=(()=>{
+ 
+ 
+<script>const OfflineQuiz=(()=>{
 // 所有情境及选项均为原创。史实只是场景背景，虚构行动不冒充史书记载。
 const dimensions = [
   {name:'洞察与判断',low:'凭直觉把握',high:'核证后判断',hint:'你如何理解信息、辨别线索'},
@@ -310,13 +315,280 @@ function match(era,gender,answers){
 }
 
 return {eras,dimensions,banks,figures,candidates,publicQuestions,match};
-})();</script>
- <script>'use strict';
+})();
+// 扩展人物：按文化时期归类，真实历史简介与文学化向量分开。
+(()=>{
+ const row=(id,name,era,gender,role,history,profile,tags,source)=>({id,name,era,gender,role,history,profile,tags,source});
+ const s=v=>'https://zh.wikisource.org/wiki/史記/卷'+String(v).padStart(3,'0');
+ const h=v=>'https://zh.wikisource.org/wiki/漢書/卷'+String(v).padStart(3,'0');
+ const t=v=>'https://zh.wikisource.org/wiki/三國志/卷'+v;
+ const tang='https://zh.wikisource.org/wiki/舊唐書',song='https://zh.wikisource.org/wiki/宋史';
+ OfflineQuiz.figures.push(
+  row('wangben','王贲','qin','male','秦将','秦统一六国过程中的重要将领，王翦之子。',[.35,.85,.9,-.45,-.35,.6,.55,.2],['执行有力','重视章法','目标清晰'],s(73)),
+  row('zhanghan','章邯','qin','male','秦末将领','秦末将领，曾率军与各路起义军作战。',[.5,.5,.65,-.4,-.2,.45,-.15,.75],['临事应变','承压务实','重视局势'],s(7)),
+  row('mengyi','蒙毅','qin','male','秦朝大臣','蒙恬之弟，秦始皇时期在朝任职。',[.7,.65,-.1,.15,.4,.65,.8,-.45],['守持原则','谨慎有序','直面责任'],s(88)),
+  row('zhaogao','赵高','qin','male','秦朝政治人物','秦朝宦官、政治人物，参与沙丘之变，后任中丞相。',[.6,.9,.15,-.7,-.65,.5,.2,.55],['信号敏感','关系洞察','重视掌控'],s(87)),
+  row('huhai','胡亥','qin','male','秦二世','秦始皇之子，秦朝第二位皇帝。',[-.65,-.7,.75,-.4,.65,-.8,-.3,.35],['关注当下','反应直接','依赖熟悉'],s(6)),
+  row('ziying','子婴','qin','male','秦末统治者','秦末继胡亥之后即位，诛赵高，后向刘邦投降。',[.8,.6,-.15,.4,-.5,.05,.9,.5],['审势止损','克制判断','守住底线'],s(6)),
+  row('wuguang','吴广','qin','male','秦末起义人物','与陈胜共同发动秦末大泽乡起义。',[-.15,-.1,.85,.65,.55,.15,.25,.6],['共同担当','敢于行动','重视伙伴'],s(48)),
+  row('xiangyu','项羽','qin','male','秦末军事人物','秦末起兵反秦，巨鹿之战的重要指挥者，后参与楚汉战争。',[-.2,.05,1,.15,.85,.45,1,.25],['决断强烈','重视情义','行动鲜明'],s(7)),
+  row('xiangliang','项梁','qin','male','秦末起义领袖','秦末起兵反秦，曾组织、联结多支反秦力量。',[.4,.65,.7,.3,.75,.4,-.25,.55],['善于组织','凝聚伙伴','把握时机'],s(7)),
+  row('fanzeng','范增','qin','male','秦末谋士','秦末参与反秦活动，后为项羽的重要谋士。',[.9,.85,-.25,-.2,.65,.7,1,.05],['洞察先机','独立判断','筹虑深远'],s(7)),
+  row('liyou','李由','qin','male','秦朝官员','李斯之子，秦末任三川郡守。',[.25,.65,.35,-.2,-.45,.9,.6,-.65],['守职稳健','持续承担','重视秩序'],s(87)),
+  row('weiliao','尉缭','qin','male','秦国军事人物','秦王政时期入秦，曾任国尉；按秦统一前后的文化时期归类。',[.85,.8,-.4,-.5,-.65,.75,.85,.5],['看清条件','审慎谋划','自主有度'],s(6)),
+  row('zhengguo','郑国','qin','male','战国末期水利人物','战国末期在秦国参与兴修郑国渠；按秦统一前后的文化时期归类。',[1,.75,-.3,.35,-.4,1,.5,.85],['着眼实效','长期建设','善解难题'],s(29)),
+  row('xiaohe','萧何','han','male','汉初政治家','辅佐刘邦建立西汉，主持后方政务与补给。',[.85,1,-.35,.25,-.35,1,-.15,-.1],['统筹有序','后方可靠','长线经营'],s(53)),
+  row('chenping','陈平','han','male','汉初谋士','汉初重要谋臣，曾任丞相。',[.65,.45,.2,-.25,-.5,.3,.4,1],['灵活拆局','善留余地','观察关系'],s(56)),
+  row('weiqing','卫青','han','male','西汉将领','汉武帝时期将领，曾多次领兵出击匈奴。',[.45,.75,.65,.5,-.55,.85,.1,-.2],['稳健担当','顾及伙伴','克制务实'],h(55)),
+  row('dongzhongshu','董仲舒','han','male','西汉思想家','西汉儒家学者，参与当时的经学与政治论述。',[.75,.7,-.6,-.1,.45,.9,.65,-.8],['体系思考','持续研习','坚持主张'],h(56)),
+  row('suwu','苏武','han','male','西汉使者','出使匈奴，长期羁留后归汉。',[.35,.25,-.35,.15,-.7,1,1,-.8],['守持信念','耐受孤独','长久坚持'],h(54)),
+  row('liuxiu','刘秀','han','male','东汉开国皇帝','建立东汉，后世称汉光武帝。',[.7,.85,.35,.5,.25,.85,.35,.35],['进退有序','善聚人心','稳中求进'],'https://zh.wikisource.org/wiki/後漢書/卷1上'),
+  row('zhangheng','张衡','han','male','东汉学者','东汉科学、文学人物，曾任太史令。',[1,.45,-.45,.15,-.15,.8,.7,1],['观察精细','求证探索','耐心创造'],'https://zh.wikisource.org/wiki/後漢書/卷59'),
+  row('cailun','蔡伦','han','male','东汉造纸人物','东汉官员，与造纸技术的改进和推广相关。',[.75,.7,.4,-.1,-.4,.9,.2,1],['改进方法','务实推进','重视积累'],'https://zh.wikisource.org/wiki/後漢書/卷78'),
+  row('mayuan','马援','han','male','东汉将领','东汉开国功臣、将领，封新息侯。',[.15,.25,1,-.15,.35,.9,.9,.4],['行动坚韧','不改进取','敢担重任'],'https://zh.wikisource.org/wiki/後漢書/卷24'),
+  row('douyifang','窦太后','han','female','西汉皇后、太后','汉文帝皇后，后为皇太后，史籍多称窦太后。',[.5,.55,-.55,.4,-.4,.9,.85,-.65],['稳守根本','长期影响','自有判断'],h(97)+'上'),
+  row('sunce','孙策','three','male','汉末军事人物','孙坚之子，奠定孙氏在江东的基业。',[-.05,.15,1,.15,.8,.4,.75,.85],['敢开局面','行动迅疾','凝聚热情'],t(46)),
+  row('lvbu','吕布','three','male','汉末将领','汉末将领，曾活动于并州、关东及徐州等地。',[-.5,-.65,1,-.1,.6,-.45,1,.55],['现场反应','个人锋芒','自主强烈'],t(7)),
+  row('simayi','司马懿','three','male','曹魏政治军事人物','曹魏重要政治与军事人物，西晋建立后追尊为宣帝。',[.9,1,-.8,-.4,-.8,1,.75,.3],['耐心观局','长线筹谋','克制藏锋'],'https://zh.wikisource.org/wiki/晉書/卷001'),
+  row('xunyu','荀彧','three','male','汉末谋臣','汉末曹操的重要谋臣，参与军政筹划。',[.85,.9,-.15,.45,.05,.9,.85,-.15],['筹虑周详','守住尺度','善识人才'],t(10)),
+  row('guojia','郭嘉','three','male','汉末谋士','曹操麾下谋士，参与多次军事筹划。',[.8,.35,.55,-.25,.35,.15,.7,1],['直指关键','敏于变化','敢作判断'],t(14)),
+  row('lusu','鲁肃','three','male','汉末外交军事人物','孙权麾下重要人物，参与孙刘联盟的形成。',[.7,.7,.1,.8,.55,.8,-.65,.55],['协调大局','善建信任','长远合作'],t(54)),
+  row('luxun','陆逊','three','male','东吴将领','东吴重要将领，曾指挥夷陵之战。',[.9,.85,-.55,.15,-.5,.8,.75,.65],['沉着观势','耐心待机','清晰布局'],t(58)),
+  row('zhangliao','张辽','three','male','曹魏将领','曹操麾下重要将领，以合肥作战等经历著称。',[.55,.5,.95,-.15,-.4,.75,.7,.45],['临阵果决','执行紧凑','善抓时机'],t(17)),
+  row('zhangfei','张飞','three','male','蜀汉将领','刘备集团的重要将领，曾任巴西太守。',[-.2,-.15,1,.3,1,.35,.85,-.15],['坦率有力','重情重诺','直接担当'],t(36)),
+  row('bufuren','步夫人','three','female','东吴历史人物','孙权夫人，见《三国志·吴书·妃嫔传》。',[.25,.45,-.6,1,-.65,.8,-.7,-.1],['温和协调','体察他人','安定关系'],t(50)),
+  row('direnjie','狄仁杰','tang','male','唐代政治家','唐及武周时期政治人物，曾任宰相。',[1,.6,.15,.55,.55,.65,.8,.3],['求证明辨','务实进言','顾及人心'],tang),
+  row('hanyu','韩愈','tang','male','唐代文学家','唐代文学家、思想家，倡导古文。',[.5,.35,.45,.1,1,.85,1,.5],['敢言敢写','坚持主张','重视传承'],tang),
+  row('liuzongyuan','柳宗元','tang','male','唐代文学家','唐代文学家、思想家，曾参与永贞革新。',[.9,.4,-.45,.7,.1,.65,1,.55],['深思自省','关注现实','独立清醒'],tang),
+  row('liuyuxi','刘禹锡','tang','male','唐代诗人','唐代文学家，诗文兼长，经历长期地方任职。',[.4,.15,.35,.35,.8,.75,1,.7],['坚韧通达','自有锋芒','善于转化'],tang),
+  row('zhangjiuling','张九龄','tang','male','唐代政治家、诗人','唐玄宗时期宰相，也以诗文著称。',[.75,.65,-.25,.55,.35,.8,.9,-.15],['清醒持正','沉着进言','顾全长远'],tang),
+  row('yanzhenqing','颜真卿','tang','male','唐代书法家、政治家','唐代政治人物、书法家，楷书影响深远。',[.4,.65,.45,.1,.6,1,1,-.45],['自持坚正','功夫深厚','重视担当'],tang),
+  row('sunsimiao','孙思邈','tang','male','唐代医药学家','唐代医药学家，著有《千金要方》等。',[.85,.65,-.55,1,-.45,1,.35,.4],['体察细微','耐心求证','关怀有度'],tang),
+  row('dumu','杜牧','tang','male','唐代诗人','晚唐诗人、散文家，也有史论与政论作品。',[.65,.15,.2,.4,.85,.1,.85,.65],['敏锐明快','表达鲜明','兼观远近'],tang),
+  row('ouyangxiu','欧阳修','song','male','宋代文学家、史学家','北宋文学家、史学家，参与修撰《新唐书》等。',[.7,.6,-.1,.65,.65,.8,.3,.5],['通达论事','扶持后学','耐心积累'],song),
+  row('fanzhongyan','范仲淹','song','male','宋代政治家、文学家','北宋政治家、文学家，参与庆历新政。',[.65,.85,.3,.8,.35,1,.85,.45],['关注长远','承担公共责任','兼顾他人'],song),
+  row('baozheng','包拯','song','male','宋代政治家','北宋官员，曾任开封府尹等职。',[1,.65,.25,.05,.85,.85,1,-.5],['核事明辨','原则清楚','直言有据'],song),
+  row('suzhe','苏辙','song','male','宋代文学家、政治家','北宋文学家、政治家，与苏轼并称苏氏兄弟。',[.75,.75,-.65,.65,-.45,.85,.5,-.2],['深思有度','稳健支持','沉着自守'],song),
+  row('luyou','陆游','song','male','宋代诗人','南宋诗人，诗作兼有家国志意与日常生活。',[.35,.35,.2,.7,.65,1,1,.05],['初心持久','重视日常','情志深长'],song),
+  row('wentianxiang','文天祥','song','male','南宋政治家、文学家','南宋末年政治、军事与文学人物。',[.3,.45,.7,.35,.7,1,1,-.4],['守持信念','临事担当','表达坚定'],song),
+  row('zhuxi','朱熹','song','male','宋代思想家','南宋思想家、教育家，理学的重要代表。',[1,1,-.65,-.05,.1,1,.8,-.65],['系统研习','耐心辨析','重视根本'],song),
+  row('songci','宋慈','song','male','南宋官员、法医学人物','南宋官员，著有《洗冤集录》。',[1,.8,-.45,.65,-.2,.9,.8,.35],['求证细密','耐心核查','重视公允'],'https://zh.wikisource.org/wiki/洗冤集錄'),
+  row('zhushuzhen','朱淑真','song','female','宋代诗人、词人','宋代女诗人、词人，传有《断肠集》等作品；生平细节存在争议。',[.35,-.35,-.25,1,.9,.1,1,.35],['情感真切','自主审美','细腻表达'],'https://zh.wikisource.org/wiki/作者:朱淑真')
+ );
+ const qin=OfflineQuiz.eras.find(e=>e.id==='qin');
+ qin.period='秦统一前后至秦末';qin.note='按秦文化时期归类，含战国末秦国人物及秦末群雄；历史身份在结果中分别标注。';
+})();
+
+// 报告文案为原创的娱乐性解读，不是历史人物原话或心理学结论。
+const ReportBuilder=(()=>{
+ const voices={
+  yingzheng:['你习惯先在心里画出一个完整的局面，再让零散的人和事朝同一方向靠拢。你在意的往往不是一时热闹，而是事情最终能否形成秩序。','路要由人走通，规则也要有人立下。','把眼前的分歧放回全局，方向就会清楚。'],
+  lisi:['你擅长把模糊的想法拆成可以说明、执行和复核的条目。比起空泛的赞同，你更愿意拿出一套说得通的办法。','说得清楚，事情才有落地的可能。','先理顺一条线，再把复杂的局面接起来。'],
+  mengtian:['你不急于用响亮的话证明自己，更相信持续交付的分量。别人看见的是一段成果，你留意的却是背后的准备与接续。','交到我手里的事，我会认真做到最后。','走得稳，也是把路走远的一种方式。'],
+  wangjian:['你愿意在行动前把代价看清，把准备做足。安静并不表示没有判断，很多时候你只是已经在心里推演过几种结局。','准备不是犹豫，是给决定留足分量。','条件看清了，我自然知道何时向前。'],
+  fusu:['你容易看见规则落到具体人身上时的重量。面对众人的期待，你仍希望给温厚与体谅留下位置。','把道理讲明白，也要让人能够承受。','我愿意站出来，是因为有人正在被忽略。'],
+  chensheng:['你对停滞和被预先划好的边界格外敏感。真正让你动起来的，往往是看见事情原来还可以有另一种开始。','没有人替我开路，我就先走出第一步。','与其一直等答案，不如让行动带来变化。'],
+  baqing:['你重视自己能够掌握的本领与资源，愿意把独立建立在实实在在的积累上。你不必站在人群中央，也能守住自己的生活。','安稳不是等来的，是一件件经营出来的。','手里有本领，心里便多一分从容。'],
+  liubang:['你擅长在不同性情的人之间找到合作的入口。你未必事事亲力亲为，却常能判断谁值得信任、什么值得先做。','先把人聚起来，办法才会越来越多。','我不必什么都会，但要知道谁能做好。'],
+  zhangliang:['你更愿意先看清关系和时机，再选择自己的位置。你珍惜主动权，也懂得为事情留一点没有说尽的余地。','看清一步之后，我还会再想一步。','真正的从容，是知道什么时候可以退开。'],
+  hanxin:['你容易被复杂局面中尚未显现的路径吸引。你希望得到的不是笼统认可，而是一次可以真正发挥判断的机会。','换一个位置看，困局也许就有出口。','给我合适的空间，我会用结果说明。'],
+  huoqubing:['你常在变化中比在等待中更有精神。目标一旦清楚，你愿意通过行动获得新的信息，而不是等一切都完美。','方向认准了，就让第一步先落下。','路上的反馈，会告诉我下一步往哪走。'],
+  simaqian:['你不容易被单一的讲述满足，总想留下更多细节和不同的声音。你在意一件事是否经得起后来的人重新翻阅。','有些细节值得留下，哪怕此刻无人追问。','我想写清楚的，是人怎样走到这一步。'],
+  zhangqian:['你对陌生世界保留着愿意靠近的好奇。你知道远行未必总有清晰的回报，却仍愿意用经历换取更开阔的理解。','走到新的地方，才会看见原先地图的边界。','陌生不是终点，只是理解的开始。'],
+  lvzhi:['你对局面的延续和资源的归属有很强的敏感。你更愿意把安全感建立在可以持续运转的安排上，而非一时的承诺。','重要的事，不能只靠一句会好的。','把安排做实，才能让明天少一些失控。'],
+  banzhao:['你愿意在容易被忽略的细节上多花一点时间。对你而言，完整与准确不只是要求，也是对后来者的一份照顾。','把缺的一页补好，后来的人就少一道难题。','认真做过的功夫，会安静地留下来。'],
+  wangzhaojun:['你能够察觉不同处境之间的距离，也愿意在变化里重新寻找自己的支点。温和对你而言，常是一种有意识的选择。','在陌生的地方，也可以慢慢安顿自己。','我愿意理解差异，也会记得自己的来处。'],
+  zhuowenjun:['你对生活是否合乎自己的心意有鲜明的感受。即使选择需要付出代价，你仍希望那是经过自己认可的路。','日子终究要自己过，心意也该自己认。','我想要的生活，值得由我亲手试一试。'],
+  zhuge:['你会把眼前的任务放进更长的时间里考虑。你擅长把复杂的期待拆成步骤，也容易把自己的责任看得比别人更重。','先把眼前这一件事，做到能接住下一步。','筹划不是为了掌控一切，而是少辜负一些人。'],
+  caocao:['你对人、机会和局势的变化都保持着敏锐。比起等待一个人人都满意的时刻，你更愿意先确定方向，再在推进中调整。','局面一直在变，判断也要跟着向前。','把能做的先做成，再去争取更大的空间。'],
+  liubei:['你更容易从关系和共同经历中建立行动的意义。你希望同行的人知道，合作不只是分工，也是一种彼此照应。','能一起走下去的人，比一时的热闹更重要。','答应过的照应，我会尽力记在心上。'],
+  zhouyu:['你常能在纷乱中很快找到需要统筹的关键。你既在意事情能否漂亮地推进，也懂得配合比个人表现更能改变局面。','把节奏合上，每个人的力量都会更清楚。','看准时机之后，我愿意把决定做得利落。'],
+  sunquan:['你擅长在不同诉求之间寻找可以延续的平衡。对你而言，成功往往不是一次惊险的突破，而是让事情长期站得住。','眼前要有取舍，长远也要留得下余地。','能持续运转的安排，才是真正的底气。'],
+  guanyu:['你重视承诺的分量，也很清楚有些底线不想轻易更改。你希望别人从日常的行动里认识你，而不是只听见漂亮的话。','我认下的承诺，会认真放在心上。','有些事做不做，我心里一直有一把尺。'],
+  caizhi:['你容易从普通的场景里感到更丰富的情绪。表达对你而言不是装饰，而是让那些尚未说清的感受获得形状。','心里走过的风景，总要有个地方安放。','我想写下的，是别人尚未听见的那一点回声。'],
+  caiyan:['你既珍惜记忆，也懂得记忆会带来重量。你愿意把经历慢慢整理成可以承受、可以讲述的部分。','有些东西留下来，是为了不再轻易失去。','经历会改变我，但不必替我写完余生。'],
+  sunfuren:['你对自己的边界和决定有鲜明的意识。你不喜欢只作为别人的安排出现，希望在关系里仍能保有自己的位置。','同行可以，替我决定却不必。','我会认真对待关系，也会守住自己的方向。'],
+  zhenshi:['你容易觉察到相处中没有被直接说出的情绪。比起争取每一刻的注意，你更在意关系里是否有稳定而温和的回应。','不必每句话都说满，心意也可以被看见。','我珍惜的，是日常里细小却可靠的回应。'],
+  lishimin:['你愿意对目标作出清晰判断，也重视不同能力的人如何共同发挥。对你而言，担当不仅是拍板，也包括接住反馈。','决定由我来做，反馈我也愿意来听。','让合适的人站在合适的位置，事情才能走远。'],
+  weizheng:['你对说法能否与事实对得上格外在意。即使场面暂时不够圆满，你仍希望关键的疑点能被认真放到桌面上。','一句有依据的提醒，比一场顺耳的附和更重要。','我把问题说出来，是希望事情做得更稳。'],
+  libai:['你对自由、想象和鲜明的体验有很高的感受力。你需要的不只是按部就班，也是一点让自己真正投入的光亮。','日子可以有章法，心里却要留一片旷野。','被打动的时候，我愿意先向前一步。'],
+  dufu:['你常常看见热闹之外具体的人和难处。你愿意把复杂的感受放回现实，而不是让它们只停留在漂亮的表达里。','看见一件事，也要看见在其中生活的人。','把日常认真写下，本身就是一种珍重。'],
+  wangwei:['你能够在安静里保有充实的感受。比起不断向外证明，你更愿意把心力放在值得长期相处的人、事与风景上。','安静下来，很多细微的东西才会显现。','我不必赶在所有人前面，也可以走自己的路。'],
+  baijuyi:['你希望想法能够被真正听懂，而不只是显得高明。你常从日常的处境出发，让表达与具体的生活建立联系。','话说得明白，关心才更容易抵达。','愿意认真听的人，我也愿意认真讲。'],
+  guoziyi:['你重视在压力中维持稳定的分寸。你不一定急于争取每一次风头，却往往知道怎样让局面继续向前。','局势越复杂，越要把该稳住的地方稳住。','把人和事照看周全，也是很硬的本领。'],
+  wuzetian:['你不太愿意把外界的限制当作最终答案。你更相信持续准备、主动选择与承担后果，可以为自己争来新的位置。','眼前没有的位置，我会慢慢争取出来。','选择既然由我作出，代价也由我认真面对。'],
+  shangguan:['你对语境和人的反应都很敏感，常能找到更合适的表达角度。你希望才华被看见，也在意它怎样与现实相处。','同一句话，放对了位置才真正有力量。','我愿意把复杂的心意，说得准确一点。'],
+  pingyang:['你并不把担当只理解为一句态度。遇到需要有人组织和推进的事情，你愿意先把能做的那部分接起来。','总要有人先把第一件事做起来。','我站出来，是想让更多人能一起向前。'],
+  xuetao:['你对自己喜欢什么、珍惜什么有细密而稳定的判断。你愿意用自己的方式表达，也不急着把每段经历都解释给别人。','一张纸也能留住我认真经过的日子。','被理解很好，先忠于自己的感受也很好。'],
+  yuxuanji:['你不容易接受只有一种答案的生活。表达和选择都需要经过内心的认可，才会让你觉得自己确实在场。','我想说的话，不只为了合乎别人的期待。','一段生活值不值得，要问我自己的心。'],
+  sushi:['你善于在境遇变化时，为生活重新找到可亲近的部分。你并非没有失落，而是愿意继续把日子过出一点滋味。','风雨来了，就把今天的路认真走完。','心里留一点余地，日子便还能长出新意。'],
+  wanganshi:['你更容易从反复出现的问题里看见结构。你希望改变不只靠临时补救，而能形成一套经得起持续使用的办法。','总得有人把反复的难题往根上再问一问。','改变值得做，也值得把每一步做扎实。'],
+  simaguang:['你在意一件事的前因后果，也愿意为弄清脉络投入长久的耐心。你希望决定建立在可以回看和查验的基础上。','先把来路理清，去路才不至于只凭猜想。','慢一点核对，是为了少一点无谓的反复。'],
+  xinqiji:['你心里常有一个不愿轻易放下的方向。热情并不只出现在话语里，也会在反复受阻之后重新把你推向行动。','想做的事，我还愿意再认真试一次。','有些念头走过很多年，仍然值得拿出来说。'],
+  yuefei:['你习惯把认定的事情落实在日常的纪律里。你相信可靠不是一时的激动，而是压力之下仍愿意继续完成。','把承诺守在每一天，才知道它有多重。','困难可以改变办法，不必先改变初心。'],
+  shenkua:['你容易对习以为常的现象生出问题。你愿意观察、记录和尝试，让零散的经验逐渐成为能够说明的发现。','多看一眼，多试一次，也许就会发现不同。','我想知道的不只是是什么，还有为什么。'],
+  liuyong:['你善于感受普通生活里的细微情绪，尤其是相聚与离别之间的余味。你希望表达能够贴近真实，而不只是体面。','人间的细小心事，也值得被认真唱出来。','说不尽的那一点，才让我愿意再停留。'],
+  liqingzhao:['你对语言、细节和自己的感受都有一把清楚的尺。你愿意温柔地看世界，也不愿为了迁就而磨掉自己的判断。','细微之处，不必因为无人注意就将就。','我记得的，不只是事情，还有它落在心里的样子。'],
+  liangshi:['你更愿意在需要协作的时刻直接接住责任。你在意的并非自己是否成为焦点，而是关键的位置有没有人守住。','有人在前面向前，我就把身后的事接稳。','需要我的时候，我会先把能做的做起来。'],
+  liue:['你擅长把不同的要求放进一个可以持续运转的安排里。你重视掌握情况，也愿意为长远的稳定承受眼前的繁杂。','把每一处接续想清楚，局面才站得住。','从容不是事少，是心里知道轻重先后。'],
+  caohou:['你重视克制与分寸，也能够理解稳定的支持有多大分量。你未必每次都站出来，却往往知道何时该把态度说清。','平日可以安静，重要的时候不能含糊。','我愿意照顾全局，也不会忘记心里的尺度。'],
+  wangben:['你倾向于把明确的目标迅速转成可以执行的动作。任务越具体，你越容易集中精神，让大家看见切实的进展。','目标说清以后，就让事情一件件落下去。','做得到的安排，比响亮的保证更有用。'],
+  zhanghan:['你对现实条件有敏锐的感知，不愿在局势改变后仍只守着原先的说法。你倾向于先找到还能稳住的一处，再调整下一步。','先看清手里还有什么，再决定下一步怎么走。','局面变了，办法也需要重新想过。'],
+  mengyi:['你在复杂关系里仍希望保留清楚的尺度。对你而言，谨慎与担当可以同时存在，不必为了圆满场面就抹去判断。','把事情核清，也把自己的责任说清。','有些界限越是在复杂时越要记得。'],
+  zhaogao:['你很容易察觉关系里的风向，也会留意一条信息会怎样改变局面。这种敏感可以帮助你理解环境，也需要避免被控制感牵着走。','先听见没有说出的部分，再决定怎么回应。','看清关系，也要记得关系之外的事实。'],
+  huhai:['你对眼前的体验和即时反馈较为敏感，容易在明确的感受里找到行动动力。你需要的是让当下的兴致也能与较远的后果相处。','我想认真体验今天，也学着为明天留一点准备。','喜欢一件事的时候，更要记得问一句代价。'],
+  ziying:['你能够在局面发生变化时重新衡量取舍。你不把坚持等同于不肯转身，更在意还有什么值得保全。','认清变化，不等于放弃自己的判断。','有时退开一步，是为了保住更重要的东西。'],
+  wuguang:['你更容易从共同处境里产生行动的勇气。你不只关心自己能否向前，也希望身边的人愿意一起迈出那一步。','既然决定一起走，就把彼此的难处也算进去。','有人先起身，大家才会看见事情能够改变。'],
+  xiangyu:['你对认定的目标和关系投入得很直接。你愿意在关键时刻承担决定，也需要为强烈的心意留出重新观察的空隙。','真正在意的事，我愿意用行动回答。','向前的时候，也给新的信息留一个位置。'],
+  xiangliang:['你擅长把零散的力量组织成共同的行动。你会留意谁愿意同行，也知道开局时清楚的方向有多重要。','先把人和方向接起来，路才会慢慢出现。','我愿意先承担，让同行的人少一点犹豫。'],
+  fanzeng:['你常比周围的人更早注意到局势里的隐患。你愿意提出长远判断，也容易因为别人没有及时理解而着急。','有些提醒，是因为已经看见了后面的路。','把判断说到别人能接住，也是谋划的一部分。'],
+  liyou:['你重视自己的位置应当承担什么，不轻易因一时变化丢开正在做的事。你需要的是在守住职责时，也看见可调整的边界。','站在这里，就先把这里该做的做好。','守住责任，也要留心现实已经怎样改变。'],
+  weiliao:['你更在意决定是否具备可行的条件，而非它听起来是否动人。你愿意看清资源、关系和代价，再选择自己的位置。','先问清条件，才知道承诺有没有分量。','进退之间，我希望保有清醒的选择。'],
+  zhengguo:['你容易被那些可以长期改善生活的问题吸引。你愿意把宏大的愿望落到具体结构里，让改变成为能够持续发生的日常。','把一条路修通，很多人的日子就会不同。','慢工也可以有大用，只要方向值得。'],
+  xiaohe:['你常能看见成果背后那些不显眼的接续工作。你愿意耐心统筹，让别人向前时知道身后有可以依靠的秩序。','把后面的事接稳，前面的人才走得踏实。','每一份清楚的记录，都是在为以后省力。'],
+  chenping:['你擅长从僵住的关系中找到可以转动的一处。你不执着只有一种漂亮的解法，更关心怎样让现实真正出现转机。','换个角度看，未必还需要在原处用力。','留一点余地，事情才会有继续变化的可能。'],
+  weiqing:['你愿意把力量放在能够照顾整体的地方。你重视行动，也记得行动之后，同行的人是否还能够跟得上。','把路走通，也把同行的人照看好。','稳稳做成的事，自会留下分量。'],
+  dongzhongshu:['你习惯把零散的看法放回较完整的解释里。你希望自己的判断有根基，也愿意长期打磨其中的脉络。','先弄清根本，枝节才不会各说各话。','把一个问题想深，也要记得回到具体生活。'],
+  suwu:['你能够把信念放进漫长而安静的日常里。你不一定需要旁人不断肯定，也愿意守住自己认可的那一部分。','没有人看见的时候，我也记得自己的选择。','时间可以很长，心里的尺度仍要自己保管。'],
+  liuxiu:['你擅长在向前与等待之间找到合适的节奏。你既看重目标，也愿意把关系和条件一点点修整得更扎实。','能稳稳接住的机会，才值得真正向前。','把人心和准备放在一起，路会更长一些。'],
+  zhangheng:['你会对普通现象背后的规律保持好奇。你愿意独自观察和反复尝试，也希望自己的发现能经得起实际检验。','习以为常的地方，也许藏着新的问题。','先认真看，再让一次次尝试接近答案。'],
+  cailun:['你关心一种方法究竟能不能被更多人方便地使用。你愿意在材料、过程与结果之间反复试验，让改进变得具体。','好办法不只要想出来，还要用得起来。','把小处改好，日常就能轻一点。'],
+  mayuan:['你不太愿意让眼前的限制替自己决定还有没有可能。只要目标仍值得，你就愿意重新准备，再向前走一段。','还愿意向前的时候，就把这一步踏实走好。','经历可以增加分量，不必只增加迟疑。'],
+  douyifang:['你看重能够让生活长期安定的根本。面对外界不断变化的主张，你常会先回到自己经过检验的判断。','不必随着每一阵风，改变心里的根本。','把重要的守好，再谈别的取舍。'],
+  sunce:['你常能用明确的行动点燃周围人的热情。你愿意开局，也享受把尚未成形的可能迅速推向现实的过程。','先让第一步发生，伙伴才看得见方向。','有些局面，是走进去之后才真正打开的。'],
+  lvbu:['你对现场变化反应迅速，也珍惜个人行动的空间。你需要学习的不是磨掉锋芒，而是让这份力量有更稳定的落点。','能冲出去的时候，也要知道要守住什么。','锋芒可以属于我，承诺也应当属于我。'],
+  simayi:['你愿意为看清局面等待，也能把很多判断留在尚未开口的时候。你重视长期的位置，不轻易被一时声势推着走。','不必每次都争在前面，但要知道自己在等什么。','看清变化，比急着证明判断更重要。'],
+  xunyu:['你擅长把人的长处与事情的需要接在一起。你希望合作有成效，也愿意保留不因环境而轻易松动的原则。','把合适的人放对位置，事情就有了根基。','能一起做事很好，尺度也要一同守住。'],
+  guojia:['你常能从繁杂的信息里抓住最会改变局势的一点。你愿意打破惯性，但也需要让直觉接受必要的核对。','与其处处用力，不如先看准真正的关节。','新的可能出现时，我愿意认真看一眼。'],
+  lusu:['你能够看见单独一方之外的共同利益。你愿意耐心解释和建立信任，让彼此并不完全相同的人仍能一起前行。','先找到能共同承担的事，信任才有落点。','把话说到彼此听得懂，也是在推动大局。'],
+  luxun:['你不急于被外界的催促带动，愿意等待信息与条件逐渐清楚。你相信沉着并非被动，而是把力量用在更合适的时候。','等一等，不是没有主张，是在等条件说话。','看清局面之后，行动可以很干净。'],
+  zhangliao:['你在明确的压力下往往更容易集中。你擅长抓住关键的一步，也愿意通过紧凑的行动给周围的人建立信心。','要紧的时候，先把最关键的一步做出来。','分工清楚，行动就不必被杂音拖住。'],
+  zhangfei:['你愿意把喜欢、认可和不赞同说得直接。你的热心通常不难被看见，也需要给别人不同的节奏留一点缓冲。','在意的人和事，我不想只放在心里。','话可以直，回应别人的时候也可以慢一点。'],
+  bufuren:['你容易察觉关系里哪一处需要照顾，又不急着把照顾变成自己的表现。你重视让相处变得安稳而可持续。','让人安心的回应，也有很长久的力量。','我愿意照看别人，也会慢慢说出自己的需要。'],
+  direnjie:['你愿意从细节里辨认事情真正的轮廓，也记得事实背后有具体的人。你的判断希望既站得住，也能解决问题。','先把事情问清，再让判断落得公允。','说理不只是为了赢，也是为了少一些误解。'],
+  hanyu:['你对自己认定的道理有强烈的表达欲。你愿意把想法讲透，也希望自己的投入能为后来者留下一条更清楚的路。','既然认定值得说，就把依据也说扎实。','我想留下的，不只是一时响亮的声音。'],
+  liuzongyuan:['你愿意在不顺的境遇里继续观察现实。你不喜欢轻易接受现成解释，更习惯把问题带回自己的思考与体验。','失意的时候，也不妨碍把世界看得清楚。','我仍愿意追问，因为事情未必只有一个说法。'],
+  liuyuxi:['你能够在反复变化中保有自己的精神。你不一定处处针锋相对，却愿意用清楚的表达回应那些不想妥协的部分。','日子可以转弯，精神不必跟着折下去。','把经历重新写过，也是在重新理解自己。'],
+  zhangjiuling:['你重视判断里的清明，也在意表达时的分寸。你愿意把长远的隐忧说出来，即使它暂时不够合乎众人的期待。','眼前的圆满，不该遮住远处的问题。','提醒可以温和，判断仍要清楚。'],
+  yanzhenqing:['你愿意把原则落实到可以看见的日常功夫里。你不急着追求每一次新鲜，更在意自己是否站得正、做得实。','一笔一画有来处，一言一行也要有分量。','先把自己站稳，再去面对外面的风。'],
+  sunsimiao:['你容易把注意力放到具体的人和细小的需要上。你相信认真观察与耐心照看可以并行，不必用匆忙代替关怀。','愿意多问一句，便可能少忽略一种难处。','关心落在细处，才真正接近一个人。'],
+  dumu:['你常能在鲜明的感受之后，再看见一层更远的意味。你喜欢明快的表达，也愿意让情绪与思考互相照见。','看见眼前的风景，也问问它背后的来路。','话不必拖长，意思却可以再深一点。'],
+  ouyangxiu:['你乐于把清楚的理解分享给别人，也愿意为后来的声音留位置。你重视积累，却不希望学问与真实生活隔得太远。','把道理讲通，也把新人的路让出来一点。','好的积累，应当让人更愿意理解世界。'],
+  fanzhongyan:['你容易把个人选择放到更广的处境里考虑。你愿意承担较长远的责任，也需要记得自己的心力同样值得照看。','眼前的事认真做，远处的人也放在心上。','承担不是永远不累，而是知道为何还愿意。'],
+  baozheng:['你更信任可以核验的事实与明确的边界。你愿意把难以回避的问题讲清，也在意同一把尺是否能公平地落下。','把事情核清，再把判断说得明白。','尺度不该因为人不同，就悄悄换了位置。'],
+  suzhe:['你愿意在开口之前多想一层，在行动之前多留一分余地。你的支持常常不喧哗，却能在长久相处里显出可靠。','我不急着说满，也不轻易把承诺收回。','把事情想得稳一点，同行的人就安心一点。'],
+  luyou:['你能够把长久的心意藏进日常的细小坚持里。你珍惜寻常生活，也不愿因此忘记那些一直没有放下的方向。','把今天认真过好，也不把长久的愿望忘掉。','初心不必天天高声，却可以日日有回应。'],
+  wentianxiang:['你重视自己的选择是否经得起内心的追问。你愿意在困难时保有明确的立场，也知道担当需要付出具体的代价。','我希望回头时，仍能认得自己作出的选择。','重要的不是说过什么，而是最后怎样做。'],
+  zhuxi:['你喜欢把问题往根本上理清，也愿意用很长的时间反复辨析。你希望所学不只停留在记忆里，还能成为理解事物的秩序。','弄清一个根本，很多细节才有安放的地方。','把学到的放回生活，才知道是否真正明白。'],
+  songci:['你愿意在别人已经准备下结论时，再核对一次细节。你相信耐心和证据有时能够替不善表达的人争取公允。','多核对一处，也许就能少一点轻率的判断。','不能只听一个说法，还要让事实自己出现。'],
+  zhushuzhen:['你对心意是否真实有很高的要求，也愿意珍惜那些不容易被他人理解的细微感受。你希望自己的声音保持自己的颜色。','细小的心事，也有被认真对待的理由。','我愿意温柔地表达，也愿意保有自己的选择。']
+ };
+ const modes=[
+  [
+   ['你常从整体气氛和直观感受切入，再在行动里补上细节。','你容易较早形成整体印象，不必等所有线索齐全才开始理解。','与人相处时，你常先感受气氛，再判断怎样回应。','你适合先给出一个可讨论的方向，再让事实逐步修正它。','不必每次都把感受解释成结论，可以先说这是一个初步印象。','第一印象太鲜明时，后来的反例可能不容易进入视线。','在着急时，把熟悉的感觉当成已经核实的事实。','重要决定前，特意寻找一条能推翻自己初判的信息。','直觉可以带路，事实也值得后来跟上。'],
+   ['你更愿意追到问题的来路，再给出判断。','你在意真正的原因，不容易只被表面的热闹说服。','你通常是先听完、再追问的人，习惯确认对方究竟在说什么。','你能替团队核清信息、找出遗漏，也需要给判断设置截止点。','把核对与不信任区分开，告诉对方你是在确认事情。','思考过深时，可能错过需要及时回应的窗口。','压力越大，越可能把尚未查清等同于不能开始。','给自己设一个信息足够的标准，先做可回退的一小步。','问清来路之后，也允许自己向前一步。']
+  ],
+  [
+   ['你愿意给变化留出位置，比起完整蓝图，更重视眼前是否有合适的走法。','你不会轻易被一份原计划困住，能从眼前条件里找到出路。','你通常愿意听新情况，相处时不爱把每一步都规定好。','你适合需要机动和临场配合的任务，但最好先约定交付边界。','告诉伙伴哪些事情你想随势调整，哪些承诺仍会按时做到。','连续临时调整时，彼此可能很难知道真正的优先级。','把灵活变成随时改变，容易让他人失去可以依靠的预期。','只固定最重要的几个节点，把机动空间留在节点之间。','路可以边走边调，承诺最好有清楚的落点。'],
+   ['你会先在心里整理步骤，再把复杂的事分段推进。','你能把模糊的目标变成可接续的安排，替别人减少不确定。','你通常先观察整体分工，再决定自己该补上哪一处。','你适合统筹和长线工作，也可以把局部试错留给同行者。','当别人没有按计划行动时，先问是否出现了你还不知道的情况。','计划过密时，可能把有价值的偶然也挡在外面。','压力之下，容易以为只有亲自安排每一步才能放心。','为计划专门留一格空白，并约定什么时候重新讨论。','把路想清楚，也给意外留一扇门。']
+  ],
+  [
+   ['你更愿意确认代价之后再动，不急着用速度证明自己。','你能够压住一时的冲动，让决定经过必要的沉淀。','你通常不急于接话，需要一点时间才能给出自己认可的回应。','你适合把关与复核，也可以提前告知伙伴自己的考虑期限。','不必等到完全确定才表达，可以先说自己目前倾向哪里。','等待过久时，别人可能误以为你没有立场或不愿承担。','把避免出错当成唯一目标，会让值得尝试的机会不断后退。','把决定拆成可逆与不可逆两类，可逆的小事先行动。','慢一点想，也可以清楚地作出决定。'],
+   ['你愿意让明确的判断尽快进入行动，在推进中继续修正。','需要有人先迈一步时，你较容易把讨论变成进展。','你通常希望交流能够形成具体回应，而不只是反复绕圈。','你适合推动开局，最好同时找一位愿意提醒风险的伙伴。','当你想快一点时，也给同行者一个说明担忧的机会。','推进过快时，可能把尚未形成的共识误当作已经达成。','在压力下，用动作覆盖不安，反而遗漏真正需要解决的问题。','开动前先用一句话确认目标、底线和可回退的位置。','先让事情动起来，也让反馈跟得上。']
+  ],
+  [
+   ['你习惯先弄清规则与责任，再考虑具体的照顾方式。','你能在关系拉扯里保留一把相对稳定的尺。','你通常愿意把边界讲清，比起猜测，更希望彼此有明确约定。','你适合处理标准与分工，也可以多问一句现实处境是否不同。','表达原则时补上原因，让对方知道边界并不等于拒绝理解。','过于强调一致时，可能低估不同人的承受条件。','把规则当成全部答案，会忽略那些没有被规则写下的需要。','先听完一个具体难处，再决定是否存在合理的例外。','把尺度守住，也把处境听完。'],
+   ['你容易看见事情之外的人，愿意理解每个人正在承受什么。','你对未被直接说出的情绪与需要有较细的感受。','你通常先接住对方的心情，再一起讨论问题该怎样解决。','你能让合作更有人情与信任，也需要把自己的负荷说清。','帮助之前先问对方需要什么，不必自动替别人承担全部。','照顾别人太久时，可能把自己的疲惫放到最后。','把理解误认为必须答应，容易让边界慢慢消失。','练习说出能提供的帮助，以及暂时做不到的部分。','理解一个人，也包括不给自己无限的责任。']
+  ],
+  [
+   ['你更习惯把心意放在细节与行动里，不急着一一说尽。','你善于给交流留下余味，也愿意照顾对方接收的时机。','你通常先观察，再选择私下或更安静的方式表达。','你适合需要细致沟通的合作，但重要需求最好不要只靠暗示。','把最希望被知道的一句话说清，剩下的仍可以慢慢讲。','别人未必能读懂你留在行动中的全部心意。','长时间不说明，容易让沉默被误解成同意或疏远。','遇到关键分歧时，直接讲出事实、感受和一个具体请求。','留白可以动人，重要的话也值得说清。'],
+   ['你愿意把感受与主张说出来，让交流有明确的形状。','你能帮助模糊的感受被看见，也让讨论更快找到焦点。','你通常愿意主动澄清和回应，不爱让误会停留太久。','你适合表达与协调，也可以在说完之后留出真正的倾听。','直接表达不必一次说尽，可以给彼此一点消化的时间。','表达太充分时，可能无意中占满对方的回应空间。','急于说明自己时，容易错过对方真正关心的那一点。','说完一个主张后，停下来问对方最在意的是什么。','把心意说出来，也把回应听进去。']
+  ],
+  [
+   ['你珍惜生活正在发生的部分，不愿让所有今天都只为将来服务。','你能够感受眼前的满足，不容易只用进度与回报衡量日子。','你通常更看重相处是否自然，而不是关系有没有明确的计划。','你适合需要保持体验与活力的工作，也可为长期任务设少量固定节点。','可以珍惜当下，也明确告诉别人哪些长期约定你愿意维持。','遇到漫长任务时，可能较容易被眼前更新鲜的事带走。','只按即时感受决定投入，会让本来在乎的事失去积累。','给最重要的一件事留一个小而稳定的时间位置。','认真过今天，也给在乎的事留一点以后。'],
+   ['你愿意把值得的事情放进长久的日常里经营，而不只等待一时的热情。','你能看见持续投入的复利，愿意为以后留下可以接续的根基。','你通常重视可靠的回应，相比热闹的开场，更相信长久的照应。','你适合积累与维护，也需要定期检查旧目标是否仍值得继续。','告诉别人你的期待，同时允许关系不必每一步都证明长远。','太重视坚持时，可能不愿承认一段投入已经需要调整。','把所有放下都理解成浪费，会让沉没成本继续增加。','为长期计划设置复盘点，分清仍然值得与只是舍不得。','长久值得经营，方向也值得重新确认。']
+  ],
+  [
+   ['你愿意把共同前行的空间留大一点，常先寻找能够彼此认可的部分。','你能看见不同立场之间可以连接的位置，较少急着把分歧推到极端。','你通常愿意商量与配合，希望关系里有彼此接得住的节奏。','你适合协调共识，也可以先列清自己真正不能让步的边界。','同意之前先分清，这是自己的选择，还是只是不愿使人失望。','为了维系气氛，可能把不同意见保留得太久。','把一致当成安全感的唯一来源，会让自己的需要越来越难说。','每次讨论至少清楚表达一项自己的真实偏好。','同行很好，自己的声音也应该在场。'],
+   ['你习惯保留独立判断，不愿只因为多数人的方向一致就轻易改变。','你有自己的尺度，也愿意为认下的选择承担相应后果。','你通常需要关系里有清楚的边界，不喜欢被替代决定。','你适合独立负责，也可以把判断依据讲给需要协作的人。','接受帮助不等于让出判断，给可信的人一个参与的位置。','独立过强时，可能把可以共享的压力也全部留给自己。','习惯自己决定，容易误以为解释和协商只是额外负担。','试着在不放弃底线的前提下，邀请别人补充一个盲区。','路可以自己选，难处不必都独自扛。']
+  ],
+  [
+   ['你更信任经过时间检验的方法，愿意先把熟悉的事做得可靠。','你能够守住稳定的质量，不轻易被每一次新鲜的说法带离重点。','你通常珍惜熟悉的相处方式，需要一点时间适应新的变化。','你适合把成熟办法做深，也可以把新尝试放在风险较小的一角。','对变化有保留时，把担忧说具体，避免只给出不赞同。','过于依赖旧经验时，可能低估条件已经发生的变化。','把不熟悉当成不可靠，会减少本来能够带来改进的尝试。','选一个代价可控的小地方，认真比较一次新旧方法。','经验值得相信，也值得偶尔重新验证。'],
+   ['你愿意从陌生处寻找新的可能，不把现成办法当成唯一选择。','你能在变化中看见可以尝试的入口，帮助事情跳出惯性。','你通常愿意听不同的生活方式，也容易带来新鲜的话题与体验。','你适合探索与改进，最好为试验约定清楚的成本和回看时间。','邀请别人尝试时，也尊重对方需要更多准备的节奏。','不断追逐新方法时，可能把已经有用的积累放得太快。','把改变本身当成进展，容易忽略新办法是否真的解决问题。','为每次尝试写下要验证的一件事，再用结果决定去留。','新的路值得试，也值得用结果来辨认。']
+  ]
+ ];
+ const names=['洞察','布局','决断','共情','表达','经营','独立','开创'];
+ function mode(index,value){const text=modes[index][value>=0?1:0];return{portrait:text[0],common:text[1],reality:text[2],work:text[3],boundary:text[4],blind:text[5],risk:text[6],advice:text[7],quote:text[8]};}
+ function create(result){
+  const f=result.figure,profile=result.profile,editor=OfflineQuiz.figures.find(p=>p.id===f.id).profile;
+  const ranked=profile.map((value,index)=>({index,value,strength:Math.abs(value)})).sort((a,b)=>b.strength-a.strength||a.index-b.index);
+  const primary=ranked[0],secondary=ranked[1],a=mode(primary.index,primary.value),b=mode(secondary.index,secondary.value);
+  const unique=voices[f.id];if(!unique)throw new Error('人物解读尚未补齐：'+f.id);
+  const common=profile.map((value,index)=>({index,value,distance:Math.abs(value-editor[index]),strength:Math.abs(value)}))
+   .sort((x,y)=>(x.distance-x.strength*.2)-(y.distance-y.strength*.2)||x.index-y.index).slice(0,3);
+  return {figure:f,dominant:{name:names[primary.index],side:profile[primary.index]>=0?OfflineQuiz.dimensions[primary.index].high:OfflineQuiz.dimensions[primary.index].low},
+   voice:unique[1],portrait:`你与${f.name}相映的，是一种处理世界的方式。${unique[0]}结合这次选择，${a.portrait}`,
+   metrics:profile.map((value,index)=>({name:names[index],fullName:OfflineQuiz.dimensions[index].name,value:Math.round((value+1)*50),side:value>=0?OfflineQuiz.dimensions[index].high:OfflineQuiz.dimensions[index].low})),
+   common:common.map((x,i)=>({title:['第一底色','隐藏天赋','长期优势'][i]+' · '+names[x.index],text:mode(x.index,x.value).common})),
+   reality:[{title:'现实互动方式',text:a.reality},{title:'合作与做事习惯',text:b.work},{title:'关系中的边界',text:a.boundary}],
+   risks:[{title:'可能的盲点',text:a.blind},{title:'风险提醒',text:a.risk},{title:'给你的建议',text:a.advice}],
+   lines:[unique[1],unique[2],b.quote],
+   note:'以上是基于本次选择的趣味性解读，数值描述答题倾向，不代表能力高低或心理学结论；相似之处不等于认同人物的全部历史行为。',
+   rangeNotice:result.candidateCount===1?'当前所选人物范围会固定匹配巴寡妇清；如希望获得不同人物结果，可选择不限性别或更换朝代。':''};
+ }
+ return {create,voices};
+})();
+</script>
+<script>// 按内容测量并生成完整长图，所有分区共用网页报告的数据。
+function drawFullReport(report){
+ const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=1;
+ const measure=canvas.getContext('2d');if(!measure)throw new Error('当前环境暂不支持生成结果长图');
+ const commands=[],font='"Microsoft YaHei","PingFang SC",sans-serif';let cursor=54;
+ function textLines(text,size,width,weight='normal'){
+  measure.font=`${weight} ${size}px ${font}`;const lines=[];let line='';
+  for(const char of String(text)){if(char==='\n'){lines.push(line);line='';continue;}if(line&&measure.measureText(line+char).width>width){lines.push(line);line=char;}else line+=char;}if(line)lines.push(line);return lines;
+ }
+ function panel(title,blocks,kind='body'){
+  const top=cursor,draw=[],left=96,width=888;let y=top+44;
+  function text(text,size=29,color='#302653',weight='normal',gap=14){const lines=textLines(text,size,width,weight),lh=Math.ceil(size*1.65);for(const line of lines){const baseline=y+size;draw.push(ctx=>{ctx.font=`${weight} ${size}px ${font}`;ctx.textAlign='left';ctx.fillStyle=color;ctx.fillText(line,left,baseline);});y+=lh;}y+=gap;}
+  if(title)text(title,32,'#302653','bold',24);
+  if(kind==='cover'){
+   text('与你遥相呼应的人',30,'#7864bd','normal',20);
+   text(report.figure.name,report.figure.name.length>7?60:80,'#302653','bold',12);
+   text(`${report.eraName} · ${report.figure.role}`,27,'#9187a9','normal',18);
+   text(report.figure.tags.join('  ·  '),27,'#7864bd','normal',14);
+   text(`主导维度：${report.dominant.name} · ${report.dominant.side}`,26,'#7864bd','normal',20);
+   text('人物心声',26,'#7864bd','bold',6);text('“'+report.voice+'”',29);
+  }else if(kind==='metrics'){
+   text('数值为答题倾向指数，不代表能力高低或测评准确率。',24,'#9187a9','normal',22);
+   for(const m of report.metrics){const baseline=y+27,barY=y+12;
+    draw.push(ctx=>{ctx.textAlign='left';ctx.font=`27px ${font}`;ctx.fillStyle='#302653';ctx.fillText(m.name,left,baseline);ctx.fillStyle='#eee9f7';ctx.beginPath();ctx.roundRect(245,barY,650,14,7);ctx.fill();ctx.fillStyle='#7864bd';if(m.value>0){ctx.beginPath();ctx.roundRect(245,barY,650*m.value/100,14,7);ctx.fill();}ctx.textAlign='right';ctx.font=`26px ${font}`;ctx.fillText(String(m.value),984,baseline);});
+    y+=60;
+   }
+  }else{
+   for(const block of blocks){if(block.title)text(block.title,27,'#514273','bold',6);text(block.text,29,block.muted?'#9187a9':'#403556','normal',24);}
+  }
+  const height=y-top+18;
+  commands.push(ctx=>{ctx.fillStyle='#fff';ctx.beginPath();ctx.roundRect(54,top,972,height,30);ctx.fill();});commands.push(...draw);cursor=top+height+26;
+ }
+ panel('',[],'cover');
+ panel('01 · 人物自画像',[{text:report.portrait},{title:'历史中的'+report.figure.name,text:report.figure.history,muted:true}]);
+ panel('02 · 八维能力结构',[],'metrics');
+ panel('03 · 你与TA的共同底色',report.common);
+ panel('04 · 现实中的你',report.reality);
+ panel('05 · 性格盲点与风险提醒',report.risks);
+ panel('06 · 你的三句人物台词',report.lines.map(line=>({text:'“'+line+'”'})).concat([{text:'人物心声与台词为测试原创代入表达，并非历史人物原话。',muted:true}]));
+ panel('灵魂照面 · 趣味性自我探索',[{text:report.note,muted:true},...(report.rangeNotice?[{text:report.rangeNotice,muted:true}]:[])]);
+ canvas.height=Math.ceil(cursor+28);const ctx=canvas.getContext('2d');ctx.fillStyle='#efebf8';ctx.fillRect(0,0,1080,canvas.height);for(const draw of commands)draw(ctx);
+ return canvas;
+}
+
+'use strict';
 (()=>{
  const $=id=>document.getElementById(id),main=$('main'),KEY='soul-history-offline-v3';
  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const chevron='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>';
- let config,screen='era',state={version:3,eraChoice:null,era:null,gender:null,answers:Array(26).fill(null),index:0,complete:false},questions=[],result=null,busy=false,advanceTimer,noticeTimer,shareFocus;
+ let config,screen='era',state={version:3,eraChoice:null,era:null,gender:null,answers:Array(26).fill(null),index:0,complete:false},questions=[],result=null,currentReport=null,busy=false,advanceTimer,noticeTimer,shareFocus;
  const validAnswer=a=>Number.isInteger(a)&&a>=0&&a<4;
  function notify(message){clearTimeout(noticeTimer);$('notice').textContent=message;$('notice').hidden=false;noticeTimer=setTimeout(()=>$('notice').hidden=true,4500);}
  function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch{notify('当前环境无法暂存进度，请保持页面打开直至完成。');}}
@@ -334,18 +606,18 @@ return {eras,dimensions,banks,figures,candidates,publicQuestions,match};
  const eraName=id=>config?.eras.find(e=>e.id===id)?.name||'';
  function eraPage(){
   const n=state.answers.filter(validAnswer).length;
-  render(`<section class="paper selection"><h1 tabindex="-1">你想走进哪个时代？</h1><p class="subtext">选择一个朝代，遇见与你相似的历史人物。<br>每次26道题，依直觉作答，没有标准答案。</p>${n?`<div class="resume"><span>${esc(eraName(state.era))} · ${state.complete?'人物档案已生成':`已答 ${n} / 26 题`}</span><button id="resume">${state.complete?'查看档案':'继续上次测试'}</button></div>`:''}<div class="choice-list">${config.eras.map(e=>`<button class="choice" data-era="${e.id}"><span class="glyph" aria-hidden="true">${e.glyph}</span><span class="choice-copy"><strong>${e.name}</strong><small>${e.desc}</small></span>${chevron}</button>`).join('')}<button class="choice random" data-era="random"><span class="choice-copy"><strong>随机朝代</strong><small>不必选，让命运替你翻开一页</small></span>${chevron}</button></div><p class="footnote">三国按汉末三国文化时期归类；唐朝含武周。<br>共50位有史料记载的人物，性格描述为文学化映射。</p></section>`,'era');
+  render(`<section class="paper selection"><h1 tabindex="-1">你想走进哪个时代？</h1><p class="subtext">选择一个朝代，遇见与你相似的历史人物。<br>每次26道题，依直觉作答，没有标准答案。</p>${n?`<div class="resume"><span>${esc(eraName(state.era))} · ${state.complete?'人物档案已生成':`已答 ${n} / 26 题`}</span><button id="resume">${state.complete?'查看档案':'继续上次测试'}</button></div>`:''}<div class="choice-list">${config.eras.map(e=>`<button class="choice" data-era="${e.id}"><span class="glyph" aria-hidden="true">${e.glyph}</span><span class="choice-copy"><strong>${e.name}</strong><small>${e.desc}</small></span>${chevron}</button>`).join('')}<button class="choice random" data-era="random"><span class="choice-copy"><strong>随机朝代</strong><small>不必选，让命运替你翻开一页</small></span>${chevron}</button></div><p class="footnote">秦朝含统一前后与秦末人物；三国按汉末三国文化时期归类。<br>人物取自历史记载，结果为文学化性格映射。</p></section>`,'era');
   main.querySelectorAll('[data-era]').forEach(button=>button.addEventListener('click',()=>{state.eraChoice=button.dataset.era;genderPage();}));
   $('resume')?.addEventListener('click',resume);
  }
  function genderPage(){
-  const era=config.eras.find(e=>e.id===state.eraChoice),count=era?config.counts[era.id]:null;
-  render(`<section class="paper selection gender"><h1 tabindex="-1">你希望遇见谁？</h1><p class="subtext">${era?`${esc(era.name)} · ${esc(era.period)}`:'随机朝代 · 开始时随机抽取一个朝代'}<br>选择希望匹配的历史人物性别。</p><div class="choice-list">${[['male','男','男性人物'],['female','女','女性人物'],['any','不限','不限性别']].map(([id,glyph,label])=>`<button class="choice" data-gender="${id}"><span class="glyph" aria-hidden="true">${glyph}</span><span class="choice-copy"><strong>${label}</strong><small>${count?`当前收录 ${count[id]} 位历史人物`:'在抽中的朝代内匹配'}</small></span>${chevron}</button>`).join('')}</div>${era?.id==='qin'?'<p class="candidate-note"><strong>秦朝女性范围提示</strong><br>目前仅收录史料明确的巴寡妇清；选择“女性人物”会得到固定人物，26题仍生成个人倾向画像。想获得更多人物可能，可选“不限性别”或返回更换朝代。</p>':''}<p class="footnote">这里只筛选人物范围，不是询问你的生理性别，<br>也不会改变题目内容与计分方式。${era?`<br>${esc(era.note)}`:'<br>随机抽到秦朝时，女性候选仅1位，页面会明确提示。'}</p><p id="start-error" class="error" role="alert"></p></section>`,'gender');
+  const era=config.eras.find(e=>e.id===state.eraChoice);
+  render(`<section class="paper selection gender"><h1 tabindex="-1">你希望遇见谁？</h1><p class="subtext">${era?`${esc(era.name)} · ${esc(era.period)}`:'随机朝代 · 开始时随机抽取一个朝代'}<br>选择希望匹配的历史人物性别。</p><div class="choice-list">${[['male','男','男性人物','只匹配男性历史人物'],['female','女','女性人物','只匹配女性历史人物'],['any','不限','不限性别','由你的性格倾向自由匹配']].map(([id,glyph,label,description])=>`<button class="choice" data-gender="${id}"><span class="glyph" aria-hidden="true">${glyph}</span><span class="choice-copy"><strong>${label}</strong><small>${description}</small></span>${chevron}</button>`).join('')}</div>${era?.id==='qin'?'<p class="candidate-note"><strong>秦朝女性方向说明</strong><br>为保证史料可靠，此方向固定对应巴寡妇清。若希望获得不同的人物结果，可选择“不限性别”或更换朝代。</p>':''}<p class="footnote">这里只筛选人物范围，不是询问你的生理性别，<br>也不会改变题目内容与计分方式。${era?`<br>${esc(era.note)}`:'<br>秦朝女性方向固定对应巴寡妇清；其余按抽中的朝代匹配。'}</p><p id="start-error" class="error" role="alert"></p></section>`,'gender');
   main.querySelectorAll('[data-gender]').forEach(button=>button.addEventListener('click',()=>start(button.dataset.gender)));
  }
  async function start(gender){
   if(busy)return;busy=true;main.querySelectorAll('button').forEach(b=>b.disabled=true);
-  try{const data=createTest(state.eraChoice,gender);state={version:3,eraChoice:state.eraChoice,era:data.era,gender,answers:Array(26).fill(null),index:0,complete:false};questions=data.questions;result=null;save();question();if(data.candidateCount===1)notify('当前范围仅有1位历史人物；人物结果固定，倾向画像仍由回答生成。');}
+  try{const data=createTest(state.eraChoice,gender);state={version:3,eraChoice:state.eraChoice,era:data.era,gender,answers:Array(26).fill(null),index:0,complete:false};questions=data.questions;result=null;currentReport=null;save();question();if(data.candidateCount===1)notify('当前人物方向固定对应巴寡妇清，详细解读仍由你的回答生成。');}
   catch(e){$('start-error').textContent=e.message;main.querySelectorAll('button').forEach(b=>b.disabled=false);busy=false;}
  }
  async function resume(){
@@ -371,8 +643,9 @@ return {eras,dimensions,banks,figures,candidates,publicQuestions,match};
   catch(e){{question();notify(e.message+' 可再次选择最后一题重试。');}}
  }
  function resultPage(){
-  const f=result.figure;
-  render(`<article class="paper result"><header class="result-heading"><p class="result-kicker">与你遥相呼应的人</p><h1 class="result-name" tabindex="-1">${esc(f.name)}</h1><p class="result-role">${eraName(f.era)} · ${esc(f.role)}</p><div class="tags">${f.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div></header><section class="result-section"><h2>历史中的 ${esc(f.name)}</h2><p>${esc(f.history)}</p><p class="subtext"><a class="source-link" href="${esc(f.source)}" rel="noreferrer">查看史料与延伸阅读</a></p></section><section class="result-section"><h2>你与TA的共同底色</h2>${result.reasons.map(r=>`<div class="reason"><strong>${esc(r.title)}</strong><p>${esc(r.text)}</p></div>`).join('')}</section><section class="result-section"><h2>你的八维倾向画像</h2><p class="subtext">每条刻度描述两端偏好，靠哪一端都没有高低优劣；<br>不是能力高低、心理诊断或匹配准确率。</p><div class="result-bars">${result.dimensions.map((d,i)=>`<div><div class="bar-label"><strong>${esc(d.name)}</strong><span>${esc(result.profile[i]>=0?d.high:d.low)}</span></div><div class="trait-track" role="meter" aria-label="${esc(d.name)}倾向" aria-valuemin="-1" aria-valuemax="1" aria-valuenow="${result.profile[i].toFixed(3)}" aria-valuetext="${esc(result.profile[i]>=0?d.high:d.low)}"><div class="trait-fill" style="width:${(result.profile[i]+1)*50}%"></div></div><div class="bar-ends"><span>${esc(d.low)}</span><span>${esc(d.high)}</span></div></div>`).join('')}</div></section><p class="result-note">${esc(result.note)}<br>本次候选：${result.candidateCount}位 · ${eraName(state.era)} · ${{male:'男性人物',female:'女性人物',any:'不限性别'}[state.gender]}。<br>人物真实生平与本测试的文学化性格解读分别呈现；结果不代表人物全部经历或价值评价。</p><div class="result-actions"><button class="primary" id="share">保存人物卡</button><button class="secondary" id="restart">再测一次</button></div><button class="text-button review-button" id="review">回看并修改答案</button></article>`,'result',`我遇见了${f.name}`);
+  const r=currentReport=ReportBuilder.create(result),f=r.figure;r.eraName=eraName(f.era);
+  const cards=items=>items.map(item=>`<div class="report-card"><h3>${esc(item.title)}</h3><p>${esc(item.text)}</p></div>`).join('');
+  render(`<article class="result-report"><header class="paper result-cover"><p class="result-kicker">与你遥相呼应的人</p><h1 class="result-name" tabindex="-1">${esc(f.name)}</h1><p class="result-role">${eraName(f.era)} · ${esc(f.role)}</p><div class="tags">${f.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div><p class="dominant-label">主导维度：${esc(r.dominant.name)} · ${esc(r.dominant.side)}</p><div class="character-voice"><strong>人物心声</strong><p>“${esc(r.voice)}”</p></div></header><section class="paper report-block" data-report-section="portrait"><h2>01 · 人物自画像</h2><p>${esc(r.portrait)}</p><details class="history-detail"><summary>历史中的${esc(f.name)}</summary><p>${esc(f.history)}</p><a class="source-link" href="${esc(f.source)}" rel="noreferrer">史料与延伸阅读</a></details></section><section class="paper report-block" data-report-section="metrics"><h2>02 · 八维能力结构</h2><p class="report-caption">数值是本次答题的倾向指数，不代表能力高低或测评准确率。</p><div class="metric-list">${r.metrics.map(m=>`<div class="metric-row"><span>${esc(m.name)}</span><div class="metric-track" role="meter" aria-label="${esc(m.fullName)}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${m.value}" aria-valuetext="${esc(m.side)}，倾向指数${m.value}"><span style="width:${m.value}%"></span></div><b>${m.value}</b></div>`).join('')}</div></section><section class="paper report-block" data-report-section="common"><h2>03 · 你与TA的共同底色</h2><div class="report-grid">${cards(r.common)}</div></section><section class="paper report-block" data-report-section="reality"><h2>04 · 现实中的你</h2><div class="reality-list">${cards(r.reality)}</div></section><section class="paper report-block" data-report-section="risks"><h2>05 · 性格盲点与风险提醒</h2><div class="report-grid">${cards(r.risks)}</div></section><section class="paper report-block" data-report-section="lines"><h2>06 · 你的三句人物台词</h2><div class="report-grid quote-grid">${r.lines.map(line=>`<blockquote class="report-card">“${esc(line)}”</blockquote>`).join('')}</div><p class="report-caption">人物心声与台词均为本测试原创代入文案，并非历史人物原话。</p></section><p class="report-disclaimer">${esc(r.note)}${r.rangeNotice?`<br>${esc(r.rangeNotice)}`:''}</p><div class="result-actions"><button class="primary" id="share">保存完整结果</button><button class="secondary" id="restart">再测一次</button></div><button class="text-button review-button" id="review">回看并修改答案</button></article>`,'result',`我遇见了${f.name}`);
   $('share').addEventListener('click',share);$('restart').addEventListener('click',eraPage);$('review').addEventListener('click',()=>{state.index=0;question();});
  }
  function back(){clearTimeout(advanceTimer);busy=false;if(screen==='gender')eraPage();else if(screen==='quiz'){if(state.index){state.index--;save();question();}else genderPage();}else if(screen==='result')eraPage();}
@@ -380,24 +653,17 @@ return {eras,dimensions,banks,figures,candidates,publicQuestions,match};
  function wrap(ctx,text,x,y,width,lineHeight){let line='';for(const char of text){if(ctx.measureText(line+char).width>width){ctx.fillText(line,x,y);y+=lineHeight;line=char;}else line+=char;}if(line)ctx.fillText(line,x,y);return y+lineHeight;}
  async function share(){
   const button=$('share');button.disabled=true;button.textContent='正在制作…';
-  try{await document.fonts?.ready;const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=1570;const ctx=canvas.getContext('2d');
-   if(!ctx)throw new Error('当前环境暂不支持生成人物卡');
-   ctx.fillStyle='#efebf8';ctx.fillRect(0,0,1080,1570);ctx.fillStyle='#fff';ctx.beginPath();ctx.roundRect(54,54,972,1462,48);ctx.fill();
-   ctx.textAlign='center';ctx.fillStyle='#7864bd';ctx.font='30px sans-serif';ctx.fillText('灵魂照面 · 26道选择，一次与历史的相逢',540,130);ctx.fillStyle='#302653';ctx.font='36px sans-serif';ctx.fillText('与你遥相呼应的人',540,220);
-   const f=result.figure;ctx.font=`bold ${f.name.length>7?66:104}px SimSun,serif`;ctx.fillText(f.name,540,355);ctx.font='30px sans-serif';ctx.fillStyle='#9187a9';ctx.fillText(`${eraName(f.era)} · ${f.role}`,540,420);ctx.fillStyle='#7864bd';ctx.font='32px sans-serif';ctx.fillText(f.tags.join('  ·  '),540,490);
-   ctx.textAlign='left';ctx.fillStyle='#302653';ctx.font='28px sans-serif';let y=wrap(ctx,f.history,115,575,850,45)+30;
-   ctx.font='bold 30px sans-serif';ctx.fillText('我的八维倾向',115,y);y+=42;
-   result.dimensions.forEach((d,i)=>{ctx.fillStyle='#302653';ctx.font='25px sans-serif';ctx.fillText(d.name,115,y+15);ctx.fillStyle='#ded7ef';ctx.fillRect(360,y-4,390,12);ctx.fillStyle='#7864bd';ctx.fillRect(360,y-4,390*(result.profile[i]+1)/2,12);ctx.font='23px sans-serif';ctx.fillText(result.profile[i]>=0?d.high:d.low,775,y+13);y+=62;});
-   ctx.fillStyle='#9187a9';ctx.font='22px sans-serif';wrap(ctx,result.candidateCount===1?'当前人物范围仅1位，人物结果固定；倾向画像由回答生成。':'基于26道情境选择的文学化匹配，非专业心理测评。',115,y+25,850,35);ctx.textAlign='center';ctx.font='22px sans-serif';ctx.fillText('刻度表示偏好，不表示能力高低或匹配准确率。',540,1450);
+  try{await document.fonts?.ready;const canvas=drawFullReport(currentReport);
    $('share-image').src=canvas.toDataURL('image/png');$('download').href=$('share-image').src;
+   $('download').download=`${currentReport.figure.name}-灵魂照面完整报告.png`;
    shareFocus=document.activeElement;$('share-overlay').hidden=false;document.body.style.overflow='hidden';$('close-share').focus();
-  }catch(e){notify(e.message||'图片生成失败，请稍后重试。');}finally{button.disabled=false;button.textContent='保存人物卡';}
+  }catch(e){notify(e.message||'图片生成失败，请稍后重试。');}finally{button.disabled=false;button.textContent='保存完整结果';}
  }
  function closeShare(){$('share-overlay').hidden=true;document.body.style.overflow='';shareFocus?.focus();}
  $('close-share').addEventListener('click',closeShare);$('share-overlay').addEventListener('click',e=>{if(e.target===$('share-overlay'))closeShare();});
  document.addEventListener('keydown',e=>{if($('share-overlay').hidden)return;if(e.key==='Escape')closeShare();if(e.key==='Tab'){const focusables=[$('close-share'),$('download')],first=focusables[0],last=focusables[1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
  function boot(){
-  config={eras:OfflineQuiz.eras,dimensions:OfflineQuiz.dimensions,counts:Object.fromEntries(OfflineQuiz.eras.map(e=>[e.id,Object.fromEntries(['male','female','any'].map(g=>[g,OfflineQuiz.candidates(e.id,g).length]))]))};
+  config={eras:OfflineQuiz.eras,dimensions:OfflineQuiz.dimensions};
   restore();eraPage();
  }
  boot();
